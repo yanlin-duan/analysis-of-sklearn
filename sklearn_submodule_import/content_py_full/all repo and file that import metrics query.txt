@@ -1,0 +1,16 @@
+SELECT
+  line,
+  path,
+  repo_name
+FROM (
+    SELECT
+      SPLIT(content, '\n') line,
+      path,
+      repo_name 
+    FROM
+      [pyfiles.content_py_full]
+    WHERE
+      (NOT RIGHT(repo_name ,12) = "scikit-learn")
+      AND (NOT Right(repo_name ,7) = "sklearn")
+    HAVING
+      line = "from sklearn import metrics" )

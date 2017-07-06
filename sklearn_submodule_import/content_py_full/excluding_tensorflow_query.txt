@@ -1,0 +1,19 @@
+SELECT
+  line,
+  COUNT(*) count
+FROM (
+    SELECT
+      SPLIT(content, '\n') line,
+      id
+    FROM
+      [pyfiles.content_py_full]
+    WHERE
+    (NOT RIGHT(repo_name ,12) = "scikit-learn")
+      AND (NOT Right(repo_name ,7) = "sklearn")
+       AND (NOT Right(repo_name ,10) = "tensorflow")
+    HAVING
+      REGEXP_MATCH(line, r'from sklearn.*? import .+') )
+GROUP BY
+  1
+ORDER BY
+  count DESC

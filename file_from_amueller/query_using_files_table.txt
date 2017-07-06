@@ -1,0 +1,14 @@
+SELECT
+  path,
+  repo_name,
+  COUNT(*) count
+FROM
+  [bigquery-public-data:github_repos.files]
+WHERE
+  REGEXP_MATCH(repo_name, r'^amueller/.+')
+  AND
+  RIGHT(path,3) = ".py"
+GROUP BY
+  1,2
+ORDER BY
+  count DESC

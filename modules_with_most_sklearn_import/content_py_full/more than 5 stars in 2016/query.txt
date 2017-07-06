@@ -1,0 +1,35 @@
+SELECT
+  repo_name,
+  COUNT(*) count
+FROM (
+  SELECT
+    SPLIT(content, '\n') line,
+    repo_name
+  FROM
+    [pyfiles.content_py_full]
+  WHERE
+    (NOT RIGHT(repo_name,12) = "scikit-learn")
+    AND (NOT RIGHT(repo_name,7) = "sklearn")
+    AND repo_name IN (
+    SELECT
+      repo.name
+    FROM (
+      SELECT
+        repo.name,
+        COUNT(*) watch_count
+      FROM
+        [githubarchive:year.2016]
+      WHERE
+        type="WatchEvent"
+      GROUP BY
+        1
+      HAVING
+        watch_count >= 5
+      ORDER BY
+        watch_count DESC))
+  HAVING
+    REGEXP_MATCH(line, r'from sklearn.*? import .+') )
+GROUP BY
+  1
+ORDER BY
+  count DESC

@@ -1,0 +1,12 @@
+SELECT
+  sample_path,
+  sample_repo_name,
+  COUNT(*) count
+FROM
+  [fh-bigquery:github_extracts.contents_py]
+WHERE
+  sample_repo_name CONTAINS "amueller"
+GROUP BY
+  1,2
+ORDER BY
+  count DESC
