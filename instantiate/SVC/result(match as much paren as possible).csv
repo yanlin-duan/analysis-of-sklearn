@@ -1,0 +1,2060 @@
+match,count
+,5982978
+"SVC()
+",506
+"SVC(kernel='linear')
+",153
+"SVC(C=1, gamma=0.01, kernel='rbf').fit(scaled_train_X, train_y_reduced)
+",66
+"SVC(C=1, kernel='linear')
+",54
+"SVC(probability=True)
+",50
+"SVC(kernel=""linear"")
+",38
+"SVC())
+",37
+"SVC(gamma=0.001)
+",30
+"SVC(kernel='rbf')
+",29
+"SVC(C=1, kernel='linear', probability=True)
+",27
+"SVC (default 1)
+",26
+"SVC(C=1, gamma=0.01, kernel='rbf').fit(scaled_train_X, y_train)
+",22
+"SVC(kernel='linear'))
+",21
+"SVC(kernel='rbf', class_weight='balanced'), param_grid)
+",21
+"SVC(kernel='linear', probability=True, random_state=0)
+",17
+"SVC(kernel='rbf', class_weight='auto'), param_grid)
+",16
+"SVC() ",15
+"SVC(kernel='linear', probability=True)
+",15
+"SVC(), param_grid=param_grid, cv=cv)
+",15
+"SVC(C=C, gamma=gamma)
+",15
+"SVC(kernel='linear', C=1)
+",14
+"SVC()))
+",13
+"SVC(probability=True))
+",12
+"SVC(gamma=0.001, C=100.)
+",12
+"SVC(kernel=arc_cosine, cache_size=2048)
+",10
+"SVC(kernel='linear', C=1.0, random_state=0)
+",10
+"SVC(random_state=1))])
+",10
+"SVC(kernel='linear', C=C).fit(X, y)
+",10
+"SVC(kernel='linear', probability=True, C=svm_C)
+",9
+"SVC(kernel='precomputed')
+",9
+"SVC(kernel='linear', C=inf)
+",8
+"SVC(kernel='linear', probability=True).fit(X_train, y_train)
+",8
+"SVC( kernel = 'rbf',cache_size = 1000)
+",8
+"SVC(C=1), param_grid, cv=5).fit(X, y)
+",8
+"SVC(kernel='linear', C=1.0)
+",8
+"SVC(probability = True)
+",8
+"SVC(), ""sample_weight"")
+",8
+"SVC(C=params['aC'],gamma=params['agamma'],probability=True, cache_size=7000)
+",8
+"SVC(kernel=""linear"", C=1.0)
+",7
+"SVC(kernel='linear', C=1))
+",7
+"SVC(C=1), tuned_parameters, cv=5, scoring=score)
+",7
+"SVC(C=c, kernel='precomputed')
+",7
+"SVC(**params)
+",7
+"SVC(C=10, gamma=0.005)
+",7
+"SVC(kernel='linear').fit(X, Y)
+",7
+"SVC(kernel='linear', C=10)
+",7
+"SVC(probability=True, **kwargs)
+",6
+"SVC(kernel='linear', C=C)
+",6
+"SVC(C=best_c, gamma=best_g, kernel='rbf')
+",6
+"SVC(C=1., kernel=""linear"")
+",6
+"SVC(), tuned_parameters, cv=5, scoring='accuracy')
+",6
+"SVC(kernel=""linear"", C=1)
+",6
+"SVC(kernel='linear', C=0.01)
+",6
+"SVC(decision_function_shape='ovr')
+",6
+"SVC(kernel=""linear"", C= 1.0)
+",6
+"SVC(C=optimal_c, kernel='rbf', gamma=optimal_gamma)
+",6
+"SVC(kernel='linear', C=1).fit(X_train, y_train)
+",5
+"SVC(kernel='linear') ",5
+"SVC(decision_function_shape='ovo')
+",5
+"SVC(kernel='linear', shrinking=False, C=1)
+",5
+"SVC(kernel=""linear"", C=1.)
+",5
+"SVC(), algorithm=""SAMME"")
+",5
+"SVC(gamma=.2)
+",5
+"SVC(kernel = 'rbf', gamma=self.gamma_value, C=self.c_value)
+",5
+"SVC(C=2.0,gamma=0.5)
+",5
+"SVC(kernel=kernel, gamma=10)
+",5
+"SVC(**kwargs)
+",5
+"SVC(kernel=kernel)
+",5
+"SVC(C=1)
+",5
+"SVC(kernel=kernel, C=C)
+",5
+"SVC(C=1.0, kernel='linear')
+",5
+"SVC(kernel='rbf', probability=True)
+",5
+"SVC(C=496.6,gamma=0.00767,probability=True, cache_size=7000)
+",4
+"SVC(C=1.0,gamma=0.0955,probability=True, cache_size=7000)
+",4
+"SVC(kernel='rbf', gamma=gamma, C=C)
+",4
+"SVC(kernel='precomputed', shrinking=False, C=1)
+",4
+"SVC(), require_dense=[False, True])
+",4
+"SVC(C=c,probability=True, class_weight='auto',kernel='linear') ",4
+"SVC(kernel='linear', probability=True))
+",4
+"SVC(kernel='linear',C=C)
+",4
+"SVC(kernel='linear', C = 1.0)
+",4
+"SVC(kernel=arc_cosine)
+",4
+"SVC (Support Vector Classification)
+",4
+"SVC(kernel=""linear"", C=C))
+",4
+"SVC(C=1,kernel='rbf',gamma=0.001) ",4
+"SVC(kernel='linear'), param_grid,n_jobs=-1)
+",4
+"SVC(), param_grid=param_grid)
+",4
+"SVC(gamma=0.001, C=100)
+",4
+"SVC(C=10000, gamma=0.75), feature, 500)
+",4
+"SVC(kernel='linear', C=C).fit(train_feats_fc7[:,:500], train_labels)
+",4
+"SVC(C=cost, gamma=gamma, class_weight='auto')
+",4
+"SVC(kernel='linear', C=100)
+",4
+"SVC(kernel='linear', C=1, probability=True)
+",4
+"SVC(*args, **kwargs)
+",4
+"SVC(random_state=self.random_state, **self.kwargs)
+",4
+"SVC(C=1.0, kernel='rbf', degree=3, gamma=0.0, coef0=0.0, shrinking=True, probability=True, tol=0.001, cache_size=200, class_weight=None, verbose=False, max_iter=-1, random_state=None)
+",4
+"SVC(probability=False)
+",4
+"SVC(C=1., gamma=0.001, kernel='rbf', random_state=0)
+",4
+"SVC(kernel='rbf', C=C).fit(X, y)
+",4
+"SVC(kernel='poly', degree=2, C=1000000), feature, 500)
+",3
+"SVC(kernel=""linear"", C=0.025)
+",3
+"SVC(kernel='linear', C=C).fit(X, Y)
+",3
+"SVC(gamma=2, C=1)
+",3
+"SVC( kernel = 'linear')
+",3
+"SVC(C = Cparam, kernel = 'linear',  probability = True) ",3
+"SVC(kernel=""precomputed"")
+",3
+"SVC(C = 1, kernel = 'linear', class_weight = 'auto')
+",3
+"SVC(kernel='rbf',C=c, gamma=g).fit(train, train_Label)
+",3
+"SVC(kernel=my_kernel)
+",3
+"SVC(kernel=kernel).fit(Xtrain, ytrain)
+",3
+"SVC(C=0.02, kernel='linear', probability=True)
+",3
+"SVC(C=C, kernel=kernel)
+",3
+"SVC(gamma = 0.001, C= 100.)
+",3
+"SVC(kernel='precomputed', shrinking=False, C=10)
+",3
+"SVC()).fit(X_train, sparse(Y_train))
+",3
+"SVC(kernel='rbf' ,probability=True, max_iter=100000)
+",3
+"SVC(C=C, kernel=kernel, degree=degree, gamma=gamma, coef0=coef0, shrinking=shrinking, probability=probability, tol=tol, cache_size=cache_size, class_weight=class_weight, verbose=verbose, max_iter=max_iter, decision_function_shape=decision_function_shape, random_state=random_state)
+",3
+"SVC(C = svmDef.Cfactor, decision_function_shape = 'ovr', probability=True)
+",3
+"SVC(kernel = 'linear')
+",3
+"SVC(C=C, kernel='rbf', gamma=gamma, class_weight='auto')
+",3
+"SVC(kernel=kernel, gamma=2)
+",3
+"SVC(kernel='rbf', class_weight='balanced')
+",3
+"SVC(kernel='linear', C=C, tol=0.00001).fit(X, y)
+",3
+"SVC(gamma=manual_param['gamma'], C=manual_param['C'])
+",3
+"SVC(kernel=arc_cosine, cache_size=4096)
+",3
+"SVC(kernel='poly', degree=2)
+",3
+"SVC(verbose=False, kernel='linear', probability=False, random_state=0, cache_size=2000, class_weight='auto')
+",3
+"SVC (Support vector clustering) ",3
+"SVC(kernel='poly')
+",3
+"SVC(kernel = 'linear', C = self._best_parameter_C, tol = 1.0)
+",3
+"SVC(kernel=""linear"", probability=True)
+",3
+"SVC(random_state=42)
+",3
+"SVC(kernel='linear', class_weight='balanced')
+",3
+"SVC(kernel=paras['svm'][1], C=paras['svm'][0], probability=True)
+",3
+"SVC(kernel='linear').fit(x, y) ",3
+"SVC(C=float(input_dict[""penaltyIn""]), kernel=str(input_dict[""kernelIn""]), degree=int(input_dict[""degIn""]))
+",3
+"SVC(gamma=gamma, C=C)
+",3
+"SVC(C= np.inf , kernel=""rbf"", coef0=1, gamma=gama)
+",3
+"SVC(probability=True), require_dense=[False, True])
+",3
+"SVC(kernel = 'rbf', random_state = 0)
+",3
+"SVC(kernel=""rbf"", C=10000)
+",3
+"SVC(**SVC_parameters)
+",3
+"SVC(C=C)
+",3
+"SVC( C = C, gamma = gamma, shrinking = shrinking, probability = probability, verbose = verbose )
+",3
+"SVC(kernel='linear', probability=True, random_state=0))
+",2
+"SVC(kernel='linear', C=0.05), N=5)
+",2
+"SVC(kernel=""linear"", probability=True))
+",2
+"SVC(random_state=RND_SEED)
+",2
+"SVC(C=params['C'],cache_size=7000,class_weight=None,coef0=0.0,decision_function_shape=None,degree=3,gamma=params['gamma'],kernel='rbf',max_iter=-1,probability=True,random_state=None,shrinking=True,tol=0.001,verbose=False)
+",2
+"SVC(kernel='rbf', C=1)
+",2
+"SVC(kernel = ""linear"")
+",2
+"SVC(kernel='linear')#, probability=True)
+",2
+"SVC(kernel='rbf', C=10, verbose=True, tol=1e-5))
+",2
+"SVC(kernel = 'rbf', probability = True, random_state = 0)
+",2
+"SVC(kernel = 'linear', random_state = 0)
+",2
+"SVC(kernel=""rbf"", degree=2, C=1))
+",2
+"SVC(C=1.0,kernel='linear')
+",2
+"SVC(decision_function_shape='ovr', kernel = 'rbf')
+",2
+"SVC(kernel=kernel, max_iter=max_iter).fit(trainingData, trainingLabel)
+",2
+"SVC(probability=True), tuned_parameters, cv=5)
+",2
+"SVC(kernel=""poly"", degree=degree, C=C, gamma=gamma, probability=True))])
+",2
+"SVC(), X, y, params, n_splits=n_splits)
+",2
+"SVC(class_weight='auto')
+",2
+"SVC(kernel='rbf',C=10,probability=True,verbose=True) ",2
+"SVC(kernel='linear', C=reg)
+",2
+"SVC(cache_size=2048)
+",2
+"SVC(kernel='rbf',gamma=0.1,C=1) ",2
+"SVC(C = 1000, kernel = 'linear') ",2
+"SVC(C=C,gamma=gamma,kernel='rbf',tol=0.00001,verbose=True)
+",2
+"SVC(C=10, kernel='linear')
+",2
+"SVC(kernel='linear'))])
+",2
+"SVC(kernel=""linear"",class_weight=""auto"",probability=True)
+",2
+"SVC(kernel=""rbf"", probability=True), predict_from_probabilities=True) ",2
+"SVC(kernel='linear', C=1, verbose=False) ",2
+"SVC(), tuned_parameters, cv=5, scoring='accuracy', n_jobs=10, verbose=True)
+",2
+"SVC(C=1.0)
+",2
+"SVC(kernel=""linear""))
+",2
+"SVC(probability=False,random_state=33,kernel='linear',shrinking=True)
+",2
+"SVC(kernel='rbf', gamma=0.01, C=100, probability=True))
+",2
+"SVC())])
+",2
+"SVC(kernel=""rbf"")).fit(transformed, labels)
+",2
+"SVC(kernel='linear', class_weight='auto'), param_grid) ",2
+"SVC().fit(x_train, y_train)
+",2
+"SVC(kernel='linear', probability=False)
+",2
+"SVC(C=C, kernel='linear', max_iter=200)
+",2
+"SVC(kernel='linear', C=1).fit(train_dat, train_lab)
+",2
+"SVC(C= C ,gamma = gamma,class_weight = class_weight)
+",2
+"SVC(kernel=krnl)
+",2
+"SVC(gamma=2, C=1, verbose=True)
+",2
+"SVC(kernel = ""rbf"",C = c, gamma = g)
+",2
+"SVC(kernel='rbf', random_state=0, gamma=0.10, C=10.0)
+",2
+"SVC(gamma=0.001,C=100.)
+",2
+"SVC(C=5., gamma=0.001)
+",2
+"SVC(C=10.0, random_state=1234)
+",2
+"SVC(probability=True,random_state=np.random.RandomState(8),tol=1e-15)
+",2
+"SVC(kernel='linear', class_weight='auto')
+",2
+"SVC(probability=True, verbose=False, cache_size=2000)
+",2
+"SVC(gamma = 0.001)
+",2
+"SVC(kernel='rbf', class_weight='auto'), param_grid, n_jobs=1, cv=ShuffleSplit(test_size=0.20, n_iter=1, random_state=0, n=len(train_images)))
+",2
+"SVC(C = C, kernel = kernel) ",2
+"SVC(C=C, kernel='rbf', class_weight='auto', probability=returnProb)
+",2
+"SVC(kernel=""linear"", C=C)
+",2
+"SVC(kernel=kernel, degree=degree)
+",2
+"SVC(probability=True)#tree.DecisionTreeClassifier()
+",2
+"SVC(kernel='rbf' ,probability=True, max_iter=1000)
+",2
+"SVC()))])
+",2
+"SVC(C=0.01, kernel='linear', random_state=0))
+",2
+"SVC(gamma=0.001,probability=True)
+",2
+"SVC(C = c, kernel = 'rbf', gamma=1.0) ",2
+"SVC(kernel = 'linear') ",2
+"SVC(kernel=kernel.arc_cosine, cache_size=2048)
+",2
+"SVC(C=1.0, kernel='rbf', gamma=0.7)
+",2
+"SVC(C=0.75)
+",2
+"SVC(kernel=kernel, probability=True)
+",2
+"SVC(probability=True), True, True, False)
+",2
+"SVC(kernel='rbf',C=10.0, gamma=0.0, verbose = 0, probability=True)
+",2
+"SVC(kernel = 'precomputed', C = REG_C, max_iter = 10000)
+",2
+"SVC(gamma=1.0) ",2
+"SVC(gamma=.05).fit(X_train, y_train)
+",2
+"SVC(kernel='linear', C=penalty)
+",2
+"SVC( kernel=kernel, probability=True, C=c, cache_size=500 ) ",2
+"SVC(verbose = True)
+",2
+"SVC(kernel=""rbf"", probability=True)
+",2
+"SVC(), param_grid, cv=5)
+",2
+"SVC(tol=0.0001)
+",2
+"SVC(gamma=1e-8)
+",2
+"SVC(kernel ='rbf',C=1,gamma=0.001)
+",2
+"SVC(C=3), 'y/test/score_f1': [ 0.6  0.6], 'y/test/score_recall_mean/pval': [ 0.5], 'y/test/score_recall/pval': [ 0.   0.5], 'y/test/score_accuracy/pval': [ 0.], 'y/test/score_f1/pval': [ 0.   0.5], 'y/test/score_precision/pval': [ 0.5  0. ], 'y/test/score_precision': [ 0.6  0.6], 'y/test/score_recall': [ 0.6  0.6], 'y/test/score_accuracy': 0.6, 'y/test/score_recall_mean': 0.6}])
+",2
+"SVC(gamma=0.001, kernel='rbf', C=100)
+",2
+"SVC(class_weight=weights, **self._clf_kwargs)
+",2
+"SVC(kernel = 'linear', probability = True)
+",2
+"SVC(kernel=""linear"", C=0.025, probability=True)
+",2
+"SVC(kernel='rbf',gamma=1,C=1) ",2
+"SVC(C = cValue , kernel='rbf', gamma = gammaValue , tol=0.1)
+",2
+"SVC(probability=True, class_weight={0:1, 1:5}), param_grid=param_grid, cv=cv)
+",2
+"SVC(verbose=True)
+",2
+"SVC(kernel=kernel), parameters, scoring=""accuracy"")
+",2
+"SVC(C=2, probability=True))
+",2
+"SVC(**hparams)
+",2
+"SVC(probability=True, kernel='rbf')
+",2
+"SVC(C=c,gamma=g)
+",2
+"SVC().fit(X_train, y_train)
+",2
+"SVC(C=1, kernel='linear', class_weight='auto'))])
+",2
+"SVC(kernel='linear', **vars(args))
+",2
+"SVC(C=10 ** logC, gamma=10 ** logGamma).fit(x_train, y_train)
+",2
+"SVC(kernel='linear', class_weight=""auto"", random_state=0)
+",2
+"SVC(C=290.4,gamma=0.0961,probability=True, cache_size=7000)
+",2
+"SVC(kernel=choise)
+",2
+"SVC(kernel=""rbf"", C=controlTradeOff)
+",2
+"SVC(kernel='linear', C=1).fit(selectedFeatures, data.labels)
+",2
+"SVC(kernel='rbf')#grid_search.GridSearchCV(svm.SVC(kernel='rbf', class_weight='balanced'), param_grid)
+",2
+"SVC(C=100000, kernel='linear', random_state=241)
+",2
+"SVC(kernel = 'rbf', gamma = 0.005) ",2
+"SVC(kernel='rbf', C=powc, gamma=powg)
+",2
+"SVC(gamma=2, C=1)')
+",2
+"SVC(gamma=0.001, kernel='linear', C=100)
+",2
+"SVC(gamma=.001, C=100)
+",2
+"SVC(), parameters)
+",2
+"SVC(probability=True, kernel='rbf', C=10,gamma=0.001)
+",2
+"SVC(kernel='linear', C=c, probability=True)
+",2
+"SVC(kernel=kernel.arc_cosine)
+",2
+"SVC(C=10.))
+",2
+"SVC(gamma=0.001, C=100) ",2
+"SVC(kernel=""rbf"", probability=True C=1000.0, gamma=0.1) ",2
+"SVC(C=self.C)
+",2
+"SVC(C=1000000.0, gamma=0.0, kernel='rbf')
+",2
+"SVC(C=100, cache_size=200, class_weight=None, coef0=0.0, degree=3,gamma=0.001, kernel=""rbf"", max_iter=-1, probability=False,random_state=None, shrinking=True, tol=0.001, verbose=False)
+",2
+"SVC (support vector classifier)
+",2
+"SVC(kernel='rbf', gamma=0.7, C=0.5)
+",2
+"SVC(probability=True, kernel='linear')
+",2
+"SVC(C=self.C, gamma=self.gamma, probability=True)
+",2
+"SVC(), param_grid={""C"":np.logspace(-2, 10, 13),""gamma"":np.logspace(-9, 3, 13)})
+",2
+"SVC(C=svm_c,gamma=svm_gamma)
+",2
+"SVC(kernel='rbf', gamma=0.05, C=401)
+",2
+"SVC(tmp_options)
+",2
+"SVC(kernel='linear', C=C, verbose=False).fit(trainingData, trainingLable)
+",1
+"SVC(C=C, gamma=gamma, probability=True)
+",1
+"SVC(kernel=my_kernel, C=1000, tol=1e-3)
+",1
+"SVC(probability=True)))
+",1
+"SVC(kernel='rbf', class_weight='auto', probability=True), param_grid)
+",1
+"SVC(kernel=k_type, C=c)
+",1
+"SVC(C=C,kernel=kernel)
+",1
+"SVC(C=10.0, gamma=10)
+",1
+"SVC(kernel='linear', probability=True, C=1)
+",1
+"SVC(kernel=kernel, C=C, cache_size=7000)
+",1
+"SVC(kernel='linear', C=2)
+",1
+"SVC(probability=True) #LogisticRegression(C=20.)
+",1
+"SVC(C=1., kernel='rbf', gamma=0.001, random_state=0)
+",1
+"SVC(kernel='linear'),  # too slow! (orders of magnitude)
+",1
+"SVC(kernel='rbf', C=10, gamma=0.01)
+",1
+"SVC(C=C, gamma=sigma_to_gamma(sigma), tol=0.001, kernel='rbf') ",1
+"SVC(C=1), tuned_parameters, cv=5)
+",1
+"SVC(kernel='rbf', gamma=0.7, C=1.0, probability = True).fit(mostres, tipus_event) ",1
+"SVC(kernel=""linear"", C=0.025),  ## very slow (can't wait) ",1
+"SVC(gamma=gam_vec.ravel()[param_ind], C=cost_vec.ravel()[param_ind])
+",1
+"SVC(), tuned_parameters, cv=self._cv_method)
+",1
+"SVC(C=1.6,gamma=0.002)
+",1
+"SVC(C=config.svm_C)
+",1
+"SVC( probability=True ), tuned_parameters, cv=K, scoring=power_at_5pc_FPR, n_jobs=6 )
+",1
+"SVC(gamma=.001, C=100.)
+",1
+"SVC(C=10, decision_function_shape='ovr', kernel=kernel)
+",1
+"SVC(C=opt.C, kernel='poly', degree=opt.degree, verbose=False)
+",1
+"SVC( kernel=kernel, shrinking=shrinking, random_state=self.random_state)
+",1
+"SVC(kernel='rbf', probability=True, shrinking=True)
+",1
+"SVC(kernel='precomputed'), param_grid=param_grid, cv=cv)
+",1
+"SVC(C=1.0, kernel='rbf', probability=True)
+",1
+"SVC(C=10, gamma=1e-3, probability=True), sklearn.naive_bayes.MultinomialNB()])
+",1
+"SVC(kernel = 'precomputed', C = REG_C, class_weight = class_weight, max_iter = 10000)
+",1
+"SVC(kernel='rbf',gamma=0.001,C=100,max_iter=-1))
+",1
+"SVC(kernel='precomputed', C=self.C)
+",1
+"SVC(kernel='linear', random_state=10)
+",1
+"SVC(C=5, kernel='poly', degree=4, probability=True)
+",1
+"SVC(mysvm.SMO, mysvm.Kernel('linear')))
+",1
+"SVC(C=100.0, kernel='rbf', gamma=Gamma, coef0=0.0, shrinking=True, probability=False, tol=0.001, cache_size=200, class_weight=None, verbose=False, max_iter=-1, decision_function_shape=None, random_state=None)
+",1
+"SVC(kernel=k, probability=proba) ",1
+"SVC(kernel=kernel) if kernel == 'poly' else SVC(kernel=kernel, gamma=gamma)
+",1
+"SVC().fit(train_x,train_y)
+",1
+"SVC(C=32768.0, gamma=0.001953125)
+",1
+"SVC(C=9)
+",1
+"SVC(kernel='poly') ",1
+"SVC(kernel='linear').fit(x, label)
+",1
+"SVC().fit(Train_Data,Train_Data_labels)
+",1
+"SVC(kernel = 'linear', random_state = 84))
+",1
+"SVC(kernel='rbf', gamma=gamma, C=C))
+",1
+"SVC(class_weight=class_weight,verbose=1, C=C, gamma=gamma)
+",1
+"SVC(C=2000.0, class_weight=""balanced"", gamma = 0.01,probability=True)
+",1
+"SVC(gamma = 0.001, C = 100., probability = True)
+",1
+"SVC(kernel='linear', random_state=241)
+",1
+"SVC(kernel='rbf', gamma=0.7, C=C).fit(X, y)
+",1
+"SVC(kernel='linear', class_weight='balanced',) # verbose=1,)
+",1
+"SVC(C=10**C, gamma=10**gamma)
+",1
+"SVC(), svm_parameters, cv=3, verbose=2)
+",1
+"SVC(**classi_params)
+",1
+"SVC( kernel='linear', probability=True, C=regime_c_terms[regime], cache_size=500 )
+",1
+"SVC(C=1000.0) ",1
+"SVC(**self.PARAMS)
+",1
+"SVC(kernel='precomputed', C=Cfg.svm_C)
+",1
+"SVC(FEATURES)
+",1
+"SVC(kernel='linear', probability=True), n_jobs=NUMBER_OF_CPUS_TO_USE)
+",1
+"SVC(kernel=chi2_kernel)
+",1
+"SVC(kernel='linear', C=1e-1)
+",1
+"SVC(), sparse=False)
+",1
+"SVC(kernel='rbf', gamma=3).fit(X_train, y_train)
+",1
+"SVC(probability=1),4)
+",1
+"SVC(kernel=k, C=c, degree=d)
+",1
+"SVC(C = float(self.chosencvalue), kernel = self.chosenkernel)
+",1
+"SVC(class_weight={-1:1,1:10}), tuned_parameters, cv=5, scoring='accuracy')
+",1
+"SVC(probability=True, **classifier_spec)
+",1
+"SVC(C=params['rbf']['C'],gamma=params['rbf']['gamma'])
+",1
+"SVC(C=0.3,kernel='linear',probability=True)
+",1
+"SVC              (multi-class classification)
+",1
+"SVC(C=50, cache_size=1900, class_weight='auto', gamma=0.0, kernel='rbf', probability=True)
+",1
+"SVC(C=2.8)
+",1
+"SVC(C=2., kernel='poly', degree=11, gamma=1./2048., coef0=1) ",1
+"SVC( **self.param_dict ).fit(ds.x, ds.y)
+",1
+"SVC(C=1.0, kernel='rbf', degree=3, gamma='auto', coef0=0.0, shrinking=True, probability=False, tol=0.001, cache_size=200, class_weight=None, verbose=False, max_iter=-1, decision_function_shape=None, random_state=None)
+",1
+"SVC(probability=True,kernel='linear', decision_function_shape='ovr')
+",1
+"SVC (Software handshaking structure) ",1
+"SVC(C=1.0,gamma=0.3,probability=True)
+",1
+"SVC(kernel='linear', verbose=True, tol=1e-9, C=5.)
+",1
+"SVC(kernel=svmKern, gamma=svmGamma, C=svmC)
+",1
+"SVC(kernel='linear', C=best_params['C1'], class_weight=class_weights)
+",1
+"SVC(kernel='poly'))
+",1
+"SVC(kernel = 'rbf', gamma = 1000)
+",1
+"SVC(C=0.001, gamma =10000)
+",1
+"SVC(kernel='rbf', gamma=1e-5, C=20))])
+",1
+"SVC(kernel='rbf', C = 1)
+",1
+"SVC(C=C, kernel='linear', tol=1e-3, max_iter=200)
+",1
+"SVC(kernel=kernel, gamma=3)
+",1
+"SVC(gamma=0.001, C=100., class_weight='balanced')
+",1
+"SVC(kernel='linear', gamma=0.001, C=1, class_weight='balanced')
+",1
+"SVC(**params))
+",1
+"SVC(C=32., kernel='rbf', gamma=8.)
+",1
+"SVC(kernel='linear', random_state=0)
+",1
+"SVC(kernel='rbf', C=10)
+",1
+"SVC(kernel='linear').fit(X_sp, Y)
+",1
+"SVC(C=1.0, kernel='precomputed')
+",1
+"SVC(kernel='linear', probability=True, random_state=0, C=c)
+",1
+"SVC(kernel='poly', gamma=1.0, coef0=21))) ",1
+"SVC(C=1.9,gamma=0.001)
+",1
+"SVC(kernel='rbf', gamma=20.0, class_weight='auto')
+",1
+"SVC(c, kernel='linear', tol=1e-3)
+",1
+"SVC(C=C) ",1
+"SVC(class_weight={1:class_wt}, **param1)
+",1
+"SVC(kernel=""linear"", C=1.).fit(features_train, labels_train)
+",1
+"SVC(gamma = 0.0001, C = 50, probability = True)
+",1
+"SVC(C=value, kernel=""poly"", degree=6, class_weight=""auto"")
+",1
+"SVC(kernel='rbf', probability=True, random_state=random_state))
+",1
+"SVC(gamma=0.001, verbose=True)
+",1
+"SVC(kernel=""rbf"", verbose=2)
+",1
+"SVC(scale_C=True)
+",1
+"SVC(kernel=""rbf"")
+",1
+"SVC(C=C, kernel=kernel, max_iter=max_iter, tol=tol, gamma=gamma)
+",1
+"SVC(cache_size=6000, verbose=True)
+",1
+"SVC( kernel='rbf' )
+",1
+"SVC(kernel=""linear"", C=3.4)
+",1
+"SVC(kernel='poly', degree=4) ",1
+"SVC(**args)
+",1
+"SVC(kernel=kernel, C=10000)
+",1
+"SVC(kernel=my_kernel, probability=True, random_state=my_random_state, max_iter=my_max_iteration))
+",1
+"SVC(kernel='rbf', random_state=42)
+",1
+"SVC(C = 5., gamma =0.001)
+",1
+"SVC(C=3.4, gamma=0.0285, cache_size=1000)
+",1
+"SVC(kernel='rbf'))
+",1
+"SVC(probability=True, kernel='rbf', C=2.4, degree=1, gamma=0.7/len(features[0]))
+",1
+"SVC(kernel='rbf', gamma=0.7, C=C).fit(X_train, Y_train)
+",1
+"SVC(kernel='sigmoid')))
+",1
+"SVC(C = 100000, random_state=241, kernel='linear')
+",1
+"SVC(kernel=kern, probability=True, **kwargs)
+",1
+"SVC(C=1), param_selection)
+",1
+"SVC(C=1)', a=npdata1, b=npdata2)
+",1
+"SVC(), param_grid=param_grid_svm, cv=cv,n_jobs=n_jobs)
+",1
+"SVC(kernel='linear', C=0.1))
+",1
+"SVC(kernel='rbf', C=20, gamma=0.15, probability=True)
+",1
+"SVC(random_state=rand_state)
+",1
+"SVC("" + model_params + "")"")
+",1
+"SVC(kernel='rbf', gamma=svm_gamma, C=C))
+",1
+"SVC(kernel='rbf', class_weight='balanced'), para).fit(X_test_pca, Y_train)
+",1
+"SVC(probability=True, kernel='linear')))
+",1
+"SVC(kernel='linear', C=C).fit(features, labels)
+",1
+"SVC(kernel=""rbf"", C=c)
+",1
+"SVC(random_state=0)
+",1
+"SVC(kernel='rbf', C=C, gamma=gamma).fit(X, y)
+",1
+"SVC(C=1.0, cache_size=5000, kernel='rbf')
+",1
+"SVC(), param_grid=param_grid, cv=kf)
+",1
+"SVC(C = 10.0)
+",1
+"SVC(kernel=""linear"",probability=True)
+",1
+"SVC().fit(feature_train, label_train)
+",1
+"SVC(kernel=str(self.kernel))
+",1
+"SVC(kernel=kernel, C=C)) for kernel in (""linear"", ""rbf"") for C in [1, 10] for k in [1, 2]])
+",1
+"SVC(C=1.0,kernel=""linear"")
+",1
+"SVC(C=2, kernel=""rbf"", gamma=3, cache_size = 1000, probability=False)
+",1
+"SVC(cache_size=60000)
+",1
+"SVC(kernel=""linear"",probability=True,class_weight='auto'))
+",1
+"SVC(kernel='linear', shrinking=True, verbose=False)
+",1
+"SVC(C = 0.1)
+",1
+"SVC(kernel='rbf', class_weight=None, random_state=0)
+",1
+"SVC(kernel='linear'), n_jobs=-1)
+",1
+"SVC(kernel='rbf', gamma=0.7, C=C).fit(X, Y)
+",1
+"SVC(kernel = ""rbf"")).fit(transformed, labels).predict(transformed)
+",1
+"SVC(kernel='rbf'), param_grid=param_rbf_grid, cv=cv)
+",1
+"SVC(gamma=gamma, C=C, random_state=self.rng)
+",1
+"SVC()'''or svm.LinearSVC() ",1
+"SVC(C=10.)
+",1
+"SVC(C=3.0, gamma=0.7, kernel='rbf')
+",1
+"SVC(kernel='rbf'), param_grid=param_grid, scoring='accuracy')
+",1
+"SVC(kernel='linear', C = 0.01)
+",1
+"SVC(kernel='poly', degree=3, random_state=0)
+",1
+"SVC(C=0.001, degree=2, kernel='poly')
+",1
+"SVC(probability=True, kernel='linear', class_weight='auto')
+",1
+"SVC(random_state=8)
+",1
+"SVC(kernel='poly', probability=True, C=1, degree=2, gamma=1)
+",1
+"SVC(C=10.0, verbose=1, kernel='poly', degree=2)
+",1
+"SVC(class_weight=""auto"", cache_size=2200, shrinking=True)
+",1
+"SVC(kernel='rbf', degree=3,gamma=9)
+",1
+"SVC(kernel='rbf').fit(X, y), y)
+",1
+"SVC(C=C, kernel=svm_model)
+",1
+"SVC(C=16.91,gamma=0.00928,probability=True, cache_size=7000)
+",1
+"SVC(kernal='RBF')
+",1
+"SVC(probability=True, cache_size=7000), ['C','gamma'], [[1.0,1000.0],[1E-6,0.1]])
+",1
+"SVC(kernel='rbf', random_state=0)
+",1
+"SVC()) ",1
+"SVC(random_state=0, probability=True, **kwargs)
+",1
+"SVC(kernel='poly', degree=9, probability=True)
+",1
+"SVC(kernel='rbf',gamma=gamma,C=C_vals[i])
+",1
+"SVC( kernel = kernel, C = C, gamma = gamma, degree = degree )
+",1
+"SVC(kernel='rbf', gamma =1.0,C=1)
+",1
+"SVC(kernel=""rbf"")]), n_folds=3)
+",1
+"SVC(probability=True, verbose=False)
+",1
+"SVC(C=10, kernel = 'rbf', gamma = 0.0625)
+",1
+"SVC(kernel='rbf', gamma=0.0001, C=44, class_weight='balanced', probability=True)
+",1
+"SVC(C=regularizer, kernel='linear', probability=True, random_state=0,verbose=False)
+",1
+"SVC(kernel='linear', C=penality)
+",1
+"SVC(kernel=""poly"",degree=10,C=1)
+",1
+"SVC(random_state=7), tuned_parameters, scoring='roc_auc', cv=5, verbose=10, n_jobs=5)
+",1
+"SVC().fit(X_train, y_train).score(X_test, y_test))
+",1
+"SVC(C=50, cache_size=1500, class_weight='auto', gamma=0.0, kernel='rbf', probability=True)
+",1
+"SVC(random_state=self.__seed), search_space, cv=10, scoring='roc_auc', n_jobs=self.n_jobs)
+",1
+"SVC(C=1,kernel='rbf',probability=True) ",1
+"SVC(C=Ce, gamma=Gamma, cache_size=cache)
+",1
+"SVC(kernel='rbf', **job)
+",1
+"SVC(C=C, kernel=kernel, gamma=gamma)
+",1
+"SVC(kernel=""linear"", probability=True),param_grid={'C': [2**-5, 2**-4, 2**-3, 2**-2, 2**-1, 2**0, 2**1, 2**2, 2**3, 2**4, 2**5, 2**6]},cv=grid_cv,n_jobs=-1)
+",1
+"SVC(C=C, kernel='rbf', gamma=gamma, class_weight='auto', probability=True)
+",1
+"SVC(random_state = 1))])
+",1
+"SVC(kernel='rbf', C=1.0, gamma=100.0, random_state=0)
+",1
+"SVC(kernel='linear', class_weight={0: 0.3, 1: 0.7})
+",1
+"SVC(kernel='poly',tol=1e-2, verbose=False)
+",1
+"SVC(kernel='linear', C=1).fit(X_new, y_train)
+",1
+"SVC(decision_function_shape ='ovo')
+",1
+"SVC(C=1), candidates, cv=5, scoring=""f1"")
+",1
+"SVC(C=20, gamma=1.5e-04) ",1
+"SVC(), params, n_jobs=8,cv=cross_validation.ShuffleSplit(data.shape[0], n_iter=10, test_size=0.2,random_state=0))
+",1
+"SVC(kernel='precomputed', C=C)
+",1
+"SVC(class_weight='auto'))
+",1
+"SVC(probability=True,gamma=1)
+",1
+"SVC(C=10, kernel='linear', class_weight='balanced')
+",1
+"SVC(kernel=self.cfg[""prediction""][""svm_kernel""])
+",1
+"SVC(C=0.01, kernel='linear') ",1
+"SVC(C=10000.0, kernel ='rbf')
+",1
+"SVC(C=1), self.tuned_parameters, cv=2, scoring='%s_weighted' % self.score)
+",1
+"SVC(kernel='linear', probability=True).fit(X, Y)
+",1
+"SVC(kernel='rbf', probability=True, tol=0.1)
+",1
+"SVC(C=2.8).fit(training_samples, training_labels)
+",1
+"SVC(digits) ",1
+"SVC(probability= True,decision_function_shape='ovr',random_state=np.random.randint(1000),kernel=""linear"")
+",1
+"SVC(gamma=gamma, C=C, probability=True, cache_size=500, random_state=0))
+",1
+"SVC(), parameters, verbose=10).fit(x_train, y_train)
+",1
+"SVC(kernel='rbf', probability=False))
+",1
+"SVC(C=1, kernel='linear', class_weight='auto')
+",1
+"SVC(probability=probability, gamma=svmgamma, C=svmC) ",1
+"SVC(**svc_params)
+",1
+"SVC(probability=True,C=svm_C, coef0=acoef0, gamma=agamma)
+",1
+"SVC(C=self.C, kernel=self.kernel.compute)
+",1
+"SVC(C=1), param_selection, cv=5)
+",1
+"SVC(kernel=""linear""),step=1,cv=StratifiedKFold(y,5),scoring=""accuracy"")
+",1
+"SVC(C=float(param), class_weight='balanced')
+",1
+"SVC(kernel='rbf', C=2, gamma=1) ",1
+"SVC(kernel = kernel, C = C, gamma = gamma)
+",1
+"SVC(kernel='linear', C=1, probability=True))
+",1
+"SVC(C=1, kernel='linear', probability=False)
+",1
+"SVC(C=100) ",1
+"SVC(C=2.3, kernel= 'rbf', gamma= 0.0, cache_size= 1000, class_weight= 'auto',probability=True)
+",1
+"SVC(kernel='linear',C=1).fit(X_train,y_train)
+",1
+"SVC(), features)
+",1
+"SVC(C=1.0, kernel='poly', probability=True, cache_size=2000, verbose = True)
+",1
+"SVC(cache_size=1900)
+",1
+"SVC(C=C, kernel='rbf', gamma=100, shrinking=False)
+",1
+"SVC(probability=True, kernel='linear', C=3)
+",1
+"SVC(kernel = mode)
+",1
+"SVC(kernel='linear', class_weight= 'auto')
+",1
+"SVC(gamma=0.01).fit(X_train, y_train)
+",1
+"SVC(C = 1.0, probability=True)
+",1
+"SVC(), tuned_parameters_linear, cv = 5) ",1
+"SVC(**svc_parameters)
+",1
+"SVC(kernel='linear',C=1.0,random_state=0)
+",1
+"SVC(), params_grid=cv_params, verbose=1, n_jobs=-1)
+",1
+"SVC(probability=True).fit(X_featurized, Y_binarized[:, 1])
+",1
+"SVC(kernel=""rbf"", gamma=gamma_values[i], C=c_values[j])
+",1
+"SVC(C=10, verbose = 2)
+",1
+"SVC(**libsvm_default_param)
+",1
+"SVC(kernel='linear', C=1).fit(x_train, y_train)
+",1
+"SVC(kernel='rbf',C=self.C,verbose=False,class_weight=self.class_weight,max_iter=self.iter,probability=self.prob,gamma=self.gamma)
+",1
+"SVC(kernel='rbf',gamma=0.01,C=100,max_iter=-1,class_weight='balanced'))
+",1
+"SVC(kernel = 'linear', C = 2 ** 15)
+",1
+"SVC(C=1,degree=9,gamma=10,probability=True)
+",1
+"SVC(kernel='linear', C=1) ",1
+"SVC(kernel='linear', C=1.) #LinearSVC(C=1.0)
+",1
+"SVC(kernel=SVM_KERNEL)
+",1
+"SVC(C=1)', **dict(a=1, b=2))
+",1
+"SVC(C=c, kernel=k, degree=d, gamma=g, coef0=r)
+",1
+"SVC(kernel = ""linear""), ""Support Vector Machine - Linear"")
+",1
+"SVC(kernel = ""rbf"", gamma = 0.000001)).fit(transformed, labels)
+",1
+"SVC(kernel = ""rbf"",C = c)
+",1
+"SVC(self.svc, max_iter=2**20)
+",1
+"SVC(kernel=""rbf"", gamma=1.0)
+",1
+"SVC(kernel='rbf',probability=True,cache_size=2000)
+",1
+"SVC(C=10.0, kernel='rbf', degree=3, gamma=0.001, coef0=0.0, shrinking=True, probability=False, tol=0.001, cache_size=200, class_weight=None, verbose=False, max_iter=-1, random_state=None))])
+",1
+"SVC(kernel='linear',C=0.1)
+",1
+"SVC(C=1000.0, gamma=0.001)
+",1
+"SVC(C=10, gamma=C)
+",1
+"SVC(kernel=""precomputed""), c) for c in categories)
+",1
+"SVC(kernel='linear', C=1, probability=True).fit(x_train, y_train)
+",1
+"SVC(C=1, kernel='poly')
+",1
+"SVC(verbose=False)
+",1
+"SVC(kernel='rbf', class_weight='auto', verbose = True, probability=False), param_grid)
+",1
+"SVC(gamma=0.1, C=1)
+",1
+"SVC(cache_size=CACHE_SIZE)
+",1
+"SVC(**params_used)
+",1
+"SVC(probability=True) )
+",1
+"SVC(kernel=kernel,gamma=3)
+",1
+"SVC(kernel='rbf',random_state = 0,gamma=0.10,C=10.0)
+",1
+"SVC(random_state=self.__seed), search_space, cv=2, scoring='roc_auc', n_jobs=self.n_jobs)
+",1
+"SVC(kernel='linear', C=1.0).fit(irisDF[features], irisDF[""Species""])
+",1
+"SVC(C=C, kernel = kernel, degree = degree, gamma = gamma)
+",1
+"SVC(kernel='linear', C = 10 ** -(param))
+",1
+"SVC(gamma=0.014, C=0.01*i)
+",1
+"SVC(kernel=classifier_type, gamma = gamma , C = regularization_param).fit(X,Y)
+",1
+"SVC (imm8) ",1
+"SVC(C=10, gamma=0.005), X, y, cv=cv)
+",1
+"SVC(kernel=""rbf"", C=1.)
+",1
+"SVC(probability=True,kernel='linear',C=0.0011253,random_state=1)
+",1
+"SVC(verbose=True), training_set, model_path='dumps/SVC.m')
+",1
+"SVC(C=c, kernel=""precomputed"").fit(fold_K_train, fold_y_train)
+",1
+"SVC(C=C, gamma=gamma).fit(x_train, y_train)
+",1
+"SVC(), tuned_parameters, cv=10, scoring=scoring)
+",1
+"SVC(C=10))])
+",1
+"SVC(kernel='poly',C=1,probability=True)
+",1
+"SVC(kernel='rbf', C = self.C)
+",1
+"SVC(C=C, kernel='linear')
+",1
+"SVC(C=Ci), X, y, cv=5, scoring='precision').mean() ",1
+"SVC(kernel='linear',probability=True)
+",1
+"SVC(kernel=""linear"") #sklearn.linear_model.Lasso(alpha = 0.1)
+",1
+"SVC        (multi-class classification)
+",1
+"SVC(kernel=""linear"", verbose=True, probability=True)
+",1
+"SVC(C=0.5, kernel='linear'))
+",1
+"SVC(verbose= 2)
+",1
+"SVC(C=regularizer, kernel='linear', probability=True, random_state=0, verbose=False)
+",1
+"SVC(class_weight='balanced')
+",1
+"SVC(C = Cfactor, decision_function_shape = 'ovr', probability=True)
+",1
+"SVC(C=1000, kernel=""poly"", degree=2)
+",1
+"SVC(kernel='linear', class_weight=None)
+",1
+"SVC(class_weight='auto', cache_size=3000, C=1.0)
+",1
+"SVC(kernel='rbf', C=1, gamma=0).fit(X, y)
+",1
+"SVC(C=reg, kernel=k, degree=deg)
+",1
+"SVC(cache_size=7000)
+",1
+"SVC(kernel='rbf', C=1, gamma=10)
+",1
+"SVC(C=1000.0, class_weight=getClassWeights())
+",1
+"SVC(C=C, **kwargs)
+",1
+"SVC(C=self.C, kernel=self.kernel, degree=self.kernelParam, gamma=self.kernelParam, tol=self.tol, class_weight={-1:1-self.errorCost, 1:self.errorCost})
+",1
+"SVC(gamma=self.gamma, kernel='linear')
+",1
+"SVC(C = c, kernel = 'rbf', gamma = r, cache_size = 2048.0)
+",1
+"SVC(kernel='linear'), mode='decision_function')
+",1
+"SVC(C=10., kernel=""rbf""))])
+",1
+"SVC(decision_function_shape='ovr', kernel='linear'))])
+",1
+"SVC(C=1, kernel='rbf', gamma = 0.1)
+",1
+"SVC(C=cost, kernel='rbf', max_iter=max_iter, gamma=gamma, tol=tol)
+",1
+"SVC(C=32, gamma=0.5)
+",1
+"SVC(C = C, kernel = kernel)
+",1
+"SVC(verbose = 2, probability = True, C = 100.)
+",1
+"SVC(C=1.0, kernel='rbf', gamma=0.0010)
+",1
+"SVC(kernel='precomputed', class_weight='balanced', C=c, random_state=42))
+",1
+"SVC(C=C, kernel='precomputed', class_weight='auto')
+",1
+"SVC(kernel=kernel(self.trainData, self.))
+",1
+"SVC(C=SVM_C, random_state=SEED, kernel='linear')
+",1
+"SVC(), svc_tuned_params, cv=5, scoring='accuracy')
+",1
+"SVC(C=rbf_C, gamma=rbf_Gamma, probability=make_probabilistic)
+",1
+"SVC(kernel='rbf', C=1000,gamma=1.0)
+",1
+"SVC(kernel='linear', C=1.0, class_weight='auto')
+",1
+"SVC(kernel = 'linear', C=c)
+",1
+"SVC(C=100, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.2, kernel='rbf', max_iter=-1, probability=True, random_state=None, shrinking=True, tol=0.001, verbose=False)
+",1
+"SVC(kernel='rbf', gamma=0.0001, C=44, class_weight='balanced')
+",1
+"SVC(C=1), param_grid, n_jobs=-1)
+",1
+"SVC(kernel=""linear"").fit(trainCount, genre)
+",1
+"SVC(kernel='linear', class_weight={1: 10})
+",1
+"SVC(C = C_value, random_state=241, kernel='linear')
+",1
+"SVC(), sparse=False).train(train_set)
+",1
+"SVC(kernel=kernel, verbose=False, C=c, gamma=gamma, class_weight='balanced', max_iter=-1, tol=1e-3)
+",1
+"SVC(C=1, gamma=100.) ",1
+"SVC(**self.svm_dict)
+",1
+"SVC(kernel='rbf',degree=2, probability=True, class_weight={1:1})
+",1
+"SVC(kernel='linear', C=0.025)
+",1
+"SVC(), n_estimators = 128)
+",1
+"SVC(kernel='rbf'), tuned_parameters, cv=10, scoring='accuracy')
+",1
+"SVC(kernel='poly', C=C, degree=Q, coef0=coef0, gamma=1., verbose=verbose)
+",1
+"SVC(), tuned_parameters, cv=cv, scoring=score)
+",1
+"SVC(probability=True, C=1.0, kernel='rbf', class_weight={1: 1.0, 0:1.0})
+",1
+"SVC(probability=True), n_jobs = -1)
+",1
+"SVC(C=1), tuned_parameters, cv=5, scoring='accuracy')
+",1
+"SVC(C=C, kernel=kernel, gamma=gamma, coef0=coef0, degree=poly)
+",1
+"SVC(C=1.5, tol=1e-4, probability=True)
+",1
+"SVC(kernel='rbf', gamma=1e-5, C=20))
+",1
+"SVC(kernel=""rbf"", verbose=True, decision_function_shape='ovo', probability=True, cache_size=1500)
+",1
+"SVC(kernel=""rbf"", tol=0.001, decision_function_shape=""ovr"")
+",1
+"SVC(C=1.0, kernel='rbf', degree=3, gamma=0.003, verbose=False)
+",1
+"SVC(kernel='poly', degree = 2, coef0 = 1, C=100000, gamma = 1)
+",1
+"SVC(cache_size=512), TUNED_PARAMETERS, scoring=score, n_jobs=4, verbose=3)
+",1
+"SVC(**params)))
+",1
+"SVC(degree=degree,kernel=kernel)
+",1
+"SVC(kernel='linear', C=2.67, decision_function_shape= ""ovo"", max_iter=5000000, probability=True, verbose=True)
+",1
+"SVC(C=100000000.0, kernel='rbf', degree=3, gamma=0.1, verbose=True)
+",1
+"SVC(kernel='rbf', C=float(parameters))
+",1
+"SVC(C=0.8,kernel='rbf',gamma=0.08)
+",1
+"SVC(kernel=clfParam['kernel'],probability=True)
+",1
+"SVC(), tuned_parameters, cv=3)
+",1
+"SVC(kernel='rbf', C=10000)
+",1
+"SVC(C=500.0, class_weight='balanced')
+",1
+"SVC(kernel=clstype, C=20, gamma=0.001, cache_size=100000., probability=True)
+",1
+"SVC(kernel=kernel, scale_C=True)
+",1
+"SVC(gamma=0.0001)
+",1
+"SVC(C=0.1, kernel='rbf')
+",1
+"SVC(kernel='linear', C=p[params.keys().index('C')])
+",1
+"SVC(C=8, gamma=0.17)
+",1
+"SVC(kernel='linear') # ---> Accuracy: 88% (1% data training, no C value)
+",1
+"SVC(kernel=_kernel)
+",1
+"SVC())]) ",1
+"SVC(kernel = 'linear', probability = True))])
+",1
+"SVC(kernel=intersection_kernel, C=1e0)
+",1
+"SVC() # defaults to kernel='rbf' (usually worse for RP/SSD/RH features)
+",1
+"SVC(kernel='rbf', gamma=0.7, C=1.0)
+",1
+"SVC().fit(X_train_tfidf, train_labels)
+",1
+"SVC(C=10**svmparams[p],gamma=10**rbfparams[r])
+",1
+"SVC(kernel=""rbf"", C=100.0)
+",1
+"SVC(kernel='rbf', degree=3, gamma=2, class_weight='auto')
+",1
+"SVC(C=0.8, kernel='rbf', gamma=0.0050)
+",1
+"SVC(kernel = my_kernel)
+",1
+"SVC(C=tC, kernel='rbf', gamma=1.0/tSigma, max_iter=200)
+",1
+"SVC(kernel='poly', C=10000000, gamma=1, degree=K, coef0=1)
+",1
+"SVC(C=Ctry, kernel=""linear"", probability=True)
+",1
+"SVC(kernel='rbf'), param_grid)
+",1
+"SVC (SVM Multi classifier)
+",1
+"SVC(kernel='rbf'),params,cv=cv)
+",1
+"SVC(C = 1), tuned_parameters, cv = 5, scoring = '%s_weighted' %score)
+",1
+"SVC(kernel='sigmoid',degree=9,gamma=10)
+",1
+"SVC(kernel='rbf',class_weight={'1':weightNormal,'-1':weightFake})
+",1
+"SVC(C=35)
+",1
+"SVC(verbose=True), parameters)
+",1
+"SVC(kernel=""rbf"", gamma=gamma, C=self.C)
+",1
+"SVC(decision_function_shape='ovo') ",1
+"SVC(probability=True), svc_params, cv=5)
+",1
+"SVC(), tuned_parameters, cv=5)
+",1
+"SVC(C=10, kernel='rbf', gamma=1e-6, cache_size=512, verbose=3)
+",1
+"SVC(kernel='rbf', max_iter=100000).fit(X_train[:,0:featureDimension], y_train)
+",1
+"SVC(gamma=gamma)
+",1
+"SVC(kernel='linear', C=1000)
+",1
+"SVC(C=1, kernel='linear',probability=True)
+",1
+"SVC(C = 1, gamma = 0.001, kernel = 'rbf')
+",1
+"SVC (Switched Virtual Circuit) ",1
+"SVC(probability=True), sklearn.svm.SVC(probability=True), sklearn.naive_bayes.MultinomialNB()])
+",1
+"SVC(probability=True, kernel='linear') ",1
+"SVC(kernel=kernel, C=1.0)
+",1
+"SVC(kernel='linear', C=svm_c)
+",1
+"SVC( ), parameters, cv = folder, n_jobs = -1 )
+",1
+"SVC(C=1.0, kernel='linear', probability=True).fit(features, classes)
+",1
+"SVC(kernel='rbf' ,probability=True, max_iter=10000)
+",1
+"SVC(kernel='linear'), n_features_to_select={N_FEATURES_TO_SELECT}, step={STEP})
+",1
+"SVC(C=150, gamma=2e-2, probability=True))
+",1
+"SVC(kernel='rbf', C=5000)
+",1
+"SVC(kernel='linear', C=0.1)
+",1
+"SVC(C=cost, gamma=g, kernel='rbf') ",1
+"SVC(kernel='linear', C=c, gamma=g).fit(X, y)
+",1
+"SVC(C=C, kernel='linear', verbose=False)
+",1
+"SVC (support vector classifier) ",1
+"SVC(kernel='linear', C=100000, random_state=241)
+",1
+"SVC(kernel=kern)
+",1
+"SVC(kernel='rbf', C=100)
+",1
+"SVC().fit(self.text_vectors.values(), self.labels)
+",1
+"SVC(kernel=""linear""), step=0.05, loss_func=auc_score), #cv=3, default; cv=StratifiedKFold(n_subjs, 3)
+",1
+"SVC(C=1, kernel='rbf',gamma=2)
+",1
+"SVC(*args, **local_kwargs))
+",1
+"SVC(kernel=""linear""))])
+",1
+"SVC(kernel = 'linear', C = 1)
+",1
+"SVC(C=cost, kernel='poly', max_iter=max_iter)
+",1
+"SVC(kernel='rbf', gamma=0.0025, C=12)
+",1
+"SVC(kernel=""rbf"",C=10000)
+",1
+"SVC(C=10.0, gamma=0.5, kernel=""rbf"", random_state=0)
+",1
+"SVC(decision_function_shape='ovo', probability=True)
+",1
+"SVC(kernel='poly', degree=3)
+",1
+"SVC(kernel=""linear"", C=0.06)
+",1
+"SVC().fit(n_sample,n_feature)
+",1
+"SVC(kernel=""linear"", C=C) for C in [1, 3]])
+",1
+"SVC(kernel='linear',probability=True))
+",1
+"SVC(X, Y)
+",1
+"SVC(tol=1e-6, C=c, kernel='rbf', gamma=gamma)
+",1
+"SVC(logging = False).process()
+",1
+"SVC(gamma=0.001, C=100.) ",1
+"SVC(C=1000, degree=2, kernel='linear'))
+",1
+"SVC(C=10, cache_size=2000, decision_function_shape='ovr', gamma=0.0001, kernel='rbf', class_weight='balanced' ,tol=0.01) ",1
+"SVC(gamma=0.1, kernel='poly')
+",1
+"SVC(kernel=linear,C=1)')
+",1
+"SVC(C=3.5, random_state=1234, class_weight={1: 2, 2: 1.5, 3: 1.5, 4: 1})
+",1
+"SVC(kernel='linear').fit(data[:,0:dimension], label)
+",1
+"SVC(C=C, gamma=gamma, kernel='rbf'))
+",1
+"SVC(C=1000., kernel='rbf')
+",1
+"SVC(C=3.1622776601683795,gamma=1.7782794100389229e-05,verbose=True)
+",1
+"SVC(C=1, gamma=1e-3, probability=True, class_weight={-1:1, 1:10}))
+",1
+"SVC(kernel='poly', degree=5, random_state=77)
+",1
+"SVC(random_state=seed))])
+",1
+"SVC(C=10., kernel='rbf', gamma=3e-3, class_weight={1.: 3.95}, random_state=198964, verbose=True, cache_size=512)
+",1
+"SVC(), param_grid=[{'C': [0.1,0.3,1,3], 'class_weight': [None, 'balanced']}], scoring='f1_micro')
+",1
+"SVC(C=1.0, gamma=0.1)
+",1
+"SVC(kernel='linear').fit(X, y)
+",1
+"SVC(verbose=1)
+",1
+"SVC(kernel='linear', C=C).fit(train_features2, ytr)
+",1
+"SVC(probability=True, class_weight='auto', C=2)
+",1
+"SVC(C=.5, kernel='linear', class_weight='balanced')
+",1
+"SVC(t)
+",1
+"SVC(C=100, kernel='linear') ",1
+"SVC(kernel = 'rbf')
+",1
+"SVC(C = c, kernel = 'linear', probability = True)
+",1
+"SVC(kernel='rbf', probability = True,class_weight=self.class_weight)
+",1
+"SVC(kernel='linear', probability=True, C=C)
+",1
+"SVC(**tmp_options)
+",1
+"SVC(C = parameter_C, gamma = parameter_gamma)
+",1
+"SVC(C=10, gamma=0.01)
+",1
+"SVC(kernel=""rbf"", C=100000)
+",1
+"SVC(gamma=0.0017, cache_size=1000) ",1
+"SVC(kernel=self.kernel)
+",1
+"SVC(C=1.0, kernel='rbf',gamma=g, random_state = 0, probability=True)
+",1
+"SVC(class_weight='auto', kernel='linear')
+",1
+"SVC(C=1000.0, class_weight='balanced', probability=True) ",1
+"SVC(probability=True))])
+",1
+"SVC(C=1, kernel='poly', degree=2, gamma=1., coef0=1., verbose=True)
+",1
+"SVC(kernel=""poly"", degree=3)
+",1
+"SVC(max_iter=SVC_MAX_ITER), tuned_params, cv=CV_K_FOLD, scoring=""f1"", verbose=PARAM_VERBOSE, n_jobs=PARAM_JOBS)
+",1
+"SVC(probability=True, random_state=0))])
+",1
+"SVC(C=1, kernel='linear', probability=True, class_weight='auto')
+",1
+"SVC(C=best_params['C'],gamma=best_params['gamma'],decision_function_shape='ovr')
+",1
+"SVC(probability=True, cache_size=2048)
+",1
+"SVC(max_iter=300)
+",1
+"SVC(C = 1.0, kernel = 'rbf', probability = True)
+",1
+"SVC(class_weight=class_weight,verbose=1)
+",1
+"SVC(C=100, kernel='rbf', shrinking=True, probability=True, tol=0.001, cache_size=200)
+",1
+"SVC(kernel='rbf', C=10.0, gamma=0.10, random_state=0)
+",1
+"SVC( kernel = ""linear"" ) ",1
+"SVC(**sl.train_params), sl.X_train_scaled, n_jobs = -1, y = Y_train, cv=10)
+",1
+"SVC(C=5, kernel='poly', degree=4)
+",1
+"SVC(C=100, class_weight='auto', kernel='linear', probability=True, verbose= 15)
+",1
+"SVC(probability=True, kernel='linear'))
+",1
+"SVC(cache_size=200)
+",1
+"SVC(C=0.5, kernel=cosine_similarity, decision_function_shape='ovr')
+",1
+"SVC(probability=True, verbose=True)
+",1
+"SVC(kernel='rbf', probability=probability, class_weight='balanced')
+",1
+"SVC(kernel='rbf', probability=True, C=2)
+",1
+"SVC(C=1.0, kernel='rbf', gamma=0.01))])
+",1
+"SVC(C=model_param['C'], epsilon=model_param['epsilon'])
+",1
+"SVC(kernel='precomputed', probability=True)
+",1
+"SVC(C=5), n_jobs=-1)
+",1
+"SVC(C=svm_c, kernel=kernel, probability=True)
+",1
+"SVC(**self._models['svm'])
+",1
+"SVC(C=1, probability=True), param_grid, cv=5, refit=True).fit(X, y)
+",1
+"SVC(gamma=0.1, probability=True)
+",1
+"SVC(kernel='rbf', gamma=gamma, C=C, probability=False, class_weight={-1:1,1:w1})
+",1
+"SVC(gamma=0.0070, C=5)
+",1
+"SVC(), rbfParams)
+",1
+"SVC(C=C, kernel='linear'))
+",1
+"SVC(kernel='rbf', C=reg, cache_size=1000)
+",1
+"SVC(kernel='rbf', gamma=optGamma, C=optC).fit(vTrain, vSurv)
+",1
+"SVC(kernel).fit(data_train, target_train)
+",1
+"SVC(C=C, kernel='linear', tol=1e-3, max_iter=20)
+",1
+"SVC(C=10**10, kernel=""poly"", coef0=1, gamma=1, degree=2, verbose=True)
+",1
+"SVC(max_iter=1000) ",1
+"SVC(probability=probability, cache_size=cache_size, **svm_kwargs)
+",1
+"SVC(kernel=args.param, probability=True)
+",1
+"SVC(kernel='rbf', gamma=0.01, C=100))
+",1
+"SVC(), param_grid=param_grid, cv=cv, n_jobs = -1, verbose = 2)
+",1
+"SVC(kernel = 'linear', C = 1.0)
+",1
+"SVC(kernel='rbf', C=10.0, gamma=g, random_state = 0)
+",1
+"SVC(kernel='linear', cache_size = 3000, probability=True)
+",1
+"SVC(C=1000)
+",1
+"SVC(C=1,kernel='rbf',probability=True)
+",1
+"SVC(C=c, kernel='precomputed',probability=True)
+",1
+"SVC(C=1.833, gamma=0.1366, cache_size=1000)
+",1
+"SVC (Classifier) ",1
+"SVC(gamma=0.001, C=100.))
+",1
+"SVC(gamma=""auto"", max_iter=-1, verbose=True)
+",1
+"SVC(random_state = random_state)
+",1
+"SVC(kernel='poly',degree=2)
+",1
+"SVC(C=1), tuned_parameters, cv=10)
+",1
+"SVC(kernel = 'linear', C=1e6)
+",1
+"SVC(kernel='rbf', probability=True, verbose=False)
+",1
+"SVC(C=C, kernel = 'precomputed',verbose=True,class_weight='balanced')
+",1
+"SVC(), param_grid=rbf_params, cv=20, n_jobs=4, verbose=5)
+",1
+"SVC(kernel='poly', probability=True, C=0.5)
+",1
+"SVC(probability=True,random_state=random_state)
+",1
+"SVC(kernel=""linear""), SVC(kernel=""rbf"")])))
+",1
+"SVC(kernel='poly', degree=3))
+",1
+"SVC(tol=1e-3,kernel='rbf',cache_size=500),[{'C': [1,10,100] , 'gamma':[0.1,1,10]}] , cv=3 ) ",1
+"SVC(), dict(C=np.logspace(-6, -1, 10), kernel=['linear', 'poly', 'rbf', 'sigmoid'])))
+",1
+"SVC(C = 10,  kernel = ""rbf"", decision_function_shape = ""ovr"")
+",1
+"SVC(probability=True, C=options.svm_c, kernel=""linear"")
+",1
+"SVC(kernel='rbf', probability=True))
+",1
+"SVC(kernel='linear', degree=3, cache_size=1000)
+",1
+"SVC(kernel='rbf', C=ci, class_weight='balanced')
+",1
+"SVC(C = c, kernel='precomputed')
+",1
+"SVC(kernel='poly', C=1.0)
+",1
+"SVC(kernel='rbf',verbose=True)
+",1
+"SVC(C=10000.,kernel='linear')
+",1
+"SVC('ovr')
+",1
+"SVC (Switched Virtual Circuit)
+",1
+"SVC(kernel='rbf', gamma=0.0001, C=1000000.0)
+",1
+"SVC(kernel=""rbf"", C=C, gamma=gamma)
+",1
+"SVC(kernel=kernel_type, C=C, gamma=gamma)
+",1
+"SVC(C=0.4, cache_size=2000, decision_function_shape='ovr', gamma=0.0001, kernel='rbf', class_weight='balanced' ,tol=0.01) ",1
+"SVC(kernel=kernel_type) ",1
+"SVC(kernel='linear')))
+",1
+"SVC(random_state=seed)
+",1
+"SVC(**params), n_jobs=-1)
+",1
+"SVC(kernel='linear', probability=True, random_state=random_state))
+",1
+"SVC(kernel=""poly"", degree=3, C=C))])
+",1
+"SVC(decision_function_shape='ovr', cache_size=1000)
+",1
+"SVC(kernel='linear', C=1.0, random_state = 0)
+",1
+"SVC(kernel=self._kernel,probability=True)
+",1
+"SVC(kernel='rbf', cache_size=500) ",1
+"SVC(), tuned_parameters, cv=self._cv_method, verbose=0)
+",1
+"SVC(kernel='linear', C=1, gamma=0.001)
+",1
+"SVC(), param_grid=param_grid, cv=5, verbose=3)
+",1
+"SVC(C=0.1)
+",1
+"SVC(C=1,kernel='linear',decision_function_shape='ovr', shrinking=False, tol=1e-4)
+",1
+"SVC(kernel=krnl, C=c, probability=prob)
+",1
+"SVC(kernel='linear', C=0.01))
+",1
+"SVC(train_mat, train_label)
+",1
+"SVC(C=C, kernel='rbf', gamma =1.0, tol=0.001, cache_size=256)
+",1
+"SVC(C={C})\n'.format(OPERATOR_NUM=operator_num, C=C)
+",1
+"SVC(C=1000, kernel=_histogramIntersectionKernel, scale_C=True)
+",1
+"SVC(C=cost, kernel='linear', max_iter=max_iter)
+",1
+"SVC(**kwargs))
+",1
+"SVC( kernel = 'linear', C = 1000 )
+",1
+"SVC( C=1000)
+",1
+"SVC(kernel='linear', C=C, probability=True, random_state=0) ",1
+"SVC(kernel='rbf'), param_grid=param_grid, cv=cv)
+",1
+"SVC(kernel='rbf', gamma=1e-5))])
+",1
+"SVC(args)
+",1
+"SVC(C=param_d['SVC:C'], gamma=param_d['SVC:gamma'])
+",1
+"SVC(**parameters)) ",1
+"SVC(C=1.0, kernel='linear', probability=True).fit(train_features, train_classes)
+",1
+"SVC(C=10)
+",1
+"SVC(decision_function_shape='ovo'))
+",1
+"SVC(class_weight='balanced', probability=True)
+",1
+"SVC(c, kernel='linear')
+",1
+"SVC(), param_grid=param_grid_rbf, cv=cv)
+",1
+"SVC(kernel=""linear"", gamma=1.0)
+",1
+"SVC(kernel=str(kernel))
+",1
+"SVC(C = c, gamma = g, class_weight='auto')
+",1
+"SVC(probability = True, kernel = 'linear', C = 1)
+",1
+"SVC(kernel='rbf', gamma=0.001, C=10, decision_function_shape='ovr')
+",1
+"SVC(C=1.0))])
+",1
+"SVC (i.e., Soft PVC)
+",1
+"SVC(gamma = 0.003, verbose = True, C = 100.0)
+",1
+"SVC(kernel='rbf', cache_size=1000)
+",1
+"SVC(gamma=0.0001, C=50, probability=True)
+",1
+"SVC(),)
+",1
+"SVC(gamma = .001)
+",1
+"SVC(kernel='linear',C=0.01)
+",1
+"SVC(C=1.0,gamma=0.0)
+",1
+"SVC  (imm24) ",1
+"SVC(kernel = 'linear', C = 0.025)
+",1
+"SVC(kernel=kernel, degree=degree, C=C)
+",1
+"SVC(kernel='rbf', degree=5)
+",1
+"SVC(kernel = 'rbf', C = self.param1, gamma = self.param2, probability = True, cache_size = 2048, random_state = 2512 ) ",1
+"SVC(C=1), tuned_params, cv=5, scoring=score)
+",1
+"SVC(kernel='linear', cache_size=500)
+",1
+"SVC(kernel='rbf',gamma=0.001,C=0.1) ",1
+"SVC(C=reg_param, kernel='rbf', gamma=bandwidth, class_weight={1: 1./frac_pos})
+",1
+"SVC(C=100, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.001, kernel='rbf', max_iter=-1, random_state=None, shrinking=True, tol=0.001, verbose=False)
+",1
+"SVC(kernel=""rbf"", C=80000).fit(features_train,labels_train)
+",1
+"SVC(C=1, kernel='linear', gamma=1, verbose=False, probability=False))
+",1
+"SVC(kernel='linear', probability=make_probabilistic)
+",1
+"SVC(probability=True, max_iter=10000) ",1
+"SVC(kernel='linear'),param_rbf,score_func=f1_score,n_jobs=-1)
+",1
+"SVC(kernel='rbf', C=1, gamma=0, probability=True)
+",1
+"SVC(kernel='linear', probability=True, verbose=verbose))
+",1
+"SVC(probability=True, kernel='linear', C=1.0, class_weight='auto')
+",1
+"SVC(C=0.0125,kernel='linear',verbose=False).fit(samples, labels)
+",1
+"SVC(kernel=self.kernel,C=lmbda)
+",1
+"SVC(kernel=""rbf"", class_weight=""auto"", cache_size=1400, shrinking=True)
+",1
+"SVC(C=10, gamma=gamma).fit(X[train], y[train])
+",1
+"SVC(kernel='poly', degree=5)
+",1
+"SVC(probability =True)
+",1
+"SVC(kernel='rbf'), parameters, n_jobs=n_workers, score_func=precision_score)
+",1
+"SVC(cache_size=cache_size)
+",1
+"SVC())])))
+",1
+"SVC(C=50., kernel='rbf', gamma=gamma_parameter, probability=False)
+",1
+"SVC(kernel=kernel,C=C)
+",1
+"SVC(**SVM.best_params_), algorithm='SAMME')
+",1
+"SVC(kernel=""linear"", C=2))
+",1
+"SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3,gamma=0.0, kernel='rbf', probability=False, shrinking=True, tol=0.001,verbose=False)
+",1
+"SVC(kernel='rbf',C=2)
+",1
+"SVC(C=C, kernel='linear', max_iter=20)
+",1
+"SVC(C=1, gamma=0.001, kernel='rbf')
+",1
+"SVC(face_profile_data, face_profile_name_index, FACE_DIM)
+",1
+"SVC(kernel=self.kernel, C=self.c)
+",1
+"SVC(gamma=0.001, C=1.)
+",1
+"SVC(C=iii, gamma=jjj, cache_size=1000)
+",1
+"SVC(C=parameters['C_reg'], kernel=parameters['kernel'])
+",1
+"SVC(kernel='linear', C=c)
+",1
+"SVC(C= 1.0, kernel= 'rbf', class_weight={'Y': 4, 'N':1})
+",1
+"SVC(kernel='rbf', C=10, gamma=10, probability=True)
+",1
+"SVC(kernel='linear')))])
+",1
+"SVC(C=0.1, kernel='rbf', random_state=0))
+",1
+"SVC(random_state=1)
+",1
+"SVC(probability=True, kernel='rbf'))
+",1
+"SVC(kernel='rbf', gamma=1.5)
+",1
+"SVC(kernel=""precomputed"",C=1)
+",1
+"SVC(kernel='rbf'), param_grid,n_jobs=-1)
+",1
+"SVC(kernel=kernel) ",1
+"SVC(kernel='rbf', gamma=0.7, C=1.0).fit(X, y)
+",1
+"SVC(gamma=0.0001, C=100)
+",1
+"SVC(gamma=0.0003, C=1.2)
+",1
+"SVC(kernel=""linear"",gamma=0.01, C=250, class_weight='balanced')
+",1
+"SVC(C=C, gamma=1 / (2 * sigma), kernel='rbf',)
+",1
+"SVC(C=1, class_weight='balanced'), svm_tuned_parameters])
+",1
+"SVC(C=5, cache_size=2048), n_jobs=-1)
+",1
+"SVC(kernel='poly',**job)
+",1
+"SVC(C=10, kernel=""linear"")
+",1
+"SVC(kernel='linear', C=1))])
+",1
+"SVC (Suppot Vector Classifier)
+",1
+"SVC(kernel=kernel, C=c)
+",1
+"SVC(kernel='rbf') #, random_state=17)
+",1
+"SVC(kernel='rbf', gamma=0.01, C=100, cache_size=2000)
+",1
+"SVC(C=100, kernel='rbf', gamma=0.001)
+",1
+"SVC(kernel='rbf', C=C)
+",1
+"SVC(kernel='linear', C=0.1, probability=True)
+",1
+"SVC(kernel='rbf', C=10**4)
+",1
+"SVC(C=C,kernel='rbf',degree=3)
+",1
+"SVC(C=C, kernel='rbf', gamma=gamma)
+",1
+"SVC(kernel=kernel, gamma=0.7, C=c,probability=True)
+",1
+"SVC(cache_size=2000), searchParams)
+",1
+"SVC(kernel='rbf', gamma=0.05, class_weight='auto', probability=True)
+",1
+"SVC(), std_features, labels, cv=5)
+",1
+"SVC(kernel='precomputed', class_weight='balanced', C=c, max_iter=-1, tol=1e-7, probability=probability, verbose=False)
+",1
+"SVC(C=1, kernel='linear'), SVC(C=1, kernel='rbf')]) ",1
+"SVC(kernel='rbf', C=2.8, gamma=.0073)
+",1
+"SVC(kernel='linear', class_weight='balanced', C=100, random_state=42))
+",1
+"SVC(cache_size=CACHE_SIZE, kernel=""rbf"", C=c, gamma=gamma)
+",1
+"SVC(cache_size=1024)
+",1
+"SVC(C=1.0, kernel='sigmoid', gamma='auto', cache_size=5000)
+",1
+"SVC(gamma=0.7, C=1.0)
+",1
+"SVC(kernel='rbf', C=300)
+",1
+"SVC(C=c, kernel='precomputed',max_iter=10000000)
+",1
+"SVC(with probas=True), RF, KNN])
+",1
+"SVC(probability=True, class_weight=""auto"")
+",1
+"SVC(C=9.0, kernel='rbf', degree=3, gamma=0.0, coef0=0.0, shrinking=True, probability=False, tol=0.001, cache_size=200, class_weight=None, verbose=False, max_iter=-1, random_state=None)
+",1
+"SVC(kernel='rbf',C=1)
+",1
+"SVC(kernel=kernel, gamma=gamma, degree=degree)
+",1
+"SVC(kernel='rbf', gamma=0.01, cache_size=1000)
+",1
+"SVC(kernel = ""rbf"",gamma = 0.001,C = 100)
+",1
+"SVC(kernel='rbf', gamma=0.7, C=1.0).fit(trainX, trainY)
+",1
+"SVC(gamma=0.03)
+",1
+"SVC().fit(data,labels)
+",1
+"SVC(gamma=GAMMA, C=C, probability=True).fit(self.data_test, self.labels_test)
+",1
+"SVC(C=1, probability=True), param_grid, cv=5)
+",1
+"SVC(kernel=""linear"", C=4, probability=True)
+",1
+"SVC(C=10,kernel='precomputed')
+",1
+"SVC(C=1, gamma=0.001, kernel='linear')
+",1
+"SVC(kernel='poly', C=1E-2, gamma=1E-2, degree=2)
+",1
+"SVC(random_state=241)
+",1
+"SVC(probability=True), scoring=p_value_scoring_object.p_value_scoring_object ,param_grid=param_grid, cv=cv)
+",1
+"SVC(kernel='linear', C=20.0)
+",1
+"SVC().fit(x, y)
+",1
+"SVC().fit(X, train_labels)
+",1
+"SVC(kernel=""linear"", C=float(c))
+",1
+"SVC(cache_size=2000)
+",1
+"SVC(C=1)))
+",1
+"SVC(with probas=True)],[RF, KNN],[LR] ])
+",1
+"SVC(),n_jobs=-1)
+",1
+"SVC(cache_size=3000, C=1), tuned_parameters, cv=5, scoring=score)
+",1
+"SVC(cache_size=5000, verbose=True, C=10, gamma=0.2)
+",1
+"SVC(random_state=my_random_seed)
+",1
+"SVC(kernel='linear', C=2.0)
+",1
+"SVC(C=0.5, probability=True), param_grid, cv=5).fit(X, y)
+",1
+"SVC(kernel='rbf',C=10)
+",1
+"SVC(kernel='linear', probability=True), ""SVM"")
+",1
+"SVC(kernel=k)
+",1
+"SVC(C=10000000, gamma=0.00001)
+",1
+"SVC(C=args.c, gamma=args.g, cache_size=args.cache)
+",1
+"SVC(gamma=0.1, probability = True, kernel='rbf',C=2.)
+",1
+"SVC(cache_size=1024, C=10, gamma=0.02)
+",1
+"SVC(**svc_opts)
+",1
+"SVC(kernel='linear', probability=True)).train(feature_labels[traincv[0]:traincv[len(traincv)-1]]) ",1
+"SVC(kernel='rbf', gamma=0.05, C=401, probability=True)))
+",1
+"SVC(class_weight='auto'), param_grid=param_grid, cv=cv)
+",1
+"SVC(kernel='rbf')) ]) ",1
+"SVC(kernel=""precomputed"", C=1, verbose=False)
+",1
+"SVC(C=10**c, probability=1, class_weight='auto')
+",1
+"SVC(C=c, kernel='rbf', degree=3, gamma=0.0, coef0=0.0, shrinking=True, probability=False, tol=0.001, cache_size=200, class_weight=None, verbose=False, max_iter=-1, random_state=None)
+",1
+"SVC(class_weight='balanced', C=1.0)
+",1
+"SVC(probability=True) ",1
+"SVC(kernel='linear', C=10000000)
+",1
+"SVC(kernel=""rbf"", C=10000.0)
+",1
+"SVC(gamma = 0.001, kernel = 'linear')
+",1
+"SVC(C=c, gamma=g)
+",1
+"SVC(C=.01,kernel='rbf'))])
+",1
+"SVC(C=c,kernel=k,degree=degree,coef0=coef0)
+",1
+"SVC(kernel='linear', class_weight='balanced', probability=True)
+",1
+"SVC(C=C, kernel='rbf', gamma=gamma, probability=True)
+",1
+"SVC(C=1e-6, kernel='rbf', random_state=0))
+",1
+"SVC(kernel=str(""rbf""), probability=True, C=1e3, gamma=0.00001))
+",1
+"SVC(kernel='rbf', C=10000000, probability=True)
+",1
+"SVC(C=100, gamma=.01, probability=True, scale_C=True)
+",1
+"SVC(kernel='linear',verbose=0)
+",1
+"SVC(C=1.0, class_weight='auto', probability=True, kernel='rbf', gamma=0.0, tol=1e-1)
+",1
+"SVC(C = C, gamma = gamma, kernel = 'rbf')
+",1
+"SVC(kernel=""rbf"", probability=True).fit(crime_data, crime_target)
+",1
+"SVC(kernel='rbf', C=1.0)
+",1
+"SVC(decision_function_shape=""ovr"")
+",1
+"SVC(C=10000, gamma=0.75, probability=True)
+",1

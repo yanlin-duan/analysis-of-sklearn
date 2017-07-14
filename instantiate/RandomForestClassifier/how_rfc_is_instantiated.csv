@@ -1,0 +1,660 @@
+,390
+n_estimators=100,309
+n_jobs=-1,226
+n_estimators=10,170
+random_state=0,155
+n_estimators = 100,85
+max_depth=5,74
+n_estimators=50,62
+n_estimators=500,61
+n_estimators=1000,60
+random_state=1,58
+max_features=1,58
+n_jobs=2,52
+max_depth=None,49
+oob_score=True,48
+criterion='entropy',43
+min_samples_split=1,36
+random_state=42,33
+n_estimators=n_estimators,33
+n_estimators=20,32
+n_estimators=200,32
+n_jobs=1,31
+n_estimators=300,29
+n_jobs = -1,28
+criterion='gini',28
+n_jobs=4,26
+max_depth=10,24
+min_samples_split=2,24
+n_estimators=30,22
+n_estimators=1,21
+max_features=None,21
+random_state=random_state,21
+n_estimators=25,20
+**kwargs,19
+bootstrap=False,18
+n_classifiers,18
+compute_importances=True,17
+criterion="entropy",15
+verbose=2,15
+n_estimators=150,15
+min_samples_leaf=1,14
+**params,14
+max_depth=1,13
+verbose=1,13
+bootstrap=True,12
+max_features='auto',12
+seed=42,12
+ForestClassifier,12
+class_weight='auto',12
+n_estimators=400,11
+n_estimators = 10,11
+n_estimators=rf_n_estimators,11
+numTrees=3,11
+min_samples_leaf=20,11
+oob_score=False,10
+maxDepth=2,10
+n_jobs=n_jobs,10
+labelCol="indexed",10
+max_depth=3,9
+n_estimators = 50,9
+class_weight='balanced',9
+verbose=verbose,9
+n_jobs=3,9
+class_weight="balanced",9
+max_depth=max_depth,9
+verbose=0,9
+n_estimators=250,9
+n_estimators = n_estimators,9
+n_jobs=5,8
+random_state=50,8
+max_features="auto",8
+max_depth=15,8
+max_depth=4,8
+n_estimators=750,8
+min_samples_leaf=5,8
+oob_score = True,7
+min_samples_split=100,7
+n_estimators=10000,7
+n_estimators=5,7
+n_estimators=trees,7
+max_features=rf_max_features,7
+n_jobs=10,7
+labelCol="indexedLabel",7
+n_estimators = 20,7
+n_estimators=15,7
+n_estimators=40,7
+warm_start=True,7
+n_estimators=n_trees,7
+min_samples_leaf=2,7
+n_estimators = 500,7
+max_features = 'auto',6
+n_estimators = 200,6
+min_samples_leaf=3,6
+featuresCol="indexedFeatures",6
+n_estimators = 1000,6
+max_depth=25,6
+max_depth=16,6
+n_estimators=n_est,6
+max_depth = 10,6
+max_features=max_features,6
+n_estimators=80,6
+n_jobs = 12,6
+n_estimators = 30,6
+SklModel,6
+verbose=True,6
+random_state = 4,6
+bootstrap = False,5
+criterion=criterion,5
+criterion = 'entropy',5
+max_depth = max_depth,5
+n_estimators=n,5
+max_depth=100,5
+n_estimators=num_trees,5
+n_estimators=ntrees,5
+n_jobs=16,5
+random_state = 0,5
+random_state = 1,5
+random_state=123,5
+n_estimators=2000,5
+10,5
+n_jobs=8,5
+max_depth=20,5
+object,5
+criterion = 'gini',5
+max_features="sqrt",4
+verbose = 1,4
+numTrees=10,4
+class_weight={False:1,4
+**self.params,4
+n_estimators,4
+n_estimators=60,4
+verbose=3,4
+random_state=None,4
+n_estimators=8,4
+RandomForest,4
+max_depth=8,4
+random_state=randomseedcounter,4
+n_jobs = 8,4
+min_samples_split=5,4
+bootstrap = True,4
+criterion= 'entropy',4
+max_depth=depth,4
+max_features=20,4
+min_samples_leaf=10,4
+n_estimators=estimators,4
+max_features=5,4
+n_estimators = 150,4
+max_features='sqrt',4
+max_features='log2',3
+50,3
+random_state = 2543,3
+n_estimators=RFC_estimators,3
+random_state=30,3
+max_depth=2,3
+**model_params,3
+random_state = 1960,3
+max_depth = 100,3
+n_estimators=11,3
+True:1},3
+n_estimators=51,3
+max_features=.5,3
+n_trees,3
+max_depth=7,3
+min_samples_split=9,3
+*args,3
+max_depth = None,3
+max_features=10,3
+100,3
+n_estimators=120,3
+random_state=100,3
+max_depth,3
+max_features=7,3
+criterion="gini",3
+max_features,3
+criterion,3
+n_jobs=12,3
+min_samples_split=10,3
+n_estimators=256,3
+max_features = None,3
+featuresCol = 'features',3
+labelCol = 'label',3
+max_depth=RFC_depth,3
+max_features=features,3
+max_depth=max_dep,3
+warm_start=False,3
+n_estimators = n,3
+n_estimators=self.n_estimators,3
+min_samples_split=17,3
+compute_importances = True,3
+max_features=0.5,3
+n_Forests=200,3
+verbose=10,3
+1:10},2
+min_samples_leaf=msl,2
+n_estimators=n_estimators_size,2
+random_state=33,2
+max_leaf_nodes=None,2
+random_state=8,2
+labelCol="label",2
+max_depth=i,2
+n_estimators=opts.numtrees,2
+n_estimators=12,2
+class_weight = {0: 1,2
+classVar=examples.domain.classVar,2
+n_estimators=nr_of_trees,2
+criterion = "entropy",2
+random_forest_trees,2
+BaggingClassifier,2
+max_depth = 20,2
+max_features=int(math.sqrt(n_features,2
+min_samples_leaf=int(np.round(x[i],2
+max_features=int(mtry,2
+maxDepth=4,2
+random_state=21,2
+n_jobs=jobs,2
+max_features=best_params[dataset_name][method_name][nr_events]['rf_max_features'],2
+n_jobs=njobs,2
+n_estimators=n_estimator,2
+n_estimators = 1024,2
+min_samples_leaf=nodes,2
+max_depth = 4,2
+random_state=912,2
+featset1,2
+n_estimators = estimators,2
+**parse.config_for_function(RandomForestClassifier.__init__,2
+random_state=5,2
+oob_score=1,2
+n_estimators=C,2
+min_samples_leaf=leaf_size,2
+n_tree,2
+min_samples_split=12,2
+n_estimators=23,2
+domain=examples.domain,2
+class_weight=class_weight,2
+max_features=2,2
+n_estimators=3000,2
+200,2
+**rf_parameters,2
+min_samples_split = min_samples_split,2
+1000,2
+n_estimators=lNbEstimatorsInEnsembles,2
+n_estimators=101,2
+max_features = max_features,2
+random_state=1000 + l,2
+n_estimators = 128,2
+max_depth=maxDepth[0],2
+n_estimators=6000,2
+max_leaf_nodes=50,2
+featuresCol="features",2
+len(result1.columns,2
+min_samples_split=13,2
+n_estimators=n_estimators[0],2
+n_jobs = 2,2
+n_estimators = self.n_trees,2
+random_state=84,2
+name=self.name,2
+n_estimators=estimator,2
+n_estimators=90,2
+n_TreesInForest=500,2
+max_depth=6,2
+**forest_parms,2
+min_samples_leaf= 2,2
+n_jobs = 1,2
+min_samples_split=3,2
+max_depth= 8,2
+n_estimators=num_estimators,2
+random_state=i,2
+n_estimators=128,2
+max_features=n_feat,2
+max_depth=9,2
+class_weight = 'auto',2
+max_features= 0.4,2
+maxBins=32,2
+max_features=100,2
+None,2
+n_estimators = pm.num_trees,2
+random_state=131,2
+random_state=RND_SEED,2
+max_features=max_f,2
+**{'n_estimators' : 7500,2
+"entropy",2
+n_jobs=7,2
+class_weight=None,2
+config,2
+random_state=process.seed,2
+max_features=375,2
+min_samples_leaf = 10,2
+random_state=10,2
+n_TreesInForest=300,2
+n_estimators=800,2
+min_samples_split=nodes*2,2
+n_estimators=options.n,2
+min_samples_leaf=4,2
+n_estimators=5000,2
+max_depth=60,2
+min_weight_fraction_leaf=0.0,2
+150,2
+random_state=2,2
+max_features="log2",2
+n_estimators=1500,2
+min_impurity_split=1e-07,2
+Classifier,2
+classifiers = classifiers,2
+random_state=random_seed,2
+n_estimators = 2000,2
+n_estimators=850,2
+random_state=options.random,2
+n_estimators=64,2
+max_depth=max_d,2
+'max_depth' : 200},2
+max_depth=600,1
+Orange.core.Classifier,1
+compute_importances=None,1
+n_estimators=4,1
+n_estimators=min_log_loss_iter,1
+random_state=self.random_state,1
+StreamingForestClassifier,1
+method.Method,1
+n_Forests=100,1
+random_state=192,1
+n_estimators=self.num_tree,1
+n_estimators=int(SILLY_NUMBER*1.5,1
+n_estimators = n_estimators/2,1
+TSClassifier,1
+n_estimators=e,1
+min_density=None,1
+n_estimators=self.randomForestEstimators,1
+min_samples_split={min_samples_split},1
+numTrees=5,1
+**vars(args,1
+maxDepth=15,1
+max_features=.33,1
+n_estimators=1001,1
+min_samples_split=4,1
+orange.Classifier,1
+n_estimators = 4,1
+max_features=best_params[dataset_name][method_name]['rf_max_features'],1
+maxMemoryInMB=512,1
+min_samples_leaf=min_samples_leaf,1
+n_estimators = 5,1
+n_estimators=94,1
+class_weight = {0:0.1,1
+**classi_params,1
+n_estimators=self.params['num_estimators'],1
+random_state=241,1
+max_features=500,1
+random_state=102,1
+max_features = int(math.sqrt(features,1
+max_features=mtry,1
+class_weight={1:2},1
+n_estimators=n_tree,1
+verbose = 2,1
+max_depth={max_depth},1
+max_depth=13,1
+n_estimators=22,1
+criterion=CRIT,1
+min_samples_split = 16,1
+min_samples_split = 2,1
+n_estimators=2,1
+random_state =88,1
+random_state = 2,1
+train,1
+**estimator_params,1
+selectedFeatures=selectedFeatures,1
+n_estimators=66,1
+n_jobs=cpus,1
+n_estimators=NEST,1
+verbose=VERBOSE,1
+n_estimators=treeCount,1
+random_state=7112016,1
+numTrees=numTrees,1
+transitionClassifierFilename,1
+n_estimators=17,1
+random_state=rs,1
+**self.param_dict,1
+n_estimators= 20,1
+5,1
+n_estimators=20*8,1
+max_features = 50,1
+n_estimators=estimator_param,1
+max_depth=22,1
+dt.DecisionTreeClassifier,1
+n_estimators = 1,1
+max_features=4,1
+min_samples_leaf=8,1
+sklearn.ensemble.RandomForestClassifier,1
+random_state=125,1
+7,1
+RandomForestModel,1
+max_features=self.maxFeatures,1
+max_depth= 7,1
+max_depth=C,1
+max_features = k,1
+min_samples_split=16,1
+n_estimators=700,1
+class_weight = 'balanced_subsample',1
+n_estimators=16,1
+n_jobs=options.n_jobs,1
+n_jobs=40,1
+min_samples_split=50,1
+n_estimators=RF_ESTIMATORS,1
+n_estimators=i,1
+random_state = choosen_random_state,1
+class_weight="auto",1
+min_samples_split=256,1
+min_weight_fraction_leaf=0.1,1
+n_estimators =  250,1
+max_features = 6,1
+n_estimators=model_param['n_estimators'],1
+max_features=min(49,1
+domain=domain,1
+n_estimators = 10000,1
+random_state=600,1
+class_weight=rf_weights,1
+max_depth=50,1
+max_features=30,1
+n_estimators=13,1
+numTrees=100,1
+n_estimators = 256,1
+min_samples_leaf=25,1
+max_features=8,1
+n_estimators = self.n_estimators,1
+n_estimators = 196,1
+max_depth=hyper_parameter,1
+random_state = 84,1
+min_samples_split=self.minSplit,1
+n_estimators=Ntrees,1
+**rf_config,1
+max_depth=max_tree_depth,1
+n_estimators=RF_size,1
+min_samples_split=8,1
+n_estimators=28,1
+random_state=4141,1
+random_state=R_SEED,1
+n_estimators = 700,1
+random_state=2016,1
+max_depth=maxdepth,1
+min_samples_split=s,1
+1:0.9},1
+'/CountClassification',1
+min_samples_split=32,1
+min_samples_split= 3,1
+n_jobs=n_cpu_jobs,1
+n_estimators=int(numbtrees_param,1
+CLASS_ID,1
+max_depth=2000,1
+**cls_kwargs,1
+n_jobs=self.processes,1
+128,1
+n_estimators=self._settings.get('trees',1
+transitionClassifierPath,1
+n_jobs=self.n_cores,1
+max_features=Xtrain.shape[1]/3,1
+True:2},1
+class_weight='balanced_subsample',1
+min_impurity_split=0.1,1
+max_features=feature,1
+random_state = 409,1
+Stats,1
+n_estimators = n_trees,1
+bootstrap=bootstrap,1
+Sklearn,1
+n_jobs=self.n_jobs,1
+oob_score={oob_score},1
+random_state=rng,1
+k=128,1
+n_estimators=max_random_trees,1
+random_state=Lnum,1
+random_state=571,1
+n_estimators=nr_estimators_rf,1
+random_state=150,1
+n_estimators=int(len(MetricEntry.metrics,1
+15,1
+len(result2.columns,1
+max_features= max_features,1
+**rf_params,1
+max_features=1.0/3,1
+random_state=rand,1
+n_estimators = 15000,1
+n_estimators=mp.random_forest_estimators,1
+random_state=prng,1
+max_depth=self.maxDepth,1
+verbose=42,1
+random_state = random_state,1
+min_samples_split = 4,1
+max_features=min(64,1
+criterion='{criterion}',1
+numTrees=60,1
+ATS,1
+n_estimators=self.numTrees,1
+max_depth=TREE_DEPTH,1
+n_jobs=num_jobs,1
+min_samples_split=163,1
+n_estimators={n_estimators},1
+max_features=1.0,1
+random_state=321,1
+**job,1
+random_state=32,1
+verbose = 0,1
+max_features=total_features,1
+n_estimators=91,1
+n_jobs=n_procs,1
+labelCol="Response",1
+n_estimators=123,1
+min_samples_split=min_sample,1
+n_jobs = pm.n_jobs,1
+max_depth = length,1
+min_samples_leaf = 5,1
+max_features=min(52,1
+max_depth= None,1
+1,1
+n_estimators= 500,1
+min_samples_leaf=150,1
+maxDepth=6,1
+verbose = verbose,1
+n_estimators = 3,1
+n_estimators = n_est,1
+max_depth = 5,1
+class_weight = 'balanced',1
+n_estimators=tc,1
+max_depth=int(sum(labels_binary[i],1
+max_depth=700,1
+n_estimators=95,1
+n_estimators= ntrees,1
+n_jobs=args.njobs,1
+**clf_args_,1
+max_features = "auto",1
+max_depth=md,1
+random_state=1234,1
+n_estimators= self.ntrees,1
+" + model_params + ",1
+n_estimators=7,1
+n_jobs=self.nthreads,1
+min_samples_split= 2,1
+n_estimators = 40,1
+criterion = criterion,1
+random_state=self.rng,1
+min_samples_leaf=7,1
+rf_model,1
+n_estimators=34,1
+n_estimator,1
+classifarg.number_of_trees,1
+criterion ="gini",1
+agrLevel = self.agrLevel,1
+n_estimators=65,1
+n_estimators=n_estim,1
+max_leaf_nodes=80,1
+**classifier_pram_dic[rf_name],1
+max_leaf_nodes={max_leaf_nodes},1
+n_jobs = 4,1
+n_estimators=2500,1
+n_estimators=240,1
+random_state=RandomState(__seed__,1
+max_features=0.4,1
+verbose=verbosity,1
+maxBins=80,1
+random_state=87,1
+min_weight_fraction_leaf={min_weight_fraction_leaf},1
+n_estimators=t,1
+seed=1,1
+n_estimators=1800,1
+class_weight={class_weight},1
+random_state=234,1
+random_state = 1104,1
+RandomForestClassifier,1
+maxDepth=12,1
+max_features = 200,1
+max_features=38,1
+random_state=(roc_iterator+1,1
+min_samples_split=70,1
+n_estimators = 300,1
+max_depth=140,1
+n_estimators=450,1
+**clf.get('config',1
+n_estimators = numTrees,1
+n_estimators=numTrees,1
+n_estimators=70,1
+**classif_base.get_params(,1
+min_samples_split=len(X,1
+bootstrap={bootstrap},1
+Module,1
+n_jobs = 16,1
+min_samples_split=6,1
+n_estimators = 2,1
+n_jobs = workers,1
+AbstractZnormClassifier,1
+n_estimators=35,1
+criterion=splitcriteria_param,1
+max_depth = 13,1
+'tests/mergerResolvingTestDataset/tracking.ilp',1
+n_estimators=3,1
+max_features=1.,1
+NUM_TREES,1
+**clf_params,1
+min_samples_split=len(self.x,1
+n_jobs=self.params['num_jobs'],1
+random_state = RANDOM_STATE,1
+n_estimators = 9,1
+max_features=tree_features,1
+n_estimators = n_classifiers,1
+max_features=3,1
+**config_clf,1
+n_estimators= 200,1
+n_estimators=550,1
+criterion=c,1
+n_jobs=NUM_THREADS,1
+verbose=False,1
+n_estimators = 7000,1
+min_samples_leaf={min_samples_leaf},1
+n_estimators=1999,1
+n_estimators=specs['n_estimators'],1
+min_samples_leaf=200,1
+n=t,1
+class_weight=param.class_weight,1
+min_impurity_split={min_impurity_split},1
+criterion=self.criterion,1
+max_features=17,1
+min_samples_split=0.02,1
+n_jobs=nj,1
+self.imputer,1
+max_depth=80,1
+max_features= 'sqrt',1
+n_estimators=1024,1
+n_jobs=n_cores,1
+verbose = False,1
+max_depth=self.max_depth,1
+random_state=93758,1
+n_estimators = 400,1
+**args,1
+random_state=n,1
+n_estimators=5*nfeatures,1
+n_estimators=52,1
+25,1
+max_features=int(np.sqrt(len(self.dataframe.columns,1
+n_jobs=self.threadCount,1
+seed=1111,1
+random_state=RandomState(seed,1
+n_estimators=self.Nestimators,1
+**self.best_params,1
+n_jobs=15,1
+max_features=15,1
+min_samples_split=7,1
+class_weight=class_wt,1
+bootstrap = bootstrap,1
+n_jobs=self.parallel_jobs,1
+random_state = self.ran_stat,1
+random_seed=1,1
+min_samples_split=30,1
+min_samples_split=20,1
+min_samples_split=min_samples_split,1
+n_estimators=self.__n_TreesInForest,1
+n_jobs= -1,1
+n_estimators=self.config.hid_layer_units_baseline,1
+Learner,1
+random_state=SEED,1
+n_estimators=512,1
+numTrees=500,1
+n_estimators=feature,1
+t,1
+n_estimators = 250,1
