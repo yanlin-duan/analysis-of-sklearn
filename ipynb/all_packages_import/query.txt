@@ -1,0 +1,22 @@
+SELECT
+  CASE
+    WHEN package LIKE '%\\n",' THEN LEFT(package, LENGTH(package) - 4)
+    ELSE package
+  END AS package,
+  n
+FROM (
+  SELECT
+    REGEXP_EXTRACT( line, r'(?:\S+\s+)(\S+)' ) AS package,
+    COUNT(*) AS n
+  FROM (
+    SELECT
+      SPLIT(content, '\n      \"') AS line
+    FROM
+      [scikit-learn-research:pyfiles.content_ipynb] 
+    HAVING
+      LEFT(line, 7) = 'import '
+      OR LEFT(line, 5) = 'from ')
+  GROUP BY
+    package
+  ORDER BY
+    n DESC)

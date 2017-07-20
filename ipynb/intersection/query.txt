@@ -1,0 +1,18 @@
+SELECT
+  count(*) n
+FROM (
+  SELECT
+    content
+  FROM (
+    SELECT
+      SPLIT(content, '\n      \"') AS line,
+      content,
+    FROM
+      [scikit-learn-research:pyfiles.content_ipynb] 
+    HAVING
+      LEFT(line, 14) = 'import sklearn'
+      OR LEFT(line, 12) = 'from sklearn'
+  )
+  group by content
+  )
+  where content contains "pandas"
