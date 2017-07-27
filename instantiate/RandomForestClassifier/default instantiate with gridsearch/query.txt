@@ -11,3 +11,22 @@ SELECT
 WHERE
   match!=""
   AND content CONTAINS 'GridSearchCV'
+
+
+—- For without grid search
+SELECT
+  sample_repo_name,
+  sample_path from(
+  SELECT
+    REGEXP_EXTRACT(content, r'(RandomForestClassifier *\(\))') match,
+    content,
+    sample_repo_name,
+    sample_path
+  FROM
+    [scikit-learn-research:pyfiles.content_py]
+  WHERE
+    (NOT RIGHT(sample_repo_name,12) = "scikit-learn")
+    AND (NOT RIGHT(sample_repo_name,7) = "sklearn") )
+WHERE
+  match!=""
+  AND NOT content CONTAINS 'GridSearchCV'
