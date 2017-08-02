@@ -1,0 +1,21 @@
+SELECT
+  CASE
+    WHEN package LIKE '%\\n",' THEN RTRIM(LEFT(package, LENGTH(package) - 4),'"')
+    ELSE RTRIM(package, '"')
+  END AS package,
+  n from(
+  SELECT
+    REGEXP_EXTRACT( line, r'(from sklearn.*? import (?:[[:alpha:]]|_|\d)*)' ) AS package,
+    COUNT(*) AS n
+  FROM (
+    SELECT
+      SPLIT(content, '\n      \"') AS line
+    FROM
+      [scikit-learn-research:pyfiles.content_ipynb]
+    WHERE
+      (NOT RIGHT(sample_repo_name,12) = "scikit-learn")
+      AND (NOT RIGHT(sample_repo_name,7) = "sklearn") )
+  GROUP BY
+    1
+  ORDER BY
+    n DESC)
