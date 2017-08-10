@@ -1,0 +1,1086 @@
+match,path,repo_name,count
+,,,5985761
+"from treeherder.model.models import Datasource
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,avih/treeherder,1
+"                usage_info would contain a user object for which the
+                transform should be applied.
+
+            block_structure (BlockStructureBlockData) - A mutable
+                block structure, with already collected data for the
+                transformer, that is to be transformed in place.
+        """"""
+        raise NotImplementedError
+
+
+class FilteringTransformerMixin(BlockStructureTransformer):
+    """"""
+    Transformers may optionally choose to implement this mixin if their
+    transform logic can be broken apart into a lambda for optimization of
+    combined tree traversals.
+
+    For performance reasons, developers should try to implement this mixin
+    whenever possible - with this alternative, traversal of the entire block
+    structure happens only once for all transformers that implement
+    FilteringTransformerMixin.",openedx/core/djangoapps/content/block_structure/transformer.py,ayernitin/edx-platform,1
+"class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class NotFittedError(ValueError, AttributeError):
+  """"""Exception class to raise if estimator is used before fitting.
+
+  This class inherits from both ValueError and AttributeError to help with
+  exception handling and backward compatibility.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,jart/tensorflow,1
+"from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl.common import (generate_revision_hash,
+                                   get_not_found_onhold_push)
+
+from .mixins import (JsonExtractorMixin,
+                     OAuthLoaderMixin)
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {}
+
+        # iterate over the pushes
+        for push in pushlog.values():",treeherder/etl/pushlog.py,sylvestre/treeherder,1
+"from ..externals import six
+
+
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",mne/decoding/mixin.py,drammock/mne-python,1
+"        ``columns_`` attributes exist.
+
+        """"""
+        from .utils.validation import check_array
+        data = check_array(data, accept_sparse='csr')
+        row_ind, col_ind = self.get_indices(i)
+        return data[row_ind[:, np.newaxis], col_ind]
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",projects/scikit-learn-master/sklearn/base.py,DailyActie/Surrogate-Model,1
+"def _mk_zero(data):
+    if hasattr(data, 'divisions'):
+        chunksize = data.divisions[1] - data.divisions[0]
+        empty = ddf.from_pandas(pd.Series(0, index=data.index),
+                                chunksize=chunksize)
+    else:
+        empty = pd.Series(0, index=data.index)
+    return empty
+
+
+class TransformerMixin(object):
+    __doc__ = """"""
+    Transformer Mixin
+
+    Base mixin for the transformers. Not for actual transforming.
+
+    Parameters
+    ----------
+
+    field : str",dasky/transformers.py,thequackdaddy/dasky,1
+"class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class NotFittedError(ValueError, AttributeError):
+  """"""Exception class to raise if estimator is used before fitting.
+
+  This class inherits from both ValueError and AttributeError to help with
+  exception handling and backward compatibility.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,dhalleine/tensorflow,1
+"
+        Works with sparse matrices. Only works if ``rows_`` and
+        ``columns_`` attributes exist.
+
+        """"""
+        from .cluster.bicluster.utils import get_submatrix
+        return get_submatrix(self.rows_[i], self.columns_[i], data)
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",sklearn/base.py,loli/sklearn-ensembletrees,1
+"from treeherder.model.models import Datasource
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,adusca/treeherder,1
+"        ``columns_`` attributes exist.
+
+        """"""
+        from .utils.validation import check_array
+        data = check_array(data, accept_sparse='csr')
+        row_ind, col_ind = self.get_indices(i)
+        return data[row_ind[:, np.newaxis], col_ind]
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",uplift/base.py,psarka/uplift,1
+"#         Works with sparse matrices. Only works if ``rows_`` and
+#         ``columns_`` attributes exist.
+#         """"""
+#         from .utils.validation import check_array
+#         data = check_array(data, accept_sparse='csr')
+#         row_ind, col_ind = self.get_indices(i)
+#         return data[row_ind[:, np.newaxis], col_ind]
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+        Parameters
+        ----------
+        X : numpy array of shape [n_samples, n_features]",pyemma/_ext/sklearn/base.py,markovmodel/PyEMMA,1
+"from nltk.corpus import stopwords
+from nltk.tokenize import RegexpTokenizer
+from sklearn.base import TransformerMixin
+from sklearn.preprocessing import FunctionTransformer
+
+
+class CustomTransformerMixin(TransformerMixin):
+    def fit(self, X, y=None, **fit_params):
+        return self
+
+
+class VoidFunctionTransformer(FunctionTransformer):
+    def transform(self, X, y=None):
+        super(VoidFunctionTransformer, self).transform(X)
+        return X
+",examples/mlp/imdb_review_classification/src/preprocessing.py,itdxer/neupy,1
+"from treeherder.model.models import Datasource
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,akhileshpillai/treeherder,1
+"        Returns
+        -------
+        y : ndarray, shape (n_samples,)
+            cluster labels
+        """"""
+        self.fit(X)
+        return self.labels_
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",venv/lib/python2.7/site-packages/sklearn/base.py,devs1991/test_edx_docmode,1
+"
+from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl.common import (CollectionNotStoredException,
+                                   fetch_json,
+                                   generate_revision_hash)
+from treeherder.model.derived.jobs import JobsModel
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {
+            repository: TreeherderResultSetCollection()
+        }
+",treeherder/etl/pushlog.py,glenn124f/treeherder,1
+"from django.core.cache import cache
+
+from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl.common import generate_revision_hash, get_not_found_onhold_push
+
+from .mixins import JsonExtractorMixin, OAuthLoaderMixin
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {}
+
+        # iterate over the pushes
+        for push in pushlog.values():",treeherder/etl/pushlog.py,vaishalitekale/treeherder,1
+"
+    @abstractmethod
+    def _transform(self, stim):
+        pass
+
+    @abstractproperty
+    def _input_type(self):
+        pass
+
+
+class BatchTransformerMixin():
+    ''' A mixin that overrides the default implicit iteration behavior. Use
+    whenever batch processing of multiple stimuli should be handled within the
+    _transform method rather than applying a naive loop--e.g., for API
+    Extractors that can handle list inputs. '''
+    def transform(self, stims, *args, **kwargs):
+        return self._transform(self._validate(stims), *args, **kwargs)
+
+
+def get_converter(in_type, out_type):",featurex/transformers.py,tyarkoni/featureX,1
+"#         Works with sparse matrices. Only works if ``rows_`` and
+#         ``columns_`` attributes exist.
+#         """"""
+#         from .utils.validation import check_array
+#         data = check_array(data, accept_sparse='csr')
+#         row_ind, col_ind = self.get_indices(i)
+#         return data[row_ind[:, np.newaxis], col_ind]
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+        Parameters
+        ----------
+        X : numpy array of shape [n_samples, n_features]",pyemma/_ext/sklearn/base.py,gph82/PyEMMA,1
+"                usage_info would contain a user object for which the
+                transform should be applied.
+
+            block_structure (BlockStructureBlockData) - A mutable
+                block structure, with already collected data for the
+                transformer, that is to be transformed in place.
+        """"""
+        raise NotImplementedError
+
+
+class FilteringTransformerMixin(BlockStructureTransformer):
+    """"""
+    Transformers may optionally choose to implement this mixin if their
+    transform logic can be broken apart into a lambda for optimization of
+    combined tree traversals.
+
+    For performance reasons, developers should try to implement this mixin
+    whenever possible - with this alternative, traversal of the entire block
+    structure happens only once for all transformers that implement
+    FilteringTransformerMixin.",openedx/core/lib/block_structure/transformer.py,a-parhom/edx-platform,1
+"
+    def score(self, Z):
+        X, y, w = Z[:, 'X'], Z[:, 'y'], None
+        if 'w' in Z.columns:
+            w = Z[:, 'w']
+        return accuracy_score(y.toarray(),
+                              self.predict(X).toarray(),
+                              sample_weight=w)
+
+
+class SparkTransformerMixin(TransformerMixin):
+
+    """"""Mixin class for all transformers in sparkit-learn.""""""
+
+    def fit_transform(self, Z, **fit_params):
+        """"""Fit to data, then transform it.
+
+        Fits transformer to Z with optional parameters fit_params
+        and returns a transformed version of Z.
+",splearn/base.py,lensacom/sparkit-learn,1
+"from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl.common import (fetch_json,
+                                   generate_revision_hash,
+                                   get_not_found_onhold_push)
+
+from .mixins import ClientLoaderMixin
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {}
+
+        # iterate over the pushes
+        for push in pushlog.values():",treeherder/etl/pushlog.py,wlach/treeherder,1
+"class HierarchicalMapping(HierarchicalMappingMixin, dict):
+    '''A HierarchicalMapping is a mapping whose keys form a tree-like
+    hierarchy. Keys may have parent and child keys and there is always a single
+    root key.
+
+    The data format for keys depends on various mixins.
+    
+    '''
+    pass
+
+class PathTransformerMixin(HierarchicalMappingMixin):
+    '''Abstract superclass for all mixins that perform some preliminary
+    translation of paths used when accessing this HierarchicalMapping.
+    
+    '''
+    def transform_path(self, path):
+        return path
+
+class SlashSeparatedMappingMixin(PathTransformerMixin, HierarchicalMappingMixin, dict):
+    '''",datagrok/misc/tree_smrm.py,datagrok/python-misc,1
+"
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+class _TransformerMixin():
+    """"""Mixin class for all transformer estimators.""""""
+
+class _NotFittedError(ValueError, AttributeError):
+  """"""Exception class to raise if estimator is used before fitting.
+
+  This class inherits from both ValueError and AttributeError to help with
+  exception handling and backward compatibility.
+
+  Examples:",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,petewarden/tensorflow_makefile,1
+"
+        i_pred = []
+        for X_i in X:
+            detection = detect_stream(X_i, N_obs,
+                                      self.R_pos_, self.R_neg_,
+                                      self.gamma, self.theta, self.D_req)
+            i_pred.append(detection)
+        return i_pred
+
+
+class TransformerMixin(_TransformerMixin):
+
+    def fit(self, X, y=None, **kwargs):
+        return self
+
+
+class TrendNormalizer(BaseEstimator, TransformerMixin):
+
+    def __init__(self, beta=1, alpha=1.2, N_smooth=1, log=True,
+                 mode='online', epsilon=0.01):",hearsay/models/nikolov.py,norbert/hearsay,1
+"from ..externals import six
+
+
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",mne/decoding/mixin.py,ARudiuk/mne-python,1
+"            return model.remote_instance.id
+        else:
+            return '{model.set_name}/{model.id}'.format(model=model)
+
+    def id_from_payload(self, payload):
+        """"""Get remote id from payload.""""""
+        return self.to_model_mapping[type(payload)](payload)
+
+
+# pylint: disable=too-few-public-methods
+class GetPrimaryKeyTransformerMixin(object):
+    """"""Mixin to get primary get Transformer.""""""
+
+    def get_primary_key_transformer(self, model_class):
+        """"""Create new primary key Transformer.""""""
+        return BulkPrimaryKeyTransformer(
+            storage=self.storage, model_class=model_class,
+            account_manager=self.account_manager,
+        )
+",termius/cloud/client/transformers/single.py,Crystalnix/termius-cli,1
+"from django.core.cache import cache
+
+from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl import th_publisher
+from treeherder.etl.common import (fetch_json,
+                                   generate_revision_hash)
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {}
+
+        # iterate over the pushes
+        for push in pushlog.values():",treeherder/etl/pushlog.py,KWierso/treeherder,1
+"        y : ndarray, shape (n_samples,)
+            cluster labels
+        """"""
+        # non-optimized default implementation; override when a better
+        # method is possible for a given clustering algorithm
+        self.fit(X)
+        return self.labels_
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",python/sklearn/sklearn/base.py,seckcoder/lang-learn,1
+"class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",mne/decoding/mixin.py,LauraGwilliams/mne-python,1
+"from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl.common import (fetch_json,
+                                   generate_revision_hash,
+                                   get_not_found_onhold_push)
+
+from .mixins import ClientLoaderMixin
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {}
+
+        # iterate over the pushes
+        for push in pushlog.values():",treeherder/etl/pushlog.py,tojon/treeherder,1
+"                                     Repository)
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,edmorley/treeherder,1
+"logger = logging.getLogger(__name__)
+
+
+def last_push_id_from_server(repo):
+    """"""Obtain the last push ID from a ``Repository`` instance.""""""
+    url = '%s/json-pushes/?version=2' % repo.url
+    data = fetch_json(url)
+    return data['lastpushid']
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {
+            repository: TreeherderResultSetCollection()
+        }
+",treeherder/etl/pushlog.py,MikeLing/treeherder,1
+"
+        Works with sparse matrices. Only works if ``rows_`` and
+        ``columns_`` attributes exist.
+
+        """"""
+        from .cluster.bicluster.utils import get_submatrix
+        return get_submatrix(self.rows_[i], self.columns_[i], data)
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",scikit-learn-c604ac39ad0e5b066d964df3e8f31ba7ebda1e0e/sklearn/base.py,RPGOne/Skynet,1
+"from treeherder.model.models import Datasource
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,glenn124f/treeherder,1
+"
+    @abstractproperty
+    def _input_type(self):
+        pass
+
+    def __hash__(self):
+        tr_attrs = [getattr(self, attr) for attr in self._log_attributes]
+        return hash(self.name + str(dict(zip(self._log_attributes, tr_attrs))))
+
+
+class BatchTransformerMixin(object):
+    ''' A mixin that overrides the default implicit iteration behavior. Use
+    whenever batch processing of multiple stimuli should be handled within the
+    _transform method rather than applying a naive loop--e.g., for API
+    Extractors that can handle list inputs. '''
+    def transform(self, stims, *args, **kwargs):
+        return self._transform(self._validate(stims), *args, **kwargs)
+
+
+class EnvironmentKeyMixin(object):",pliers/transformers.py,tyarkoni/pliers,1
+"from django.core.cache import cache
+
+from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl.common import generate_revision_hash, get_not_found_onhold_push
+
+from .mixins import JsonExtractorMixin, OAuthLoaderMixin
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {}
+
+        # iterate over the pushes
+        for push in pushlog.values():",treeherder/etl/pushlog.py,rail/treeherder,1
+"from treeherder.model.models import Datasource
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,sylvestre/treeherder,1
+"            raise SkipField
+        if not model:
+            return None
+        if model.remote_instance:
+            return model.remote_instance.id
+        else:
+            return '{model.set_name}/{model.id}'.format(model=model)
+
+
+# pylint: disable=too-few-public-methods
+class GetPrimaryKeyTransformerMixin(object):
+    """"""Mixin to get primary get Transformer.""""""
+
+    def get_primary_key_transformer(self, model_class):
+        """"""Create new primary key Transformer.""""""
+        return BulkPrimaryKeyTransformer(
+            storage=self.storage, model_class=model_class,
+            account_manager=self.account_manager,
+        )
+",termius/cloud/client/transformers/single.py,Crystalnix/serverauditor-sshconfig,1
+"from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl.common import (generate_revision_hash,
+                                   get_not_found_onhold_push)
+
+from .mixins import (JsonExtractorMixin,
+                     OAuthLoaderMixin)
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {}
+
+        # iterate over the pushes
+        for push in pushlog.values():",treeherder/etl/pushlog.py,adusca/treeherder,1
+"#         Works with sparse matrices. Only works if ``rows_`` and
+#         ``columns_`` attributes exist.
+#         """"""
+#         from .utils.validation import check_array
+#         data = check_array(data, accept_sparse='csr')
+#         row_ind, col_ind = self.get_indices(i)
+#         return data[row_ind[:, np.newaxis], col_ind]
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+        Parameters
+        ----------
+        X : numpy array of shape [n_samples, n_features]",pyemma/_ext/sklearn/base.py,trendelkampschroer/PyEMMA,1
+"#         Works with sparse matrices. Only works if ``rows_`` and
+#         ``columns_`` attributes exist.
+#         """"""
+#         from .utils.validation import check_array
+#         data = check_array(data, accept_sparse='csr')
+#         row_ind, col_ind = self.get_indices(i)
+#         return data[row_ind[:, np.newaxis], col_ind]
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+        Parameters
+        ----------
+        X : numpy array of shape [n_samples, n_features]",pyemma/_ext/sklearn/base.py,clonker/PyEMMA,1
+"            # remove self
+            args.pop(0)
+        except TypeError:
+            # no explicit __init__
+            args = []
+
+        args.sort()
+        return args
+
+
+class TransformerMixin(object):
+    """"""Mixin class for all transformers""""""
+
+    def transform(self, X):
+        """"""
+        Transform a dataset X from one represenation/basis to another
+
+        Parameters
+        -----------
+        X : numpy array, trajectory, list of numpy arrays, or list of trajectories",msmbuilder3/base.py,rmcgibbo/msmbuilder3,1
+"
+    class _ClassifierMixin(object):
+        pass
+
+    class _ClusterMixin(object):
+        pass
+
+    class _RegressorMixin(object):
+        pass
+
+    class _TransformerMixin(object):
+        pass",pandas_ml/core/base.py,pandas-ml/pandas-ml,1
+"from treeherder.model.models import Datasource
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,wlach/treeherder,1
+"class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class _NotFittedError(ValueError, AttributeError):
+  """"""Exception class to raise if estimator is used before fitting.
+
+  This class inherits from both ValueError and AttributeError to help with
+  exception handling and backward compatibility.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,sachinpro/sachinpro.github.io,1
+"        for e in cls._meta.transformers:
+            if not issubclass(e, BaseTransformer):
+                raise AssertionError(
+                    ""Transformer should be subclass of ""
+                    ""`adrest.utils.transformers.BaseTransformer`""
+                )
+
+        return cls
+
+
+class TransformerMixin(object):
+
+
+    __metaclass__ = TransformerMeta
+
+    # Set default options
+    Meta = Meta
+
+    def transform(self, content, request=None):
+        """""" Transform given content by using ``transformer``",adrest/mixin/transformer.py,Lispython/adrest,1
+"from treeherder.model.models import Datasource
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,tojonmz/treeherder,1
+"class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class _NotFittedError(ValueError, AttributeError):
+  """"""Exception class to raise if estimator is used before fitting.
+
+  This class inherits from both ValueError and AttributeError to help with
+  exception handling and backward compatibility.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,ivano666/tensorflow,1
+"
+from treeherder.client import TreeherderResultSetCollection
+from treeherder.etl.common import (generate_revision_hash,
+                                   get_not_found_onhold_push)
+
+from .mixins import OAuthLoaderMixin
+
+logger = logging.getLogger(__name__)
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {}
+
+        # iterate over the pushes
+        for push in pushlog.values():",treeherder/etl/pushlog.py,parkouss/treeherder,1
+"        ``columns_`` attributes exist.
+
+        """"""
+        from .utils.validation import check_array
+        data = check_array(data, accept_sparse='csr')
+        row_ind, col_ind = self.get_indices(i)
+        return data[row_ind[:, np.newaxis], col_ind]
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",sklearn/base.py,smartscheduling/scikit-learn-categorical-tree,1
+"class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class NotFittedError(ValueError, AttributeError):
+  """"""Exception class to raise if estimator is used before fitting.
+
+  This class inherits from both ValueError and AttributeError to help with
+  exception handling and backward compatibility.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,TakayukiSakai/tensorflow,1
+"                warnings.warn(
+                    ""Trying to unpickle estimator {0} from version {1} when ""
+                    ""using version {2}. This might lead to breaking code or ""
+                    ""invalid results. Use at your own risk."".format(
+                        self.__class__.__name__, pickle_version, __version__),
+                    UserWarning)
+        self.__dict__.update(state)
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+        Parameters
+        ----------
+        X : numpy array of shape [n_samples, n_features]",mlens/externals/sklearn/base.py,flennerhag/mlens,1
+"from treeherder.model.models import Datasource
+
+logger = logging.getLogger(__name__)
+CACHE_KEYS = {
+    'pending': 'processed_buildapi_pending',
+    'running': 'processed_buildapi_running',
+    'complete': 'processed_buildapi_complete',
+}
+
+
+class Builds4hTransformerMixin(object):
+
+    def find_job_guid(self, build):
+        """"""
+        returns the job_guid, based on request id and request time.
+        necessary because request id and request time is inconsistently
+        represented in builds4h
+        """"""
+
+        # this is reused in the transformer and the analyzer, so reverting",treeherder/etl/buildapi.py,KWierso/treeherder,1
+"
+        Works with sparse matrices. Only works if ``rows_`` and
+        ``columns_`` attributes exist.
+
+        """"""
+        from .cluster.bicluster.utils import get_submatrix
+        return get_submatrix(self.rows_[i], self.columns_[i], data)
+
+
+###############################################################################
+class TransformerMixin(object):
+    """"""Mixin class for all transformers in scikit-learn.""""""
+
+    def fit_transform(self, X, y=None, **fit_params):
+        """"""Fit to data, then transform it.
+
+        Fits transformer to X and y with optional parameters fit_params
+        and returns a transformed version of X.
+
+        Parameters",sklearn/base.py,johnowhitaker/bobibabber,1
+"logger = logging.getLogger(__name__)
+
+
+def last_push_id_from_server(repo):
+    """"""Obtain the last push ID from a ``Repository`` instance.""""""
+    url = '%s/json-pushes/?version=2' % repo.url
+    data = fetch_json(url)
+    return data['lastpushid']
+
+
+class HgPushlogTransformerMixin(object):
+
+    def transform(self, pushlog, repository):
+
+        # this contain the whole list of transformed pushes
+
+        th_collections = {
+            repository: TreeherderResultSetCollection()
+        }
+",treeherder/etl/pushlog.py,kapy2010/treeherder,1

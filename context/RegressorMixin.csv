@@ -1,0 +1,457 @@
+match,path,repo_name,count
+,,,5985794
+"#         Returns
+#         -------
+#         score : float
+#             Mean accuracy of self.predict(X) wrt. y.
+#         """"""
+#         from .metrics import accuracy_score
+#         return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+# Currently unused
+# ###############################################################################
+# class RegressorMixin(object):
+#     """"""Mixin class for all regression estimators in scikit-learn.""""""
+#     _estimator_type = ""regressor""
+#
+#     def score(self, X, y, sample_weight=None):
+#         """"""Returns the coefficient of determination R^2 of the prediction.
+#         The coefficient R^2 is defined as (1 - u/v), where u is the regression
+#         sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+#         sum of squares ((y_true - y_true.mean()) ** 2).sum().
+#         Best possible score is 1.0, lower values are worse.",pyemma/_ext/sklearn/base.py,markovmodel/PyEMMA,1
+"#         Returns
+#         -------
+#         score : float
+#             Mean accuracy of self.predict(X) wrt. y.
+#         """"""
+#         from .metrics import accuracy_score
+#         return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+# Currently unused
+# ###############################################################################
+# class RegressorMixin(object):
+#     """"""Mixin class for all regression estimators in scikit-learn.""""""
+#     _estimator_type = ""regressor""
+#
+#     def score(self, X, y, sample_weight=None):
+#         """"""Returns the coefficient of determination R^2 of the prediction.
+#         The coefficient R^2 is defined as (1 - u/v), where u is the regression
+#         sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+#         sum of squares ((y_true - y_true.mean()) ** 2).sum().
+#         Best possible score is 1.0, lower values are worse.",pyemma/_ext/sklearn/base.py,clonker/PyEMMA,1
+"""""""
+
+# Authors: Henrik Linusson
+
+import abc
+import numpy as np
+
+from sklearn.base import BaseEstimator
+
+
+class RegressorMixin(object):
+	def __init__(self):
+		super(RegressorMixin, self).__init__()
+
+	@classmethod
+	def get_problem_type(cls):
+		return 'regression'
+
+
+class ClassifierMixin(object):",nonconformist/base.py,donlnz/nonconformist,1
+"
+    class _BaseEstimator(object):
+        pass
+
+    class _ClassifierMixin(object):
+        pass
+
+    class _ClusterMixin(object):
+        pass
+
+    class _RegressorMixin(object):
+        pass
+
+    class _TransformerMixin(object):
+        pass",pandas_ml/core/base.py,pandas-ml/pandas-ml,1
+"    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class NotFittedError(ValueError, AttributeError):",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,TakayukiSakai/tensorflow,1
+"
+from vmaf import svmutil
+from vmaf.tools.misc import indices
+from vmaf.core.mixin import TypeVersionEnabled
+from vmaf.core.perf_metric import RmsePerfMetric, SrccPerfMetric, PccPerfMetric, \
+    KendallPerfMetric, KflkPerfMetric
+
+__copyright__ = ""Copyright 2016-2017, Netflix, Inc.""
+__license__ = ""Apache, Version 2.0""
+
+class RegressorMixin(object):
+
+    @classmethod
+    def get_stats(cls, ys_label, ys_label_pred, ys_label_raw=None):
+
+        # cannot have None
+        assert all(x is not None for x in ys_label)
+        assert all(x is not None for x in ys_label_pred)
+
+        # RMSE",python/src/vmaf/core/train_test_model.py,Netflix/vmaf,1
+"        -------
+        score : float
+            Mean accuracy of self.predict(X) wrt. y.
+
+        """"""
+        from .metrics import accuracy_score
+        return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class RegressorMixin(object):
+    """"""Mixin class for all regression estimators in scikit-learn.""""""
+    _estimator_type = ""regressor""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the coefficient of determination R^2 of the prediction.
+
+        The coefficient R^2 is defined as (1 - u/v), where u is the regression
+        sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+        sum of squares ((y_true - y_true.mean()) ** 2).sum().",projects/scikit-learn-master/sklearn/base.py,DailyActie/Surrogate-Model,1
+"    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class NotFittedError(ValueError, AttributeError):",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,jart/tensorflow,1
+"    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class _NotFittedError(ValueError, AttributeError):",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,sachinpro/sachinpro.github.io,1
+"        -------
+        score : float
+            Mean accuracy of self.predict(X) wrt. y.
+
+        """"""
+        from .metrics import accuracy_score
+        return accuracy_score(y, self.predict(X))
+
+
+###############################################################################
+class RegressorMixin(object):
+    """"""Mixin class for all regression estimators in scikit-learn.""""""
+
+    def score(self, X, y):
+        """"""Returns the coefficient of determination R^2 of the prediction.
+
+        The coefficient R^2 is defined as (1 - u/v), where u is the regression
+        sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+        sum of squares ((y_true - y_true.mean()) ** 2).sum().
+        Best possible score is 1.0, lower values are worse.",sklearn/base.py,johnowhitaker/bobibabber,1
+"        -------
+        score : float
+            Mean accuracy of self.predict(X) wrt. y.
+
+        """"""
+        raise NotImplementedError(""Not yet implemented. TODO"")
+        #return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class RegressorMixin(object):
+    """"""Mixin class for all regression estimators in scikit-learn.""""""
+    _estimator_type = ""regressor""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the coefficient of determination R^2 of the prediction.
+
+        The coefficient R^2 is defined as (1 - u/v), where u is the regression
+        sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+        sum of squares ((y_true - y_true.mean()) ** 2).sum().",uplift/base.py,psarka/uplift,1
+"
+        Returns
+        -------
+        z : float
+
+        """"""
+        return np.mean(self.predict(X) == y)
+
+
+###############################################################################
+class RegressorMixin(object):
+    """"""Mixin class for all regression estimators in scikit-learn""""""
+
+    def score(self, X, y):
+        """"""Returns the coefficient of determination R^2 of the prediction.
+
+        The coefficient R^2 is defined as (1 - u/v), where u is the
+        regression sum of squares ((y - y_pred) ** 2).sum() and v is the
+        residual sum of squares ((y_true - y_true.mean()) ** 2).sum().
+        Best possible score is 1.0, lower values are worse.",venv/lib/python2.7/site-packages/sklearn/base.py,devs1991/test_edx_docmode,1
+"                       _pprint(
+                           self.get_params(deep=False),
+                           offset=len(class_name),),)
+
+
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _NotFittedError(ValueError, AttributeError):
+  """"""Exception class to raise if estimator is used before fitting.
+
+  This class inherits from both ValueError and AttributeError to help with
+  exception handling and backward compatibility.",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,peterbraden/tensorflow,1
+"        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+
+class _ClassifierMixin():
+    """"""Mixin class for all classifiers.""""""
+    pass
+
+
+class _RegressorMixin():
+    """"""Mixin class for all regression estimators.""""""
+    pass
+
+
+class _NotFittedError(ValueError, AttributeError):
+    """"""Exception class to raise if estimator is used before fitting.
+    This class inherits from both ValueError and AttributeError to help with
+    exception handling and backward compatibility.
+    Examples",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,shiyemin/tensorflow,1
+"#         Returns
+#         -------
+#         score : float
+#             Mean accuracy of self.predict(X) wrt. y.
+#         """"""
+#         from .metrics import accuracy_score
+#         return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+# Currently unused
+# ###############################################################################
+# class RegressorMixin(object):
+#     """"""Mixin class for all regression estimators in scikit-learn.""""""
+#     _estimator_type = ""regressor""
+#
+#     def score(self, X, y, sample_weight=None):
+#         """"""Returns the coefficient of determination R^2 of the prediction.
+#         The coefficient R^2 is defined as (1 - u/v), where u is the regression
+#         sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+#         sum of squares ((y_true - y_true.mean()) ** 2).sum().
+#         Best possible score is 1.0, lower values are worse.",pyemma/_ext/sklearn/base.py,trendelkampschroer/PyEMMA,1
+"#         Returns
+#         -------
+#         score : float
+#             Mean accuracy of self.predict(X) wrt. y.
+#         """"""
+#         from .metrics import accuracy_score
+#         return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+# Currently unused
+# ###############################################################################
+# class RegressorMixin(object):
+#     """"""Mixin class for all regression estimators in scikit-learn.""""""
+#     _estimator_type = ""regressor""
+#
+#     def score(self, X, y, sample_weight=None):
+#         """"""Returns the coefficient of determination R^2 of the prediction.
+#         The coefficient R^2 is defined as (1 - u/v), where u is the regression
+#         sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+#         sum of squares ((y_true - y_true.mean()) ** 2).sum().
+#         Best possible score is 1.0, lower values are worse.",pyemma/_ext/sklearn/base.py,gph82/PyEMMA,1
+"        -------
+        score : float
+            Mean accuracy of self.predict(X) wrt. y.
+
+        """"""
+        from .metrics import accuracy_score
+        return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class RegressorMixin(object):
+    """"""Mixin class for all regression estimators in scikit-learn.""""""
+    _estimator_type = ""regressor""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the coefficient of determination R^2 of the prediction.
+
+        The coefficient R^2 is defined as (1 - u/v), where u is the regression
+        sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+        sum of squares ((y_true - y_true.mean()) ** 2).sum().",sklearn/base.py,smartscheduling/scikit-learn-categorical-tree,1
+"    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class NotFittedError(ValueError, AttributeError):",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,dhalleine/tensorflow,1
+"    class_name = self.__class__.__name__
+    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+class _TransformerMixin():
+    """"""Mixin class for all transformer estimators.""""""
+
+class _NotFittedError(ValueError, AttributeError):
+  """"""Exception class to raise if estimator is used before fitting.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,petewarden/tensorflow_makefile,1
+"        -------
+        score : float
+            Mean accuracy of self.predict(X) wrt. y.
+
+        """"""
+        from .metrics import accuracy_score
+        return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class RegressorMixin(object):
+    """"""Mixin class for all regression estimators in scikit-learn.""""""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the coefficient of determination R^2 of the prediction.
+
+        The coefficient R^2 is defined as (1 - u/v), where u is the regression
+        sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+        sum of squares ((y_true - y_true.mean()) ** 2).sum().
+        Best possible score is 1.0, lower values are worse.",scikit-learn-c604ac39ad0e5b066d964df3e8f31ba7ebda1e0e/sklearn/base.py,RPGOne/Skynet,1
+"
+        Returns
+        -------
+        z : float
+
+        """"""
+        return np.mean(self.predict(X) == y)
+
+
+###############################################################################
+class RegressorMixin(object):
+    """"""Mixin class for all regression estimators in scikit-learn""""""
+
+    def score(self, X, y):
+        """"""Returns the coefficient of determination R^2 of the prediction.
+
+        The coefficient R^2 is defined as (1 - u/v), where u is the
+        regression sum of squares ((y - y_pred) ** 2).sum() and v is the
+        residual sum of squares ((y_true - y_true.mean()) ** 2).sum().
+        Best possible score is 1.0, lower values are worse.",python/sklearn/sklearn/base.py,seckcoder/lang-learn,1
+"    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+
+class _TransformerMixin():
+  """"""Mixin class for all transformer estimators.""""""
+
+
+class _NotFittedError(ValueError, AttributeError):",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,ivano666/tensorflow,1
+"        -------
+        score : float
+            Mean accuracy of self.predict(X) wrt. y.
+
+        """"""
+        from .metrics import accuracy_score
+        return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class RegressorMixin(object):
+    """"""Mixin class for all regression estimators in scikit-learn.""""""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the coefficient of determination R^2 of the prediction.
+
+        The coefficient R^2 is defined as (1 - u/v), where u is the regression
+        sum of squares ((y_true - y_pred) ** 2).sum() and v is the residual
+        sum of squares ((y_true - y_true.mean()) ** 2).sum().
+        Best possible score is 1.0, lower values are worse.",sklearn/base.py,loli/sklearn-ensembletrees,1

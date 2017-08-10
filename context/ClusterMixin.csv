@@ -1,0 +1,512 @@
+match,path,repo_name,count
+,,,5985790
+"                  data=None if data is None else jsonutils.dumps(data),
+                  resource_id=resource_id,
+                  transaction_id=context.request_id)
+        context.session.add(db)
+
+
+class MidonetClusterException(n_exc.NeutronException):
+    message = _(""Midonet Cluster Error: %(msg)s"")
+
+
+class MidoClusterMixin(object):
+
+    def _flush(self, context):
+        try:
+            context.session.execute('LOCK TABLES midonet_tasks WRITE')
+            with context.session.begin(subtransactions=True):
+                context.session.execute('TRUNCATE TABLE midonet_tasks')
+                create_task(context, FLUSH, task_id=1)
+        finally:
+            context.session.execute('UNLOCK TABLES')",midonet/neutron/db/task.py,midonet/python-neutron-plugin-midonet,1
+"        -------
+        score : float
+            R^2 of self.predict(X) wrt. y.
+        """"""
+
+        from .metrics import r2_score
+        return r2_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    _estimator_type = ""clusterer""
+
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)",sklearn/base.py,smartscheduling/scikit-learn-categorical-tree,1
+"class ConsistentHashingClusterMixin(object):
+    def __init__(self, *args, **kwargs):
+        raise NotImplementedError",dht/cluster/consistenthashing.py,tkaemming/dht,1
+"        score : float
+            R^2 of self.predict(X) wrt. y.
+        """"""
+
+        from .metrics import r2_score
+        return r2_score(y, self.predict(X), sample_weight=sample_weight,
+                        multioutput='variance_weighted')
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    _estimator_type = ""clusterer""
+
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)",projects/scikit-learn-master/sklearn/base.py,DailyActie/Surrogate-Model,1
+"from flask.ext.restplus import abort
+from ..models import Cluster, ProviderSSH
+from mongoengine.errors import ValidationError
+
+
+class ClusterMixin(object):
+    def _find_cluster(self, cluster_id):
+        try:
+            cluster = Cluster.objects.get(id=cluster_id)
+        except (Cluster.DoesNotExist, ValidationError):
+            abort(404, error='Cluster does not exist')
+        return cluster
+
+    def _find_app(self, cluster_id, application_name):
+        try:",onelove/api/mixins.py,one-love/api,1
+"        -------
+        score : float
+            R^2 of self.predict(X) wrt. y.
+        """"""
+
+        from .metrics import r2_score
+        return r2_score(y, self.predict(X))
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)
+            Input data.
+",sklearn/base.py,johnowhitaker/bobibabber,1
+"
+except ImportError:
+    # for ReadTheDoc, unable to use mock because of metaclass
+
+    class _BaseEstimator(object):
+        pass
+
+    class _ClassifierMixin(object):
+        pass
+
+    class _ClusterMixin(object):
+        pass
+
+    class _RegressorMixin(object):
+        pass
+
+    class _TransformerMixin(object):
+        pass",pandas_ml/core/base.py,pandas-ml/pandas-ml,1
+"from flask import current_app
+from flask_jwt import current_identity
+from flask_restplus import abort
+from mongoengine.errors import ValidationError
+
+from ..models import Cluster, Service
+from ..models import Role
+from ..models import User
+
+
+class ClusterMixin(object):
+    def _find_cluster(self, cluster_id):
+        permission = False
+        try:
+            cluster = Cluster.objects.get(id=cluster_id)
+            user = User.objects.get(email=current_identity.email)
+            permission = user.has_role('admin')
+
+            if not permission:
+                for role in cluster.roles:",onelove/api/mixins.py,mekanix/onelove-backend,1
+"#         -------
+#         score : float
+#             R^2 of self.predict(X) wrt. y.
+#         """"""
+#
+#         from .metrics import r2_score
+#         return r2_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    _estimator_type = ""clusterer""
+
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)
+            Input data.",pyemma/_ext/sklearn/base.py,trendelkampschroer/PyEMMA,1
+"#         -------
+#         score : float
+#             R^2 of self.predict(X) wrt. y.
+#         """"""
+#
+#         from .metrics import r2_score
+#         return r2_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    _estimator_type = ""clusterer""
+
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)
+            Input data.",pyemma/_ext/sklearn/base.py,gph82/PyEMMA,1
+"        -------
+        score : float
+            R^2 of self.predict(X) wrt. y.
+        """"""
+
+        from .metrics import r2_score
+        return r2_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)
+            Input data.
+",scikit-learn-c604ac39ad0e5b066d964df3e8f31ba7ebda1e0e/sklearn/base.py,RPGOne/Skynet,1
+"# Imports
+#-----------------------------------------------------------------------------
+
+from __future__ import absolute_import, print_function, division
+import numpy as np
+
+import mdtraj as md
+from ..utils import check_iter_of_sequences
+
+
+class MultiSequenceClusterMixin(object):
+
+    # The API for the scikit-learn Cluster object is, in fit(), that
+    # they take a single 2D array of shape (n_data_points, n_features).
+    #
+    # For clustering a collection of timeseries, we need to preserve
+    # the structure of which data_point came from which sequence. If
+    # we concatenate the sequences together, we lose that information.
+    #
+    # This mixin is basically a little ""adaptor"" that changes fit()",msmbuilder/cluster/base.py,dotsdl/msmbuilder,1
+"from contextlib import contextmanager
+
+from dht.cluster.base import Cluster
+from dht.utils import rehash, quorum
+
+
+class ReplicatedClusterMixin(object):
+    def __init__(self, members, replica_count=3, read_durability=None, write_durability=None, *args, **kwargs):
+        self.replica_count = 3
+        self.read_durability = read_durability
+        self.write_durability = write_durability
+        super(ReplicatedClusterMixin, self).__init__(members, *args, **kwargs)
+
+    @contextmanager
+    def __call__(self, read_durability=None, write_durability=None):
+        # We need to retrieve the original durability values -- not the",dht/cluster/replication.py,tkaemming/dht,1
+"#    distributed under the License is distributed on an ""AS IS"" BASIS, WITHOUT
+#    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+#    License for the specific language governing permissions and limitations
+#    under the License.
+
+import webob
+from jsonschema import SchemaError, ValidationError, validate
+from omegaclient.utils import url_maker
+
+
+class ClusterMixin(object):
+
+    def get_clusters(self):
+        """"""List all clusters""""""
+
+        resp = self.http.get(""/clusters"")
+
+        return self.process_data(resp)
+
+    def get_cluster(self, cluster_id):",python-omegaclient/omegaclient/cluster.py,Dataman-Cloud/omega-client,1
+"                  data=None if data is None else json.dumps(data),
+                  resource_id=resource_id,
+                  transaction_id=context.request_id)
+        context.session.add(db)
+
+
+class MidonetClusterException(n_exc.NeutronException):
+    message = _(""Midonet Cluster Error: %(msg)s"")
+
+
+class MidoClusterMixin(object):
+
+    def create_cluster(self, context):
+        try:
+            # lock the entire database so we can take a snapshot of the
+            # data we need.
+            context.session.execute('FLUSH TABLES WITH READ LOCK')
+
+            database = collections.OrderedDict({
+                NETWORK: self.get_networks(context),",midonet/neutron/db/task.py,midokura/python-neutron-plugin-midonet,1
+"        y : array-like, shape = [n_samples]
+
+        Returns
+        -------
+        z : float
+        """"""
+        return r2_score(y, self.predict(X))
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn""""""
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)
+            Input data.
+",python/sklearn/sklearn/base.py,seckcoder/lang-learn,1
+"        -------
+        score : float
+            R^2 of self.predict(X) wrt. y.
+        """"""
+
+        from .metrics import r2_score
+        return r2_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)
+            Input data.
+",sklearn/base.py,loli/sklearn-ensembletrees,1
+"                  data=None if data is None else jsonutils.dumps(data),
+                  resource_id=resource_id,
+                  transaction_id=context.request_id)
+        context.session.add(db)
+
+
+class MidonetClusterException(n_exc.NeutronException):
+    message = _(""Midonet Cluster Error: %(msg)s"")
+
+
+class MidoClusterMixin(object):
+
+    def _flush(self, context):
+        try:
+            context.session.execute('LOCK TABLES midonet_tasks WRITE')
+            with context.session.begin(subtransactions=True):
+                context.session.execute('TRUNCATE TABLE midonet_tasks')
+                create_task(context, FLUSH, task_id=1)
+        finally:
+            context.session.execute('UNLOCK TABLES')",midonet/neutron/db/task.py,JoeMido/networking-midonet,1
+":param slots: A hash slot number or range. There may be up to 16384 entries in
+    total (limit never reached). This is the list of hash slots served by this
+    node. If the entry is just a number, is parsed as such. If it is a range,
+    it is in the form start-end, and means that the node is responsible for
+    all the hash slots from start to end including the start and end values.
+:type slots: list(tuple(int, int))
+
+""""""
+
+
+class ClusterMixin(object):
+    """"""Redis Cluster Commands Mixin""""""
+
+    def cluster_add_slots(self, *slots):
+        pass
+
+    def cluster_count_failure_report(self, node):
+        pass
+
+    def cluster_count_keys_in_slot(self, slot):",tredis/cluster.py,gmr/tredis,1
+"        y : array-like, shape = [n_samples]
+
+        Returns
+        -------
+        z : float
+        """"""
+        return r2_score(y, self.predict(X))
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn""""""
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+
+        This is a non-optimized default implementation.
+
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)",venv/lib/python2.7/site-packages/sklearn/base.py,devs1991/test_edx_docmode,1
+"#         -------
+#         score : float
+#             R^2 of self.predict(X) wrt. y.
+#         """"""
+#
+#         from .metrics import r2_score
+#         return r2_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    _estimator_type = ""clusterer""
+
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)
+            Input data.",pyemma/_ext/sklearn/base.py,markovmodel/PyEMMA,1
+"# Imports
+#-----------------------------------------------------------------------------
+
+from __future__ import absolute_import, print_function, division
+import numpy as np
+
+import mdtraj as md
+from ..utils import check_iter_of_sequences
+
+
+class MultiSequenceClusterMixin(object):
+
+    # The API for the scikit-learn Cluster object is, in fit(), that
+    # they take a single 2D array of shape (n_data_points, n_features).
+    #
+    # For clustering a collection of timeseries, we need to preserve
+    # the structure of which data_point came from which sequence. If
+    # we concatenate the sequences together, we lose that information.
+    #
+    # This mixin is basically a little ""adaptor"" that changes fit()",msmbuilder/cluster/base.py,mpharrigan/mixtape,1
+"        score : float
+            R^2 of self.predict(X) wrt. y.
+        """"""
+
+        raise NotImplementedError(""Not yet implemented. TODO"")
+        return r2_score(y, self.predict(X), sample_weight=sample_weight,
+                        multioutput='variance_weighted')
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    _estimator_type = ""clusterer""
+
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)",uplift/base.py,psarka/uplift,1
+"from flask.ext.restplus import abort
+from ..models import Cluster, ProviderSSH
+from mongoengine.errors import ValidationError
+from flask_jwt import current_identity
+from ..models import User
+from ..models import Role
+
+
+class ClusterMixin(object):
+    def _find_cluster(self, cluster_id):
+        self.permission = False
+        try:
+            cluster = Cluster.objects.get(id=cluster_id)
+            user = User.objects.get(email=current_identity.email)
+
+            for role in cluster.roles:
+                if user.has_role(role):
+                    self.permission = True",onelove/api/mixins.py,mekanix/api,1
+"    name = sa.Column(sa.String(80), nullable=False)
+    flavor_id = sa.Column(sa.String(36), nullable=False)
+    image_id = sa.Column(sa.String(36))
+    node_processes = sa.Column(st.JsonListType())
+    node_configs = sa.Column(st.JsonDictType())
+    volumes_per_node = sa.Column(sa.Integer)
+    volumes_size = sa.Column(sa.Integer)
+    volume_mount_prefix = sa.Column(sa.String(80))
+
+
+class ClusterMixin(mb.IdMixin, mb.TenantMixin,
+                   mb.PluginSpecificMixin, mb.ExtraMixin, mb.DescriptionMixin):
+    """"""Base Cluster mixin, add it to subclass is like cluster object.""""""
+
+    name = sa.Column(sa.String(80), nullable=False)
+    cluster_configs = sa.Column(st.JsonDictType())
+    default_image_id = sa.Column(sa.String(36))
+    anti_affinity = sa.Column(st.JsonListType())
+
+",savanna/db/models.py,rnirmal/savanna,1
+"#         -------
+#         score : float
+#             R^2 of self.predict(X) wrt. y.
+#         """"""
+#
+#         from .metrics import r2_score
+#         return r2_score(y, self.predict(X), sample_weight=sample_weight)
+
+
+###############################################################################
+class ClusterMixin(object):
+    """"""Mixin class for all cluster estimators in scikit-learn.""""""
+    _estimator_type = ""clusterer""
+
+    def fit_predict(self, X, y=None):
+        """"""Performs clustering on X and returns cluster labels.
+        Parameters
+        ----------
+        X : ndarray, shape (n_samples, n_features)
+            Input data.",pyemma/_ext/sklearn/base.py,clonker/PyEMMA,1
+"                                'host': 'h1',
+                                'group': 'default'}
+    test_required_attributes = {'key': 'apic_hosts',
+                                'host': 'h1',
+                                'group': 'default'}
+    test_search_attributes = {'value': 'v1'}
+    test_update_attributes = {'value': 'v2'}
+    res_command = 'configuration'
+
+
+class TestDeviceClusterMixin(object):
+    resource_class = aim_service_graph.DeviceCluster
+    resource_root_type = resource.Tenant._aci_mo_name
+    prereq_objects = [resource.Tenant(name='tenant1')]
+    test_identity_attributes = {'tenant_name': 'tenant1',
+                                'name': 'cl1'}
+    test_required_attributes = {'tenant_name': 'tenant1',
+                                'name': 'cl1',
+                                'device_type': 'VIRTUAL',
+                                'service_type': 'ADC',",aim/tests/unit/test_aim_manager.py,noironetworks/aci-integration-module,1

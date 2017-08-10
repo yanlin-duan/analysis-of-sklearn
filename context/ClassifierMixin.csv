@@ -1,0 +1,816 @@
+match,path,repo_name,count
+,,,5985776
+"from sklearn.model_selection import train_test_split
+
+from ..utils import Timer, uri_to_tempfile
+
+
+__all__ = ['KerasNNClassifierMixin', 'keras_f1_score', 'EarlyStopping']
+
+logger = logging.getLogger(__name__)
+
+
+class KerasNNClassifierMixin(object):
+    PICKLE_IGNORED_ATTRIBUTES = set()
+    NN_MODEL_ATTRIBUTE = 'nn_model_'
+
+    def __init__(
+        self,
+        tf_config=None,
+        epochs=10, batch_size=128, passes_per_epoch=1,
+        initial_weights=None, initial_epoch=0,
+        validation_size=0.2, verbose=0,",ycml/classifiers/neural_networks.py,skylander86/ycml,1
+"        setattr(self, key, value)
+    return self
+
+  def __repr__(self):
+    class_name = self.__class__.__name__
+    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,dhalleine/tensorflow,1
+"# Python 2 and Python 3.
+Classifier = utils.PluginMount('Classifier',
+                               (BaseClassifier,),
+                               {
+                                   '__doc__': BaseClassifier.__doc__,
+                                   'classify': staticmethod(classify),
+                                   'check': abc.abstractmethod(check),
+                               })
+
+
+class RegexClassifierMixin(object):
+    """"""Provide regex based classifcation.""""""
+    regex = None
+
+    def get_regex(self):
+        if not self.regex:
+            raise ValueError
+        return self.regex
+
+    def check(self, filename):",reqfiles/classifiers.py,rafaduran/reqfiles,1
+"        """""" Returns intercept weight for model
+
+        Returns
+        -------
+        {int} intercept value, 0 if noconstant
+        """"""
+
+        return self.get_vw().get_weight(CONSTANT_HASH)
+
+
+class ThresholdingLinearClassifierMixin(LinearClassifierMixin):
+    """"""Mixin for linear classifiers.  A threshold is used to specify the positive
+    class cutoff
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def __init__(self, **params):
+
+        # assume 0 as positive score threshold",python/sklearn_vw.py,digitalreasoning/vowpal_wabbit,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+# Currently unused
+# ###############################################################################
+# class ClassifierMixin(object):
+#     """"""Mixin class for all classifiers in scikit-learn.""""""
+#     _estimator_type = ""classifier""
+#
+#     def score(self, X, y, sample_weight=None):
+#         """"""Returns the mean accuracy on the given test data and labels.
+#         In multi-label classification, this is the subset accuracy
+#         which is a harsh metric since you require for each sample that
+#         each label set be correctly predicted.
+#         Parameters",pyemma/_ext/sklearn/base.py,markovmodel/PyEMMA,1
+"        """""" Returns intercept weight for model
+
+        Returns
+        -------
+        {int} intercept value, 0 if noconstant
+        """"""
+
+        return self.get_vw().get_weight(CONSTANT_HASH)
+
+
+class ThresholdingLinearClassifierMixin(LinearClassifierMixin):
+    """"""Mixin for linear classifiers.  A threshold is used to specify the positive
+    class cutoff
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def __init__(self, **params):
+
+        # assume 0 as positive score threshold",python/sklearn_vw.py,tricao/vowpal_wabbit,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in scikit-learn.""""""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        Parameters
+        ----------
+        X : array-like, shape = (n_samples, n_features)
+            Test samples.",sklearn/base.py,loli/sklearn-ensembletrees,1
+"        setattr(self, key, value)
+    return self
+
+  def __repr__(self):
+    class_name = self.__class__.__name__
+    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,ivano666/tensorflow,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+# Currently unused
+# ###############################################################################
+# class ClassifierMixin(object):
+#     """"""Mixin class for all classifiers in scikit-learn.""""""
+#     _estimator_type = ""classifier""
+#
+#     def score(self, X, y, sample_weight=None):
+#         """"""Returns the mean accuracy on the given test data and labels.
+#         In multi-label classification, this is the subset accuracy
+#         which is a harsh metric since you require for each sample that
+#         each label set be correctly predicted.
+#         Parameters",pyemma/_ext/sklearn/base.py,gph82/PyEMMA,1
+"		
+		Args:
+			X : {array-like, sparse matrix}, shape = (n_samples, n_features)
+				Samples.
+		Returns:
+			array, shape=(n_samples,) if n_classes == 2 else (n_samples, n_classes)
+			Confidence scores per (sample, class) combination. In the binary
+			case, confidence score for self.classes_[1] where >0 means this
+			class would be predicted.
+
+		Note: This is a copy of the method in `sklearn.linear_model.base.LinearClassifierMixin()`,
+			changed the `check_array` to convert X to boolean.
+		""""""
+		if not hasattr(self, 'coef_') or self.coef_ is None:
+			raise NotFittedError(""This %(name)s instance is not fitted ""
+								 ""yet"" % {'name': type(self).__name__})
+
+		# Number of NER features. These can be int
+		n_ner = len(self.B)
+",vtt/__init__.py,rionbr/VTT,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in scikit-learn.""""""
+
+    def score(self, X, y):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        Parameters
+        ----------
+        X : array-like, shape = (n_samples, n_features)
+            Test samples.",sklearn/base.py,johnowhitaker/bobibabber,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in scikit-learn.""""""
+    _estimator_type = ""classifier""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        In multi-label classification, this is the subset accuracy
+        which is a harsh metric since you require for each sample that
+        each label set be correctly predicted.",uplift/base.py,psarka/uplift,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in datata-learn.""""""
+    _estimator_type = ""classifier""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        In multi-label classification, this is the subset accuracy
+        which is a harsh metric since you require for each sample that
+        each label set be correctly predicted.",m_learning/base.py,JosmanPS/parallel-SVM,1
+"
+        Returns
+        -------
+        {int} intercept value, 0 if noconstant
+        """"""
+
+        return self.get_vw().get_weight(CONSTANT_HASH)
+
+
+
+class ThresholdingLinearClassifierMixin(LinearClassifierMixin):
+    """"""
+    Mixin for linear classifiers.  A threshold is used to specify the positive
+    class cutoff
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def __init__(self, **params):
+",python/sklearn_vw.py,marko-asplund/vowpal_wabbit,1
+"    return self
+
+  def __repr__(self):
+    class_name = self.__class__.__name__
+    return '%s(%s)' % (class_name,
+                       _pprint(
+                           self.get_params(deep=False),
+                           offset=len(class_name),),)
+
+
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,peterbraden/tensorflow,1
+"
+from sklearn.preprocessing import MultiLabelBinarizer
+
+from .base import BaseClassifier
+
+__all__ = ['BinaryLabelsClassifier', 'MultiLabelsClassifier', 'MulticlassLabelsClassifier']
+
+logger = logging.getLogger(__name__)
+
+
+class LabelsClassifierMixin(BaseClassifier):
+    def __init__(self, include=[], exclude=[], **kwargs):
+        super(LabelsClassifierMixin, self).__init__(**kwargs)
+
+        self.exclude = set(exclude)
+        self.include = set(include)
+    #end def
+
+    def _fit(self, X, Y_labels, *, validation_data=None, binarize_args={}, fit_args={}, **kwargs):
+        Y_binarized = self.binarize_labels(Y_labels, **binarize_args, **kwargs)",ycml/classifiers/labels.py,skylander86/ycml,1
+"                           (key, self.__class__.__name__))
+        setattr(self, key, value)
+    return self
+
+  def __repr__(self):
+    class_name = self.__class__.__name__
+    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+class _TransformerMixin():",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,petewarden/tensorflow_makefile,1
+"        """""" Returns intercept weight for model
+
+        Returns
+        -------
+        {int} intercept value, 0 if noconstant
+        """"""
+
+        return self.get_vw().get_weight(CONSTANT_HASH)
+
+
+class ThresholdingLinearClassifierMixin(LinearClassifierMixin):
+    """"""Mixin for linear classifiers.  A threshold is used to specify the positive
+    class cutoff
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def __init__(self, **params):
+
+        # assume 0 as positive score threshold",python/vowpalwabbit/sklearn_vw.py,zachmayer/vowpal_wabbit,1
+"    def save(self, filename):
+        joblib.dump(dict(params=self.get_params(), coefs=self.get_coefs(), fit=self.fit_), filename=filename)
+
+    def load(self, filename):
+        obj = joblib.load(filename=filename)
+        self.set_params(**obj['params'])
+        self.set_coefs(obj['coefs'])
+        self.fit_ = obj['fit']
+
+
+class ThresholdingLinearClassifierMixin(LinearClassifierMixin):
+    """"""Mixin for linear classifiers.  A threshold is used to specify the positive
+    class cutoff
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    classes_ = np.array([-1., 1.])
+
+    def __init__(self, **params):",python/vowpalwabbit/sklearn_vw.py,michaelbrundage/vowpal_wabbit,1
+"        setattr(self, key, value)
+    return self
+
+  def __repr__(self):
+    class_name = self.__class__.__name__
+    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,TakayukiSakai/tensorflow,1
+"            return result['SRCC']
+        elif type == 'PCC':
+            return result['PCC']
+        elif type == 'KENDALL':
+            return result['KENDALL']
+        elif type == 'RMSE':
+            return -result['RMSE']
+        else:
+            assert False, 'Unknow type: {} for get_objective_score().'.format(type)
+
+class ClassifierMixin(object):
+
+    @classmethod
+    def get_stats(cls, ys_label, ys_label_pred):
+
+        # cannot have None
+        assert all(x is not None for x in ys_label)
+        assert all(x is not None for x in ys_label_pred)
+
+        # RMSE",python/src/vmaf/core/train_test_model.py,Netflix/vmaf,1
+"        setattr(self, key, value)
+    return self
+
+  def __repr__(self):
+    class_name = self.__class__.__name__
+    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,sachinpro/sachinpro.github.io,1
+"
+class RegressorMixin(object):
+	def __init__(self):
+		super(RegressorMixin, self).__init__()
+
+	@classmethod
+	def get_problem_type(cls):
+		return 'regression'
+
+
+class ClassifierMixin(object):
+	def __init__(self):
+		super(ClassifierMixin, self).__init__()
+
+	@classmethod
+	def get_problem_type(cls):
+		return 'classification'
+
+
+class BaseModelAdapter(BaseEstimator):",nonconformist/base.py,donlnz/nonconformist,1
+"        """"""
+        if self.fit_intercept:
+            self.coef_ = self.coef_ / X_std
+            self.intercept_ = y_mean - np.dot(X_mean, self.coef_.T)
+        else:
+            self.intercept_ = 0.
+
+
+# XXX Should this derive from LinearModel? It should be a mixin, not an ABC.
+# Maybe the n_features checking can be moved to LinearModel.
+class LinearClassifierMixin(ClassifierMixin):
+    """"""Mixin for linear classifiers.
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def decision_function(self, X):
+        """"""Predict confidence scores for samples.
+
+        The confidence score for a sample is the signed distance of that",sklearn/linear_model/base.py,loli/semisupervisedforests,1
+"        """"""
+        if self.fit_intercept:
+            self.coef_ = self.coef_ / X_std
+            self.intercept_ = y_mean - np.dot(X_mean, self.coef_.T)
+        else:
+            self.intercept_ = 0.
+
+
+# XXX Should this derive from LinearModel? It should be a mixin, not an ABC.
+# Maybe the n_features checking can be moved to LinearModel.
+class LinearClassifierMixin(ClassifierMixin):
+    """"""Mixin for linear classifiers.
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def decision_function(self, X):
+        """"""Predict confidence scores for samples.
+
+        The confidence score for a sample is the signed distance of that",python/sklearn/sklearn/linear_model/base.py,seckcoder/lang-learn,1
+"        setattr(self, key, value)
+    return self
+
+  def __repr__(self):
+    class_name = self.__class__.__name__
+    return '%s(%s)' % (class_name,
+                       _pprint(self.get_params(deep=False)),)
+
+
+# pylint: disable=old-style-class
+class _ClassifierMixin():
+  """"""Mixin class for all classifiers.""""""
+  pass
+
+
+class _RegressorMixin():
+  """"""Mixin class for all regression estimators.""""""
+  pass
+
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,jart/tensorflow,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in scikit-learn.""""""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        In multi-label classification, this is the subset accuracy
+        which is a harsh metric since you require for each sample that
+        each label set be correctly predicted.
+",scikit-learn-c604ac39ad0e5b066d964df3e8f31ba7ebda1e0e/sklearn/base.py,RPGOne/Skynet,1
+"        return '%s(%s)' % (
+                class_name,
+                _pprint(self.get_params(deep=True),
+                        offset=len(class_name),
+                        printer=str,
+                ),
+            )
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in scikit-learn""""""
+
+    def score(self, X, y):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        Parameters
+        ----------
+        X : array-like, shape = [n_samples, n_features]
+            Training set.",python/sklearn/sklearn/base.py,seckcoder/lang-learn,1
+"        """"""
+        if self.fit_intercept:
+            self.coef_ = self.coef_ / X_std
+            self.intercept_ = y_mean - np.dot(X_mean, self.coef_.T)
+        else:
+            self.intercept_ = 0.
+
+
+# XXX Should this derive from LinearModel? It should be a mixin, not an ABC.
+# Maybe the n_features checking can be moved to LinearModel.
+class LinearClassifierMixin(ClassifierMixin):
+    """"""Mixin for linear classifiers.
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def decision_function(self, X):
+        """"""Predict confidence scores for samples.
+
+        The confidence score for a sample is the signed distance of that",venv/lib/python2.7/site-packages/sklearn/linear_model/base.py,chaluemwut/fbserver,1
+"from sklearn.base             import ClassifierMixin
+from sklearn.metrics.pairwise import rbf_kernel
+
+
+class MRBinaryClassifierMixin(ClassifierMixin):
+    """"""Mixin for manifold regularization classifiers.""""""
+
+    def __init__(self, gamma_a=1.0, gamma_i=1.0, gamma_k=None, p=1):
+        self.gamma_a          = gamma_a
+        self.gamma_i          = gamma_i
+        self.gamma_k          = gamma_k
+        self.p                = p
+
+    def predict(self, X, Z):",gbssl/base.py,Y-oHr-N/TextCategorization,1
+"    _ClusterMixin = base.ClusterMixin
+    _RegressorMixin = base.RegressorMixin
+    _TransformerMixin = base.TransformerMixin
+
+except ImportError:
+    # for ReadTheDoc, unable to use mock because of metaclass
+
+    class _BaseEstimator(object):
+        pass
+
+    class _ClassifierMixin(object):
+        pass
+
+    class _ClusterMixin(object):
+        pass
+
+    class _RegressorMixin(object):
+        pass
+
+    class _TransformerMixin(object):",pandas_ml/core/base.py,pandas-ml/pandas-ml,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name), ),)
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in scikit-learn.""""""
+    _estimator_type = ""classifier""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        In multi-label classification, this is the subset accuracy
+        which is a harsh metric since you require for each sample that
+        each label set be correctly predicted.",projects/scikit-learn-master/sklearn/base.py,DailyActie/Surrogate-Model,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+# Currently unused
+# ###############################################################################
+# class ClassifierMixin(object):
+#     """"""Mixin class for all classifiers in scikit-learn.""""""
+#     _estimator_type = ""classifier""
+#
+#     def score(self, X, y, sample_weight=None):
+#         """"""Returns the mean accuracy on the given test data and labels.
+#         In multi-label classification, this is the subset accuracy
+#         which is a harsh metric since you require for each sample that
+#         each label set be correctly predicted.
+#         Parameters",pyemma/_ext/sklearn/base.py,clonker/PyEMMA,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+# Currently unused
+# ###############################################################################
+# class ClassifierMixin(object):
+#     """"""Mixin class for all classifiers in scikit-learn.""""""
+#     _estimator_type = ""classifier""
+#
+#     def score(self, X, y, sample_weight=None):
+#         """"""Returns the mean accuracy on the given test data and labels.
+#         In multi-label classification, this is the subset accuracy
+#         which is a harsh metric since you require for each sample that
+#         each label set be correctly predicted.
+#         Parameters",pyemma/_ext/sklearn/base.py,trendelkampschroer/PyEMMA,1
+"        """"""
+        if self.fit_intercept:
+            self.coef_ = self.coef_ / X_scale
+            self.intercept_ = y_offset - np.dot(X_offset, self.coef_.T)
+        else:
+            self.intercept_ = 0.
+
+
+# XXX Should this derive from LinearModel? It should be a mixin, not an ABC.
+# Maybe the n_features checking can be moved to LinearModel.
+class LinearClassifierMixin(ClassifierMixin):
+    """"""Mixin for linear classifiers.
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def decision_function(self, X):
+        """"""Predict confidence scores for samples.
+
+        The confidence score for a sample is the signed distance of that",projects/scikit-learn-master/sklearn/linear_model/base.py,DailyActie/Surrogate-Model,1
+"                                     (key, self.__class__.__name__))
+                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+
+class _ClassifierMixin():
+    """"""Mixin class for all classifiers.""""""
+    pass
+
+
+class _RegressorMixin():
+    """"""Mixin class for all regression estimators.""""""
+    pass
+
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,shiyemin/tensorflow,1
+"                setattr(self, key, value)
+        return self
+
+    def __repr__(self):
+        class_name = self.__class__.__name__
+        return '%s(%s)' % (class_name, _pprint(self.get_params(deep=False),
+                                               offset=len(class_name),),)
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in scikit-learn.""""""
+    _estimator_type = ""classifier""
+
+    def score(self, X, y, sample_weight=None):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        In multi-label classification, this is the subset accuracy
+        which is a harsh metric since you require for each sample that
+        each label set be correctly predicted.",sklearn/base.py,smartscheduling/scikit-learn-categorical-tree,1
+"            for k, v in bcvars.items():
+                setattr(func.__self__, k, v.value)
+            return func(*args, **kwargs)
+        return func_wrapper
+
+
+class SparkBaseEstimator(BaseEstimator):
+    pass
+
+
+class SparkClassifierMixin(ClassifierMixin):
+
+    """"""Mixin class for all classifiers in sparkit-learn.""""""
+
+    def score(self, Z):
+        X, y, w = Z[:, 'X'], Z[:, 'y'], None
+        if 'w' in Z.columns:
+            w = Z[:, 'w']
+        return accuracy_score(y.toarray(),
+                              self.predict(X).toarray(),",splearn/base.py,lensacom/sparkit-learn,1
+"    p2.check.asert_called_once_with('name')
+
+
+class FooClassifier(classifiers.RegexClassifierMixin, object):
+    regex = re.compile(r'requirements/(?P<name>foo).txt')
+
+    def get(self, name):
+        return 'install_requires', None
+
+
+class TestsRegexClassifierMixin(object):
+    def setup_method(self, name):
+        self.classifier = FooClassifier()
+
+    def test_check_match(self):
+        '''Tests FooClassifier match.'''
+        assert ('install_requires', None) == self.classifier.check('requirements/foo.txt')
+
+    def test_check_no_match(self):
+        assert None == self.classifier.check('requirements/spam.txt')",tests/test_classifiers.py,rafaduran/reqfiles,1
+"        return '%s(%s)' % (
+                class_name,
+                _pprint(self.get_params(deep=True),
+                        offset=len(class_name),
+                        printer=str,
+                ),
+            )
+
+
+###############################################################################
+class ClassifierMixin(object):
+    """"""Mixin class for all classifiers in scikit-learn""""""
+
+    def score(self, X, y):
+        """"""Returns the mean accuracy on the given test data and labels.
+
+        Parameters
+        ----------
+        X : array-like, shape = [n_samples, n_features]
+            Training set.",venv/lib/python2.7/site-packages/sklearn/base.py,devs1991/test_edx_docmode,1
+"        """"""
+        if self.fit_intercept:
+            self.coef_ = self.coef_ / X_std
+            self.intercept_ = y_mean - np.dot(X_mean, self.coef_.T)
+        else:
+            self.intercept_ = 0.
+
+
+# XXX Should this derive from LinearModel? It should be a mixin, not an ABC.
+# Maybe the n_features checking can be moved to LinearModel.
+class LinearClassifierMixin(ClassifierMixin):
+    """"""Mixin for linear classifiers.
+
+    Handles prediction for sparse and dense X.
+    """"""
+
+    def decision_function(self, X):
+        """"""Predict confidence scores for samples.
+
+        The confidence score for a sample is the signed distance of that",model/lib/sklearn/linear_model/base.py,nelango/ViralityAnalysis,1

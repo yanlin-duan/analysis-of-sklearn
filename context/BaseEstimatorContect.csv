@@ -1,0 +1,3244 @@
+match,path,repo_name,count
+,,,5985650
+"#          Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
+#
+# License: BSD (3-clause)
+
+import inspect
+import warnings
+import six
+import numpy as np
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,rajul/mne-python,1
+"        bcvars = {name: context.broadcast(getattr(self, name))
+                  for name in self.__transient__}
+
+        def func_wrapper(*args, **kwargs):
+            for k, v in bcvars.items():
+                setattr(func.__self__, k, v.value)
+            return func(*args, **kwargs)
+        return func_wrapper
+
+
+class SparkBaseEstimator(BaseEstimator):
+    pass
+
+
+class SparkClassifierMixin(ClassifierMixin):
+
+    """"""Mixin class for all classifiers in sparkit-learn.""""""
+
+    def score(self, Z):
+        X, y, w = Z[:, 'X'], Z[:, 'y'], None",splearn/base.py,lensacom/sparkit-learn,1
+"import unittest
+
+import pandas as pd
+import numpy as np
+
+from pgmpy.estimators import HillClimbSearch, K2Score
+from pgmpy.models import BayesianModel
+
+
+class TestBaseEstimator(unittest.TestCase):
+    def setUp(self):
+        self.rand_data = pd.DataFrame(np.random.randint(0, 5, size=(5000, 2)), columns=list('AB'))
+        self.rand_data['C'] = self.rand_data['B']
+        self.est_rand = HillClimbSearch(self.rand_data, scoring_method=K2Score(self.rand_data))
+        self.model1 = BayesianModel()
+        self.model1.add_nodes_from(['A', 'B', 'C'])
+        self.model2 = self.model1.copy()
+        self.model2.add_edge('A', 'B')
+",pgmpy/tests/test_estimators/test_HillClimbSearch.py,ankurankan/pgmpy,1
+"
+  @property
+  def sleep_times(self):
+    return self._sleeptimes
+
+  @property
+  def time_calls(self):
+    return self._time_calls
+
+
+class TestBaseEstimator(object):
+
+  def __init__(self, config, max_evals, eval_dict):
+    self.eval_count = 0
+    self.fit_count = 0
+    self._max_evals = max_evals
+    self.export_count = 0
+    self.monitors = []
+    self.eval_hooks = []
+    self._config = config or run_config.RunConfig()",tensorflow/contrib/learn/python/learn/experiment_test.py,mengxn/tensorflow,1
+"
+"""""" Test base estimator. """"""
+
+import numpy as np
+import unittest
+
+from .. import estimator
+
+
+class TestBaseEstimator(unittest.TestCase):
+
+    def test_attributes(self):
+
+        model = estimator.Estimator()
+
+        self.assertTrue(model.quantum > 0)
+         
+        with self.assertRaises(NotImplementedError):
+            model.log_prior",snob/tests/test_estimator.py,andycasey/snob,1
+"import os
+
+import numpy as np
+import six
+
+
+def _pprint(d):
+  return ', '.join(['%s=%s' % (key, str(value)) for key, value in d.items()])
+
+
+class _BaseEstimator(object):
+  """"""This is a cross-import when sklearn is not available.
+
+  Adopted from sklearn.BaseEstimator implementation.
+  https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/base.py
+  """"""
+
+  def get_params(self, deep=True):
+    """"""Get parameters for this estimator.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,sachinpro/sachinpro.github.io,1
+"from __future__ import print_function, absolute_import, division
+
+from sklearn.base import BaseEstimator as SklearnBaseEstimator
+
+
+class BaseEstimator(SklearnBaseEstimator):
+    # http://msmbuilder.org/development/apipatterns.html
+
+    def summarize(self):
+        """"""Return some diagnostic summary statistics about this Markov model""""""
+        return 'NotImplemented'",msmbuilder/base.py,cxhernandez/msmbuilder,1
+"""""""Base class for estimators.""""""
+import tensorflow as tf
+from ..functions import define_scope, to_array, log_loss
+from abc import ABCMeta, abstractmethod, abstractproperty
+from six.moves import cPickle as Pickle
+from datetime import datetime
+from sklearn.metrics import roc_auc_score
+
+
+class BaseEstimator(metaclass=ABCMeta):
+    def __init__(self, log_dir='log/', logging_frequency=10, negatives_ratio=1):
+        self.log_dir = log_dir
+        self.logging_frequency = logging_frequency
+        self.last_loss = float(""inf"")
+        self.best_val_loss = float(""inf"")
+        self.negatives_ratio = negatives_ratio
+        self._feature_indices = None
+        self._graph = tf.Graph()
+        self._num_features = None",sparseflow/estimators/base_estimator.py,maxbarkhausen/sparseflow,1
+"
+    def test_builtin_trainer_regularizer(self):
+        clf = self.Clf()
+        reg = simple_reg(clf)
+        try:
+            clf.fit(*self.fit_args, reg=reg, max_iter=2)
+        except Exception as e:
+            self.fail(""Fitting failed: %s"" % str(e))
+
+
+class TestBaseEstimator(unittest.TestCase, BaseEstimatorTransformerTests):
+    TheBase = BaseEstimator
+    TheClf = SimpleClf
+    X = np.random.standard_normal((500, 100)).astype(np.float32)
+    y = np.random.randint(0, 9, (500,)).astype(np.int32)
+    fit_args = (X, y,)
+
+    def setUp(self):
+        class Clf(self.TheClf, self.TheBase):
+            def __init__(*args, **kwargs):",tests/test_layers.py,sotlampr/theano-wrapper,1
+"    assert_explained_weights_linear_regressor(boston_train, reg,
+                                              has_bias=False)
+
+
+@pytest.mark.parametrize(['reg'], regressor_params[:2])
+def test_explain_prediction_pandas(reg, boston_train):
+    _check_explain_prediction_pandas(reg, boston_train)
+
+
+def test_explain_weights_unsupported():
+    clf = BaseEstimator()
+    res = explain_weights(clf)
+    assert 'BaseEstimator' in res.error
+    with pytest.raises(TypeError):
+        explain_prediction(clf, unknown_argument=True)
+
+
+def test_explain_prediction_unsupported():
+    clf = BaseEstimator()
+    doc = 'doc'",tests/test_lightning.py,TeamHG-Memex/eli5,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,renyi533/tensorflow,1
+"
+from .cache import Cache, np_hash
+from .dataset import Dataset
+from .utils.main import concat, tsplit, reshape_1d
+from .utils.main import report_score
+
+REQUIRED_ARGS = set(['X_train', 'y_train', 'X_test', 'y_test'])
+logger = logging.getLogger('heamy.estimator')
+
+
+class BaseEstimator(object):
+    problem = None
+
+    def __init__(self, dataset, estimator=None, parameters=None, name=None, use_cache=True):
+        """"""Base class for estimators.
+        This class should not be used directly.""""""
+        if estimator is not None:
+            self._estimator = estimator
+        elif hasattr(self.__class__, 'estimator'):
+            self._estimator = self.estimator",heamy/estimator.py,rushter/heamy,1
+"    # Regular function.
+    return inspect.getargspec(func).args
+  elif hasattr(func, '__call__'):
+    # Callable object.
+    return _get_arguments(func.__call__)
+  elif hasattr(func, 'func'):
+    # Partial function.
+    return _get_arguments(func.func)
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+
+  `Estimator` implemented below is a good example of how to use this class.
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,chemelnucfin/tensorflow,1
+"from tensorflow.python.ops import array_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variables
+from tensorflow.python.training import training
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,caisq/tensorflow,1
+"from tensorflow.contrib.layers.python.layers import feature_column_ops
+from tensorflow.contrib.learn.python.learn.estimators import composable_model
+from tensorflow.contrib.learn.python.learn.estimators import estimator
+from tensorflow.contrib.learn.python.learn.estimators import head as head_lib
+from tensorflow.python.framework import ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+
+
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,anand-c-goog/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Targets: %s.' % (metrics, targets))
+      result[name] = metric(predictions, targets)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,neilhan/tensorflow,1
+"from __future__ import print_function, absolute_import, division
+
+from sklearn.base import BaseEstimator as SklearnBaseEstimator
+
+
+class BaseEstimator(SklearnBaseEstimator):
+    # http://msmbuilder-mixtape.s3-website-us-west-1.amazonaws.com/latest/apipatterns.html
+
+    def summarize(self):
+        """"""Return some diagnostic summary statistics about this Markov model""""""
+        return 'NotImplemented'",msmbuilder/base.py,stephenliu1989/msmbuilder,1
+"    # Regular function.
+    return inspect.getargspec(func).args
+  elif hasattr(func, '__call__'):
+    # Callable object.
+    return _get_arguments(func.__call__)
+  elif hasattr(func, 'func'):
+    # Partial function.
+    return _get_arguments(func.func)
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+
+  `Estimator` implemented below is a good example of how to use this class.
+  """"""",estimator.py,chenmich/learn_rnn_tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",Tensorflow/sources/tensorflow/contrib/learn/python/learn/estimators/estimator.py,ryfeus/lambda-packs,1
+"from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import partitioned_variables
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variable_scope
+from tensorflow.python.platform import tf_logging as logging
+
+
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,AndreasMadsen/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Labels: %s.' % (metrics, labels_tensor_or_dict))
+      result[name] = metric(predictions, labels_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,sandeepdsouza93/TensorFlow-15712,1
+"    clf.fit(X, y)
+
+    res = explain_weights(clf, vec=vec, target_names=target_names, top=20)
+    format_as_all(res, clf)
+
+    assert [t.target for t in res.targets] == target_names
+
+
+def test_unsupported():
+    vec = CountVectorizer()
+    clf = BaseEstimator()
+    res = explain_weights(clf, vec=vec)
+    assert 'BaseEstimator' in res.error
+    for expl in format_as_all(res, clf):
+        assert 'Error' in expl
+        assert 'BaseEstimator' in expl
+    with pytest.raises(TypeError):
+        explain_weights(clf, unknown_argument=True)
+
+",tests/test_sklearn_explain_weights.py,TeamHG-Memex/eli5,1
+"from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import math_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variables
+from tensorflow.python.training import training
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,dhalleine/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,mengxn/tensorflow,1
+"import os
+
+import numpy as np
+import six
+
+
+def _pprint(d):
+  return ', '.join(['%s=%s' % (key, str(value)) for key, value in d.items()])
+
+
+class _BaseEstimator(object):
+  """"""This is a cross-import when sklearn is not available.
+
+  Adopted from sklearn.BaseEstimator implementation.
+  https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/base.py
+  """"""
+
+  def get_params(self, deep=True):
+    """"""Get parameters for this estimator.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,jart/tensorflow,1
+"from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import math_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variables
+from tensorflow.python.training import training
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,TakayukiSakai/tensorflow,1
+"#
+# License: BSD (3-clause)
+
+import warnings
+import numpy as np
+
+from ..externals.six import iteritems
+from ..fixes import _get_args
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,TomDLT/mne-python,1
+"from tensorflow.python.framework import ops
+from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import partitioned_variables
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variable_scope
+
+
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,DCSaunders/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,Bismarrck/tensorflow,1
+"from tensorflow.python.framework import ops
+from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import partitioned_variables
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variable_scope
+
+
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",java_predict_client/src/main/proto/tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,tobegit3hub/deep_cnn,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,wangyum/tensorflow,1
+"          isinstance(dictionary[key], int)):
+      value.simple_value = int(dictionary[key])
+    else:
+      logging.warn(
+          'Skipping summary for %s, must be a float, np.float32, np.int64, np.int32 or int.',
+          key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,gojira/tensorflow,1
+"import os
+
+import numpy as np
+import six
+
+
+def _pprint(d):
+  return ', '.join(['%s=%s' % (key, str(value)) for key, value in d.items()])
+
+
+class _BaseEstimator(object):
+  """"""This is a cross-import when sklearn is not available.
+
+  Adopted from sklearn.BaseEstimator implementation.
+  https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/base.py
+  """"""
+
+  def get_params(self, deep=True):
+    """"""Get parameters for this estimator.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,TakayukiSakai/tensorflow,1
+"from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import gradients
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import math_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,ninotoshi/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Labels: %s.' % (metrics, labels_tensor_or_dict))
+      result[name] = metric(predictions, labels_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,AndreasMadsen/tensorflow,1
+"  return df.input_builder, df.get_feed_dict_fn()
+
+
+def _get_predict_input_fn(x, y, batch_size):
+  df = data_feeder.setup_train_data_feeder(
+      x, y, n_classes=None, batch_size=batch_size,
+      shuffle=False, epochs=1)
+  return df.input_builder, df.get_feed_dict_fn()
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+  It may override _get_default_metric_functions.
+
+  `Estimator` implemented below is a good example of how to use this class.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,sachinpro/sachinpro.github.io,1
+"        else:
+            val = volume_info[key]
+            strings.append('{0} = {1:0.10g} {2:0.10g} {3:0.10g}\n'.format(
+                key.ljust(6), val[0], val[1], val[2]).encode('utf-8'))
+    return b''.join(strings)
+
+
+##############################################################################
+# adapted from scikit-learn
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+",mne/fixes.py,annapasca/mne-python,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Targets: %s.' % (metrics, targets))
+      result[name] = metric(predictions, targets)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,4Catalyzer/tensorflow,1
+"    assert 'day=tue' in expl_html
+    [test_day_vec] = vec.transform(test_day)
+    res2 = explain_prediction(
+        clf, test_day_vec, target_names=target_names,
+        vectorized=True, feature_names=vec.get_feature_names())
+    assert res1 == res2
+
+
+def test_unsupported():
+    vec = CountVectorizer()
+    clf = BaseEstimator()
+    res = explain_prediction(clf, 'hello, world', vec=vec)
+    assert 'BaseEstimator' in res.error
+    for expl in format_as_all(res, clf):
+        assert 'Error' in expl
+        assert 'BaseEstimator' in expl
+
+
+def test_explain_regression_hashing_vectorizer(newsgroups_train_binary):
+    docs, y, target_names = newsgroups_train_binary",tests/test_sklearn_vectorizers.py,TeamHG-Memex/eli5,1
+"from tensorflow.python.ops import array_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variables
+from tensorflow.python.training import training
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,HaebinShin/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,JVillella/tensorflow,1
+"from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import partitioned_variables
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variable_scope
+from tensorflow.python.platform import tf_logging as logging
+
+
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,ppries/tensorflow,1
+"from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import math_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variables
+from tensorflow.python.training import training
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,EvenStrangest/tensorflow,1
+"
+  @property
+  def sleep_times(self):
+    return self._sleeptimes
+
+  @property
+  def time_calls(self):
+    return self._time_calls
+
+
+class TestBaseEstimator(object):
+
+  def __init__(self, config, max_evals, eval_dict):
+    self.eval_count = 0
+    self.fit_count = 0
+    self._max_evals = max_evals
+    self.export_count = 0
+    self.monitors = []
+    self.eval_hooks = []
+    self._config = config or run_config.RunConfig()",tensorflow/contrib/learn/python/learn/experiment_test.py,junpenglao/tensorflow,1
+"from os.path import samefile, abspath
+import tempfile
+import datetime
+from osprey.utils import dict_merge, in_directory
+from osprey.utils import format_timedelta, current_pretty_time
+from osprey.utils import is_json_serializable
+import numpy as np
+from sklearn.base import BaseEstimator
+
+def test_is_json_serializable():
+    a = BaseEstimator()
+    b = np.array([1, 2, 3], dtype=int)
+    c = np.array([1., 2., 3.], dtype=float)
+    d = np.array(['a', 'b', 'c'], dtype=str)
+    e = ['a', 'b', 'c']
+    f, g, h, i = None, True, 1, 1.2
+    for obj in [a, b, c, d]:
+        assert(~is_json_serializable(obj))
+    for obj in [e, f, g, h, i]:
+        assert(is_json_serializable(obj))",osprey/tests/test_utils.py,msmbuilder/osprey,1
+"    vec = CountVectorizer(binary=True, stop_words='english')
+    X = vec.fit_transform(docs)
+    clf.fit(X, y)
+    res = explain_prediction(clf, docs[0], vec=vec, target_names=target_names)
+    check_targets_scores(res)
+    format_as_all(res, clf)
+
+
+def test_unsupported():
+    vec = CountVectorizer()
+    clf = BaseEstimator()
+    doc = 'doc'
+    res = explain_prediction(clf, doc, vec=vec)
+    assert 'BaseEstimator' in res.error
+    for expl in format_as_all(res, clf):
+        assert 'Error' in expl
+        assert 'BaseEstimator' in expl
+    with pytest.raises(TypeError):
+        explain_prediction(clf, doc, unknown_argument=True)
+",tests/test_sklearn_explain_prediction.py,TeamHG-Memex/eli5,1
+"          isinstance(dictionary[key], np.int32) or
+          isinstance(dictionary[key], int)):
+      value.simple_value = int(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float, np.float32, np.int64, np.int32 or int.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,mortada/tensorflow,1
+"  return df.input_builder, df.get_feed_dict_fn()
+
+
+def _get_predict_input_fn(x, y, batch_size):
+  df = data_feeder.setup_train_data_feeder(
+      x, y, n_classes=None, batch_size=batch_size,
+      shuffle=False, epochs=1)
+  return df.input_builder, df.get_feed_dict_fn()
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+  It may override _get_default_metric_functions.
+
+  `Estimator` implemented below is a good example of how to use this class.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,ivano666/tensorflow,1
+"#!/usr/bin/env python
+from warnings import warn
+
+import numpy as np
+import pandas as pd
+from scipy.stats import chisquare
+
+
+class BaseEstimator(object):
+    def __init__(self, data, state_names=None, complete_samples_only=True):
+        """"""
+        Base class for estimators in pgmpy; `ParameterEstimator`,
+        `StructureEstimator` and `StructureScore` derive from this class.
+
+        Parameters
+        ----------
+
+        data: pandas DataFrame object",pgmpy/estimators/base.py,ankurankan/pgmpy,1
+"start_time = time.time()
+
+RandomForest = False
+NaiveBayes = False
+NeuralNetwork = False
+DecisionTree = False
+Adaboost = True
+
+
+if RandomForest:
+    BaseEstimator(
+        RandomForestClassifier(),
+        ""Random Forest""
+    ).run()
+
+if NaiveBayes:
+    BaseEstimator(
+        GaussianNB(),
+        ""Naive Bayes""
+    ).run()",main.py,timothymiko/CarAuctionEvaluator,1
+"import numpy as np
+
+
+class BaseEstimator(object):
+
+    def _setup_input(self, X, y=None, y_required = True):
+        """"""Ensure inputs to an estimator are in the expected format.
+        Ensures X and y are stored as numpy ndarrays by converting from an
+        array-like object if necessary. Enables estimators to define whether
+        they require a set of y target values or not with y_required, e.g.
+        kmeans clustering requires no target labels and is fit against only X.
+        Parameters
+        ----------",utils/base_estimator.py,transedward/ml-playground,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,junpenglao/tensorflow,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mlens/externals/sklearn/base.py,flennerhag/mlens,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+",uplift/base.py,psarka/uplift,1
+"
+
+class BaseEstimator(object):
+    """"""Base estimator for SigLearn estimators""""""
+    pass",siglearn/base.py,erichseamon/siglearn,1
+"                                ParallelProcessingWarning)
+
+try:
+    from time import perf_counter as time_
+except ImportError:
+    from time import time as time_
+
+import warnings
+
+
+class BaseEstimator(object):
+
+    """"""Base class for estimating a layer in parallel.
+
+    Estimation class to be used as based for a layer estimation engined that
+    is callable by the :class:`ParallelProcess` job manager.
+
+    A subclass must implement a ``_format_instance_list`` method for
+    building a list of preprocessing cases and a list of estimators that
+    will be iterated over in the call to :class:`joblib.Parallel`,",mlens/parallel/estimation.py,flennerhag/mlens_dev,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+",scikit-learn-c604ac39ad0e5b066d964df3e8f31ba7ebda1e0e/sklearn/base.py,RPGOne/Skynet,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",seq2seq/contrib/estimator.py,liyi193328/seq2seq,1
+"          isinstance(dictionary[key], np.int32) or
+          isinstance(dictionary[key], int)):
+      value.simple_value = int(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float, np.float32, np.int64, np.int32 or int.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,thesuperzapper/tensorflow,1
+"from tensorflow.python.framework import ops
+from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import partitioned_variables
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variable_scope
+
+
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,tongwang01/tensorflow,1
+"
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+# NOTE: I have renamed this from BaseEstimator to Parametric in order to also use it for Models
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",pyemma/_ext/sklearn/base.py,trendelkampschroer/PyEMMA,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Labels: %s.' % (metrics, labels_tensor_or_dict))
+      result[name] = metric(predictions, labels_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,nanditav/15712-TensorFlow,1
+"from functools import partial
+
+from dask.base import Base, normalize_token
+from dask.optimize import fuse
+from dask.threaded import get as threaded_get
+from dask.utils import Dispatch
+from sklearn.base import BaseEstimator
+from toolz import identity
+
+
+class DaskBaseEstimator(Base):
+    """"""Base class for dask-backed estimators""""""
+    _default_get = staticmethod(threaded_get)
+
+    @staticmethod
+    def _optimize(dsk, keys, **kwargs):
+        dsk2, deps = fuse(dsk, keys)
+        return dsk2
+
+    def _keys(self):",dklearn/core.py,jcrist/dask-learn,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their __init__ as explicit keyword
+    arguments (no *args, **kwargs).
+    """"""
+",python/sklearn/sklearn/base.py,seckcoder/lang-learn,1
+"
+  @property
+  def sleep_times(self):
+    return self._sleeptimes
+
+  @property
+  def time_calls(self):
+    return self._time_calls
+
+
+class TestBaseEstimator(object):
+
+  def __init__(self, config, max_evals, eval_dict):
+    self.eval_count = 0
+    self.fit_count = 0
+    self._max_evals = max_evals
+    self.export_count = 0
+    self.monitors = []
+    self.eval_hooks = []
+    self._config = config or run_config.RunConfig()",tensorflow/contrib/learn/python/learn/experiment_test.py,eth-n/tensorflow,1
+"from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import math_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variables
+from tensorflow.python.training import training
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,mikowals/tensorflow,1
+"
+  @property
+  def sleep_times(self):
+    return self._sleeptimes
+
+  @property
+  def time_calls(self):
+    return self._time_calls
+
+
+class TestBaseEstimator(object):
+
+  def __init__(self, config, max_evals, eval_dict):
+    self.eval_count = 0
+    self.fit_count = 0
+    self._max_evals = max_evals
+    self.export_count = 0
+    self.monitors = []
+    self.eval_hooks = []
+    self._config = config or run_config.RunConfig()",tensorflow/contrib/learn/python/learn/experiment_test.py,admcrae/tensorflow,1
+"          isinstance(dictionary[key], int)):
+      value.simple_value = int(dictionary[key])
+    else:
+      logging.warn(
+          'Skipping summary for %s, must be a float, np.float32, np.int64, np.int32 or int.',
+          key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overridden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,ZhangXinNan/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,aselle/tensorflow,1
+"#
+# License: BSD (3-clause)
+
+import inspect
+import warnings
+import numpy as np
+
+from ..externals.six import iteritems
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,cle1109/mne-python,1
+"def _changing_default_center_bias():
+  logging.warn(
+      ""Change warning: default value of `enable_centered_bias` will change""
+      "" after 2016-10-09. It will be disabled by default.""
+      ""Instructions for keeping existing behaviour:\n""
+      ""Explicitly set `enable_centered_bias` to 'True' if you want to keep ""
+      ""existing behaviour."")
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,mrry/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,haeusser/tensorflow,1
+"
+import os
+import cPickle as pickle
+import numpy as np
+
+from sklearn.base import BaseEstimator,ClassifierMixin
+from sklearn.preprocessing import LabelBinarizer
+
+import tensorflow as tf
+
+class TFBaseEstimator(BaseEstimator):
+    def __init__(self):
+        self.train_step = None
+        self.predict_step = None
+        self.is_fitted = False
+        self._var_scope = None
+        self.session = tf.Session()
+        self.tf_vars = {}
+
+    # def _get_var_scope(self):",tfmodels/base.py,thalro/TFModels,1
+"#
+# License: BSD (3-clause)
+
+import warnings
+import numpy as np
+
+from ..externals.six import iteritems
+from ..fixes import _get_args
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,choldgraf/mne-python,1
+"from tensorflow.python.ops import array_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variables
+from tensorflow.python.training import training
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,rew4332/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Targets: %s.' % (metrics, targets))
+      result[name] = metric(predictions, targets)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,mdrumond/tensorflow,1
+"
+  @property
+  def sleep_times(self):
+    return self._sleeptimes
+
+  @property
+  def time_calls(self):
+    return self._time_calls
+
+
+class TestBaseEstimator(object):
+
+  def __init__(self, config, max_evals, eval_dict):
+    self.eval_count = 0
+    self.fit_count = 0
+    self._max_evals = max_evals
+    self.export_count = 0
+    self.monitors = []
+    self.eval_hooks = []
+    self._config = config or run_config.RunConfig()",tensorflow/contrib/learn/python/learn/experiment_test.py,ZhangXinNan/tensorflow,1
+"from .core import Parametrix_object
+
+class BaseEstimator(Parametrix_object):
+    
+    model=None
+    estimated_parameters=None
+
+    def fit(self,y):
+        """""" Estimation of the parameters """"""
+        return self.model
+    
+    def setattr_from_signal(self,signal):",parametrix/core/estimators.py,vincentchoqueuse/parametrix,1
+"#
+# License: BSD (3-clause)
+
+import warnings
+import numpy as np
+
+from ..externals.six import iteritems
+from ..fixes import _get_args
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,wronk/mne-python,1
+"import pandas as pd
+
+import os
+import functools
+
+import config
+from utils import np_utils, table_utils
+
+# Base class for measuring correlation/similarity/distance
+# between the search query and page information
+class BaseEstimator(object):
+    def __init__(self, obs_corpus, target_corpus, aggregation_mode, id_list=None):
+        self.obs_corpus = obs_corpus
+        self.N = len(obs_corpus)
+        # for standalone features, range so zip works right
+        self.target_corpus = range(self.N) if target_corpus is None else target_corpus
+        # id_list is used for group based relevance/distance detectors (where?)
+        self.id_list = range(self.N) if id_list is None else id_list
+        # aggregation for multi-value input fields such as hit_heading and hit_category
+        self.aggregation_mode, self.aggregator = self._check_aggregation_mode(aggregation_mode)",code/feature_base.py,ebernhardson/l2r,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,HKUST-SING/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Targets: %s.' % (metrics, targets))
+      result[name] = metric(predictions, targets)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,juharris/tensorflow,1
+"def _changing_default_center_bias():
+  logging.warn(
+      ""Change warning: default value of `enable_centered_bias` will change""
+      "" after 2016-10-09. It will be disabled by default.""
+      ""Instructions for keeping existing behaviour:\n""
+      ""Explicitly set `enable_centered_bias` to 'True' if you want to keep ""
+      ""existing behaviour."")
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,SubhasisDutta/WireframeTagging,1
+"# License: BSD (3-clause)
+
+import warnings
+import numpy as np
+
+from ..externals.six import iteritems
+from ..fixes import _get_args
+from ..utils import check_version
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn.
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+",mne/decoding/base.py,Teekuningas/mne-python,1
+"#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+import numpy as np
+
+
+class _BaseEstimator(object):
+    """"""This is a cross-import when sklearn is not available.
+    
+    Adopted from sklearn.BaseEstimator implementation.
+    https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/base.py
+    """"""
+
+    def get_params(self, deep=True):
+        """"""Get parameters for this estimator.
+        Parameters",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,shiyemin/tensorflow,1
+"#!/usr/bin/env python
+
+
+class BaseEstimator(object):
+    """"""
+    Base class for estimator class in pgmpy. Estimator class is used for parameter estimation as well
+    as structure estimation
+
+    Parameters
+    ----------
+    model: pgmpy.models.BayesianModel or pgmpy.models.MarkovModel or pgmpy.models.NoisyOrModel
+        model for which parameter estimation is to be done
+",pgmpy/estimators/base.py,liquidmetal/pgmpy,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+",sklearn/base.py,smartscheduling/scikit-learn-categorical-tree,1
+"          isinstance(dictionary[key], int)):
+      value.simple_value = int(dictionary[key])
+    else:
+      logging.warn(
+          'Skipping summary for %s, must be a float, np.float32, np.int64, np.int32 or int.',
+          key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overridden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,kevin-coder/tensorflow-fork,1
+"def _changing_default_center_bias():
+  logging.warn(
+      ""Change warning: default value of `enable_centered_bias` will change""
+      "" after 2016-10-09. It will be disabled by default.""
+      ""Instructions for keeping existing behaviour:\n""
+      ""Explicitly set `enable_centered_bias` to 'True' if you want to keep ""
+      ""existing behaviour."")
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,neilhan/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,odejesush/tensorflow,1
+"    self._add_hidden_layer_summary(logits, ""dnn_logits"")
+    return logits
+
+  def _get_default_optimizer(self, optimizer_name=None):
+    if optimizer_name is None:
+      optimizer_name = ""Adagrad""
+    return layers.OPTIMIZER_CLS_NAMES[optimizer_name](learning_rate=0.05)
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,jalexvig/tensorflow,1
+"           ""LogisticRegressionL1L2GL"",
+
+           ""LinearRegressionL2SmoothedL1TV"",
+
+           ""Clustering"",
+
+           ""GridSearchKFoldRegression"",
+           ""GridSearchKFold""]
+
+
+class BaseEstimator(object):
+    """"""Base class for estimators.
+
+    Parameters
+    ----------
+    algorithm : BaseAlgorithm. The algorithm that will be used.
+    """"""
+    __metaclass__ = abc.ABCMeta
+
+    def __init__(self, algorithm):",parsimony/estimators.py,duchesnay/pylearn-parsimony,1
+"
+# tune the token pattern to get a better correlation with y_train
+# token_pattern = r""(?u)\b\w\w+\b""
+# token_pattern = r""\w{1,}""
+# token_pattern = r""\w+""
+# token_pattern = r""[\w']+""
+token_pattern = "" "" # just split the text into tokens
+
+
+# ------------------------ Word2Vec Features -------------------------
+class Word2Vec_BaseEstimator(BaseEstimator):
+    def __init__(self, obs_corpus, target_corpus, word2vec_model, model_prefix, 
+        aggregation_mode="""", aggregation_mode_prev=""""):
+        super().__init__(obs_corpus, target_corpus, aggregation_mode, None, aggregation_mode_prev)
+        self.model = word2vec_model
+        self.model_prefix = model_prefix
+        self.vector_size = word2vec_model.vector_size
+
+    def _get_valid_word_list(self, text):
+        return [w for w in text.lower().split("" "") if w in self.model]",Code/Chenglong/feature_word2vec.py,ChenglongChen/Kaggle_HomeDepot,1
+"import os
+
+import numpy as np
+import six
+
+
+def _pprint(d):
+  return ', '.join(['%s=%s' % (key, str(value)) for key, value in d.items()])
+
+
+class _BaseEstimator(object):
+  """"""This is a cross-import when sklearn is not available.
+
+  Adopted from sklearn.BaseEstimator implementation.
+  https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/base.py
+  """"""
+
+  def get_params(self, deep=True):
+    """"""Get parameters for this estimator.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,ivano666/tensorflow,1
+"# License: BSD (3-clause)
+
+import warnings
+import numpy as np
+
+from ..externals.six import iteritems
+from ..fixes import _get_args
+from ..utils import check_version
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,alexandrebarachant/mne-python,1
+"#          Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
+#
+# License: BSD (3-clause)
+
+import inspect
+import warnings
+import six
+import numpy as np
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,rkmaddox/mne-python,1
+"
+import collections
+import os
+
+import numpy as np
+
+def _pprint(d):
+  return ', '.join(['%s=%s' % (key, str(value)) for key, value in d.items()])
+
+
+class _BaseEstimator(object):
+  """"""This is a cross-import when sklearn is not available.
+
+  Adopted from sklearn.BaseEstimator implementation.
+  https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/base.py
+  """"""
+
+  def get_params(self, deep=True):
+    """"""Get parameters for this estimator.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,petewarden/tensorflow_makefile,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Labels: %s.' % (metrics, labels_tensor_or_dict))
+      result[name] = metric(predictions, labels_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,tongwang01/tensorflow,1
+"  return df.input_builder, df.get_feed_dict_fn()
+
+
+def _get_predict_input_fn(x, y, batch_size):
+  df = data_feeder.setup_train_data_feeder(
+      x, y, n_classes=None, batch_size=batch_size,
+      shuffle=False, epochs=1)
+  return df.input_builder, df.get_feed_dict_fn()
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+
+  `Estimator` implemented below is a good example of how to use this class.
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,EvenStrangest/tensorflow,1
+"from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import gradients
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import math_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,wlsc/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,scenarios/tensorflow,1
+"
+# tune the token pattern to get a better correlation with y_train
+# token_pattern = r""(?u)\b\w\w+\b""
+# token_pattern = r""\w{1,}""
+# token_pattern = r""\w+""
+# token_pattern = r""[\w']+""
+token_pattern = "" "" # just split the text into tokens
+
+
+# -------------------------- Count ----------------------------------
+class Count_Ngram_BaseEstimator(BaseEstimator):
+    def __init__(self, obs_corpus, target_corpus, ngram, idx, aggregation_mode="""", 
+        str_match_threshold=config.STR_MATCH_THRESHOLD):
+        super().__init__(obs_corpus, target_corpus, aggregation_mode)
+        self.idx = idx
+        self.ngram = ngram
+        self.ngram_str = ngram_utils._ngram_str_map[self.ngram]
+        self.str_match_threshold = str_match_threshold
+
+    def _get_match_count(self, obs, target, idx):",Code/Chenglong/feature_first_last_ngram.py,ChenglongChen/Kaggle_HomeDepot,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,seaotterman/tensorflow,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their __init__ as explicit keyword
+    arguments (no *args, **kwargs).
+    """"""
+",venv/lib/python2.7/site-packages/sklearn/base.py,devs1991/test_edx_docmode,1
+"import numpy as np
+
+
+class BaseEstimator(object):
+    X = None
+    y = None
+    y_required = True
+    fit_required = True
+
+    def _setup_input(self, X, y=None):
+        """"""Ensure inputs to an estimator are in the expected format.
+
+        Ensures X and y are stored as numpy ndarrays by converting from an",mla/base/base.py,rushter/MLAlgorithms,1
+"import unittest
+
+import pandas as pd
+import numpy as np
+
+from pgmpy.estimators import ExhaustiveSearch, BdeuScore, BicScore
+from pgmpy.extern import six
+
+
+class TestBaseEstimator(unittest.TestCase):
+    def setUp(self):
+        self.rand_data = pd.DataFrame(np.random.randint(0, 5, size=(5000, 2)), columns=list('AB'))
+        self.rand_data['C'] = self.rand_data['B']
+        self.est_rand = ExhaustiveSearch(self.rand_data)
+        self.est_rand_bdeu = ExhaustiveSearch(self.rand_data, scoring_method=BdeuScore(self.rand_data))
+        self.est_rand_bic = ExhaustiveSearch(self.rand_data, scoring_method=BicScore(self.rand_data))
+
+        # link to dataset: ""https://www.kaggle.com/c/titanic/download/train.csv""
+        self.titanic_data = pd.read_csv('pgmpy/tests/test_estimators/testdata/titanic_train.csv')",pgmpy/tests/test_estimators/test_ExhaustiveSearch.py,ankurankan/pgmpy,1
+"from tensorflow.python.ops import array_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variables
+from tensorflow.python.training import training
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",jni-build/jni/include/tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,natanielruiz/android-yolo,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+",projects/scikit-learn-master/sklearn/base.py,DailyActie/Surrogate-Model,1
+"    # Regular function.
+    return inspect.getargspec(func).args
+  elif hasattr(func, '__call__'):
+    # Callable object.
+    return _get_arguments(func.__call__)
+  elif hasattr(func, 'func'):
+    # Partial function.
+    return _get_arguments(func.func)
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",jni-build/jni/include/tensorflow/contrib/learn/python/learn/estimators/estimator.py,natanielruiz/android-yolo,1
+"        params_list.append(this_repr)
+        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+",bhmm/_external/sklearn/base.py,marscher/bhmm,1
+"# Author: Sebastian Raschka <sebastianraschka.com>
+#
+# License: BSD 3 clause
+
+from mlxtend._base import _BaseEstimator
+import numpy as np
+from mlxtend.utils import assert_raises
+
+
+def test_init():
+    est = _BaseEstimator(print_progress=0, random_seed=1)
+    assert hasattr(est, 'print_progress')
+    assert hasattr(est, 'random_seed')
+
+
+def test_check_array_1():
+    X = np.array([1, 2, 3])
+    est = _BaseEstimator(print_progress=0, random_seed=1)
+    assert_raises(ValueError,
+                  'X must be a 2D array. Try X[:, numpy.newaxis]',",mlxtend/_base/oldtests/test_base_estimator.py,rasbt/mlxtend,1
+"  return df.input_builder, df.get_feed_dict_fn()
+
+
+def _get_predict_input_fn(x, y, batch_size):
+  df = data_feeder.setup_train_data_feeder(
+      x, y, n_classes=None, batch_size=batch_size,
+      shuffle=False, epochs=1)
+  return df.input_builder, df.get_feed_dict_fn()
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+  It may override _get_default_metric_functions.
+
+  `Estimator` implemented below is a good example of how to use this class.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,ninotoshi/tensorflow,1
+"    # Regular function.
+    return inspect.getargspec(func).args
+  elif hasattr(func, '__call__'):
+    # Callable object.
+    return _get_arguments(func.__call__)
+  elif hasattr(func, 'func'):
+    # Partial function.
+    return _get_arguments(func.func)
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+
+  `Estimator` implemented below is a good example of how to use this class.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,jalexvig/tensorflow,1
+"    def test_even_split(self):
+        # If exactly 50% of last 30 days had crime, predict no crime
+        self.time_series['Violent Crime Committed?'] = [True]*15 + [False]*15
+        predictor = BaselinePredictor(self.time_series)
+        self.assertFalse(predictor.predict(self.date_to_predict))
+
+
+class NonsequentialTests(unittest.TestCase):
+    def test_vector_alignment(self):
+        # Mock out a generic scikit-learn classifier
+        mocked_model = BaseEstimator()
+        mocked_model.fit = MagicMock()
+        mocked_model.predict = MagicMock(return_value=[True])
+
+        # Create a simple data frame extending to January 15
+        date_sequence = pd.date_range('1/1/2011', periods=15, freq='D')
+        time_series = pd.DataFrame({
+            # This column will be accessed by name to generate the targets vector.
+            'Violent Crime Committed?': [True, True] + [False]*13,
+",clearn/predict_tests.py,chi-learn/chi-learn,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,markslwong/tensorflow,1
+"    def input_fn():
+      return x.create_graph()
+    return input_fn, None
+
+  df = data_feeder.setup_train_data_feeder(x, None,
+                                           n_classes=None,
+                                           batch_size=batch_size)
+  return df.input_builder, df.get_feed_dict_fn()
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+  It may override _get_default_metric_functions.
+
+  `Estimator` implemented below is a good example of how to use this class.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,ibab/tensorflow,1
+"from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import gradients
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import math_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import state_ops
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,ivano666/tensorflow,1
+"def _changing_default_center_bias():
+  logging.warn(
+      ""Change warning: default value of `enable_centered_bias` will change""
+      "" after 2016-10-09. It will be disabled by default.""
+      ""Instructions for keeping existing behaviour:\n""
+      ""Explicitly set `enable_centered_bias` to 'True' if you want to keep ""
+      ""existing behaviour."")
+
+
+# TODO(ispir): Increase test coverage
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,cg31/tensorflow,1
+"import logging 
+import numpy as np 
+
+class BaseEstimator(object):
+
+    def __init__(
+            self, 
+            shuffle = True, 
+            n_iters = 50, 
+            eta = None, 
+            fit_intercept = True,
+            normalize = True, 
+            verbose = False):",censored_regression/base_estimator.py,iskandr/censored_regression,1
+"            x_bound = x + stride[1] * out_width
+            col[:, :, y, x, :, :] = images[:, :,
+                                           y:y_bound:stride[0],
+                                           x:x_bound:stride[1]]
+
+    col = col.transpose(0, 4, 5, 1, 2, 3).reshape(n_images * \
+                                                  out_height * \
+                                                  out_width, -1)
+    return col
+        
+class BaseEstimator(object):
+    X = None
+    y = None
+    y_required = True
+
+    def _setup_input(self, X, y=None):
+        if not isinstance(X, np.ndarray):
+            X = np.array(X)
+
+        if X.size == 0:",algs/convnet/convnet.py,burakbayramli/classnotes,1
+"import os
+
+import numpy as np
+import six
+
+
+def _pprint(d):
+  return ', '.join(['%s=%s' % (key, str(value)) for key, value in d.items()])
+
+
+class _BaseEstimator(object):
+  """"""This is a cross-import when sklearn is not available.
+
+  Adopted from sklearn.BaseEstimator implementation.
+  https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/base.py
+  """"""
+
+  def get_params(self, deep=True):
+    """"""Get parameters for this estimator.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,dhalleine/tensorflow,1
+"
+  @property
+  def sleep_times(self):
+    return self._sleeptimes
+
+  @property
+  def time_calls(self):
+    return self._time_calls
+
+
+class TestBaseEstimator(object):
+
+  def __init__(self, config, max_evals, eval_dict):
+    self.eval_count = 0
+    self.fit_count = 0
+    self._max_evals = max_evals
+    self.export_count = 0
+    self.monitors = []
+    self.eval_hooks = []
+    self._config = config or run_config.RunConfig()",tensorflow/contrib/learn/python/learn/experiment_test.py,meteorcloudy/tensorflow,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their __init__ as explicit keyword
+    arguments (no *args, **kwargs).
+    """"""
+",sklearn/base.py,loli/sklearn-ensembletrees,1
+"    def input_fn():
+      return x.create_graph()
+    return input_fn, None
+
+  df = data_feeder.setup_train_data_feeder(x, None,
+                                           n_classes=None,
+                                           batch_size=batch_size)
+  return df.input_builder, df.get_feed_dict_fn()
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+  It may override _get_default_metric_functions.
+
+  `Estimator` implemented below is a good example of how to use this class.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,petewarden/tensorflow_makefile,1
+"import numpy as np
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+
+import config
+from utils import dist_utils, ngram_utils, nlp_utils
+from utils import logging_utils, time_utils, pkl_utils
+from feature_base import BaseEstimator, StandaloneFeatureWrapper, PairwiseFeatureWrapper
+
+
+class Doc2Vec_BaseEstimator(BaseEstimator):
+    def __init__(self, obs_corpus, target_corpus, doc2vec_model, sent_label, model_prefix, aggregation_mode=""""):
+        super().__init__(obs_corpus, target_corpus, aggregation_mode)
+        self.model = doc2vec_model
+        self.sent_label = sent_label
+        self.model_prefix = model_prefix
+        self.vector_size = doc2vec_model.vector_size
+
+    def _get_vector(self, sent):
+        try:",Code/Chenglong/feature_doc2vec.py,ChenglongChen/Kaggle_HomeDepot,1
+"    # Regular function.
+    return inspect.getargspec(func).args
+  elif hasattr(func, '__call__'):
+    # Callable object.
+    return _get_arguments(func.__call__)
+  elif hasattr(func, 'func'):
+    # Partial function.
+    return _get_arguments(func.func)
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,rew4332/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Targets: %s.' % (metrics, targets))
+      result[name] = metric(predictions, targets)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,mrry/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Labels: %s.' % (metrics, labels_tensor_or_dict))
+      result[name] = metric(predictions, labels_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,ppries/tensorflow,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in datata-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+",m_learning/base.py,JosmanPS/parallel-SVM,1
+"import numpy as np
+from sklearn.base import BaseEstimator as SKBaseEstimator
+from sklearn.base import ClassifierMixin
+from sklearn.base import clone as _clone
+from pyhelper import PyDenseProblem, PySparseProblem
+import warnings
+
+from .grid_search import ParamSearchCV
+
+
+class BaseEstimator(SKBaseEstimator, ClassifierMixin):
+    """"""Base class for all estimators""""""
+
+    def __setattr__(self, name, value):
+        """"""Catch prior hyperparameter attributes""""""
+
+        if name in ['alpha', 'gamma']:
+            if hasattr(self, 'prior') and self.prior is not None:
+                if hasattr(self.prior, name) and value is not None:
+                    setattr(self.prior, name, value)",lnpy/learn/base.py,arnefmeyer/lnpy,1
+"    X, y, feature_names = boston_train
+    reg = LinearRegression()
+    reg.fit(X, y)
+    res = explain_weights_sklearn(reg)
+    html = res._repr_html_()
+    assert 'LinearRegression' not in html
+    assert 'BIAS' in html
+
+
+def test_repr_html_error():
+    reg = BaseEstimator()
+    res = explain_weights_sklearn(reg)
+    html = res._repr_html_()
+    assert 'BaseEstimator' in html",tests/test_base.py,TeamHG-Memex/eli5,1
+"    # Regular function.
+    return inspect.getargspec(func).args
+  elif hasattr(func, '__call__'):
+    # Callable object.
+    return _get_arguments(func.__call__)
+  elif hasattr(func, 'func'):
+    # Partial function.
+    return _get_arguments(func.func)
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+
+  `Estimator` implemented below is a good example of how to use this class.
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,TakayukiSakai/tensorflow,1
+"# License: BSD (3-clause)
+
+import warnings
+import numpy as np
+
+from ..externals.six import iteritems
+from ..fixes import _get_args
+from ..utils import check_version
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,joewalter/mne-python,1
+"import unittest
+
+import pandas as pd
+import numpy as np
+
+from pgmpy.estimators import BaseEstimator
+
+
+class TestBaseEstimator(unittest.TestCase):
+    def setUp(self):
+        self.d1 = pd.DataFrame(data={'A': [0, 0, 1], 'B': [0, 1, 0], 'C': [1, 1, 0], 'D': ['X', 'Y', 'Z']})
+        self.d2 = pd.DataFrame(data={'A': [0, np.NaN, 1], 'B': [0, 1, 0], 'C': [1, 1, np.NaN], 'D': [np.NaN, 'Y', np.NaN]})
+
+        self.titanic_data = pd.read_csv('pgmpy/tests/test_estimators/testdata/titanic_train.csv')
+
+    def test_state_count(self):
+        e = BaseEstimator(self.d1)
+        self.assertEqual(e.state_counts('A').values.tolist(), [[2], [1]])",pgmpy/tests/test_estimators/test_BaseEstimator.py,dungvtdev/upsbayescpm,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,elingg/tensorflow,1
+"import unittest
+
+import pandas as pd
+import numpy as np
+
+from pgmpy.estimators import BaseEstimator
+
+
+class TestBaseEstimator(unittest.TestCase):
+    def setUp(self):
+        self.d1 = pd.DataFrame(data={'A': [0, 0, 1], 'B': [0, 1, 0], 'C': [1, 1, 0], 'D': ['X', 'Y', 'Z']})
+        self.d2 = pd.DataFrame(data={'A': [0, np.NaN, 1], 'B': [0, 1, 0], 'C': [1, 1, np.NaN], 'D': [np.NaN, 'Y', np.NaN]})
+
+        self.titanic_data = pd.read_csv('pgmpy/tests/test_estimators/testdata/titanic_train.csv')
+
+    def test_state_count(self):
+        e = BaseEstimator(self.d1)
+        self.assertEqual(e.state_counts('A').values.tolist(), [[2], [1]])",pgmpy/tests/test_estimators/test_BaseEstimator.py,khalibartan/pgmpy,1
+"    # Regular function.
+    return inspect.getargspec(func).args
+  elif hasattr(func, '__call__'):
+    # Callable object.
+    return _get_arguments(func.__call__)
+  elif hasattr(func, 'func'):
+    # Partial function.
+    return _get_arguments(func.func)
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide following functions:
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+
+  `Estimator` implemented below is a good example of how to use this class.
+  """"""",tensorflow/contrib/learn/python/learn/estimators/estimator.py,dhalleine/tensorflow,1
+"from tensorflow.python.framework import ops
+from tensorflow.python.ops import control_flow_ops
+from tensorflow.python.ops import logging_ops
+from tensorflow.python.ops import nn
+from tensorflow.python.ops import parsing_ops
+from tensorflow.python.ops import partitioned_variables
+from tensorflow.python.ops import state_ops
+from tensorflow.python.ops import variable_scope
+
+
+class _DNNLinearCombinedBaseEstimator(estimator.BaseEstimator):
+  """"""An estimator for TensorFlow Linear and DNN joined training models.
+
+    Input of `fit`, `train`, and `evaluate` should have following features,
+      otherwise there will be a `KeyError`:
+        if `weight_column_name` is not `None`, a feature with
+          `key=weight_column_name` whose value is a `Tensor`.
+        for each `column` in `dnn_feature_columns` + `linear_feature_columns`:
+        - if `column` is a `SparseColumn`, a feature with `key=column.name`
+          whose `value` is a `SparseTensor`.",tensorflow/contrib/learn/python/learn/estimators/dnn_linear_combined.py,laosiaudi/tensorflow,1
+"           ""LinearRegressionL2SmoothedL1TV"",
+
+           ""Clustering"",
+
+           ""GridSearchKFoldRegression"",
+           ""GridSearchKFold"",
+           ""KFoldCrossValidationRegression"",
+           ""KFoldCrossValidation""]
+
+
+class BaseEstimator(with_metaclass(abc.ABCMeta, object)):
+    """"""Base class for estimators.
+
+    Parameters
+    ----------
+    algorithm : BaseAlgorithm. The algorithm that will be used.
+    """"""
+
+    def __init__(self, algorithm):
+",parsimony/estimators.py,neurospin/pylearn-parsimony,1
+"#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+
+import numpy as np
+
+
+class _BaseEstimator(object):
+  """"""This is a cross-import when sklearn is not available.
+
+  Adopted from sklearn.BaseEstimator implementation.
+  https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/base.py
+  """"""
+
+  def get_params(self, deep=True):
+    """"""Get parameters for this estimator.
+",tensorflow/contrib/learn/python/learn/estimators/_sklearn.py,peterbraden/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Labels: %s.' % (metrics, labels_tensor_or_dict))
+      result[name] = metric(predictions, labels_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,Mistobaan/tensorflow,1
+"#
+# License: BSD (3-clause)
+
+import warnings
+import numpy as np
+
+from ..externals.six import iteritems
+from ..fixes import _get_args
+
+
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",mne/decoding/base.py,jona-sassenhagen/mne-python,1
+"
+  @property
+  def sleep_times(self):
+    return self._sleeptimes
+
+  @property
+  def time_calls(self):
+    return self._time_calls
+
+
+class TestBaseEstimator(object):
+
+  def __init__(self, config, max_evals, eval_dict):
+    self.eval_count = 0
+    self.fit_count = 0
+    self._max_evals = max_evals
+    self.export_count = 0
+    self.monitors = []
+    self.eval_hooks = []
+    self._config = config or run_config.RunConfig()",tensorflow/contrib/learn/python/learn/experiment_test.py,ibmsoe/tensorflow,1
+"  ps_ops = ['Variable', 'AutoReloadVariable',
+            'MutableHashTable', 'MutableHashTableOfTensors']
+  if config.num_ps_replicas > 0:
+    return device_setter.replica_device_setter(
+        ps_tasks=config.num_ps_replicas, merge_devices=False, ps_ops=ps_ops,
+        cluster=config.cluster_spec)
+  else:
+    return None
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,caisq/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,GehenHe/Recognize-Face-on-Android,1
+"    # Regular function.
+    return inspect.getargspec(func).args
+  elif hasattr(func, '__call__'):
+    # Callable object.
+    return _get_arguments(func.__call__)
+  elif hasattr(func, 'func'):
+    # Partial function.
+    return _get_arguments(func.func)
+
+
+class BaseEstimator(sklearn.BaseEstimator):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+
+  `Estimator` implemented below is a good example of how to use this class.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,HaebinShin/tensorflow,1
+"
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+# NOTE: I have renamed this from BaseEstimator to Parametric in order to also use it for Models
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",pyemma/_ext/sklearn/base.py,clonker/PyEMMA,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,byronyi/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Targets: %s.' % (metrics, targets))
+      result[name] = metric(predictions, targets)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,XueqingLin/tensorflow,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their __init__ as explicit keyword
+    arguments (no *args, **kwargs).
+    """"""
+",sklearn/base.py,johnowhitaker/bobibabber,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,hfp/tensorflow-xsmm,1
+"#!/usr/bin/env python
+import numpy as np
+
+
+class BaseEstimator(object):
+    """"""
+    Base class for estimator class in pgmpy. Estimator class is used for parameter estimation as well
+    as structure estimation
+
+    Parameters
+    ----------
+    model: pgmpy.models.BayesianModel or pgmpy.models.MarkovModel or pgmpy.models.NoisyOrModel
+        model for which parameter estimation is to be done
+",pgmpy/estimators/base.py,anaviltripathi/pgmpy,1
+"import numpy as np
+
+
+class BaseEstimator(object):
+    X = None
+    y = None
+    y_required = True
+
+    def _setup_input(self, X, y=None):
+        """"""Ensure inputs to an estimator are in the expected format.
+
+        Ensures X and y are stored as numpy ndarrays by converting from an
+        array-like object if necessary. Enables estimators to define whether",mla/base/base.py,zhuhuifeng/PyML,1
+"
+  @property
+  def sleep_times(self):
+    return self._sleeptimes
+
+  @property
+  def time_calls(self):
+    return self._time_calls
+
+
+class TestBaseEstimator(object):
+
+  def __init__(self, config, max_evals, eval_dict):
+    self.eval_count = 0
+    self.fit_count = 0
+    self._max_evals = max_evals
+    self.export_count = 0
+    self.monitors = []
+    self.eval_hooks = []
+    self._config = config or run_config.RunConfig()",tensorflow/contrib/learn/python/learn/experiment_test.py,LUTAN/tensorflow,1
+"
+    _BaseEstimator = base.BaseEstimator
+    _ClassifierMixin = base.ClassifierMixin
+    _ClusterMixin = base.ClusterMixin
+    _RegressorMixin = base.RegressorMixin
+    _TransformerMixin = base.TransformerMixin
+
+except ImportError:
+    # for ReadTheDoc, unable to use mock because of metaclass
+
+    class _BaseEstimator(object):
+        pass
+
+    class _ClassifierMixin(object):
+        pass
+
+    class _ClusterMixin(object):
+        pass
+
+    class _RegressorMixin(object):",pandas_ml/core/base.py,pandas-ml/pandas-ml,1
+"
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+# NOTE: I have renamed this from BaseEstimator to Parametric in order to also use it for Models
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",pyemma/_ext/sklearn/base.py,gph82/PyEMMA,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Labels: %s.' % (metrics, labels_tensor_or_dict))
+      result[name] = metric(predictions, labels_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,DCSaunders/tensorflow,1
+"NotFittedError = AttributeError
+
+clf1 = LogisticRegression(C=1000)
+clf2 = LogisticRegression(C=5000)
+
+iris = load_iris()
+X_iris = iris.data[:, :2]
+y_iris = iris.target
+
+
+def test_tokenize_BaseEstimator():
+    assert tokenize(clf1) == tokenize(clf1)
+    assert tokenize(clf1) == tokenize(clone(clf1))
+    assert tokenize(clf1) != tokenize(clf2)
+    fit = clone(clf1).fit(X_iris, y_iris)
+    assert tokenize(fit) == tokenize(fit)
+    assert tokenize(fit) != tokenize(clf1)
+    fit2 = clone(clf2).fit(X_iris, y_iris)
+    assert tokenize(fit) != tokenize(fit2)
+",dklearn/tests/test_wrapped.py,jcrist/dask-learn,1
+"  return result
+
+
+def _maybe_add_streaming_mean(result, key, value):
+  if key in result:
+    logging.warning('Metrics already contains %s, skipping.', key)
+    return
+  result[key] = metrics_lib.streaming_mean(value)
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,cg31/tensorflow,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Targets: %s.' % (metrics, target_tensor_or_dict))
+      result[name] = metric(predictions, target_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,pierreg/tensorflow,1
+"
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+# NOTE: I have renamed this from BaseEstimator to Parametric in order to also use it for Models
+class BaseEstimator(object):
+    """"""Base class for all estimators in scikit-learn
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their ``__init__`` as explicit keyword
+    arguments (no ``*args`` or ``**kwargs``).
+    """"""
+
+    @classmethod",pyemma/_ext/sklearn/base.py,markovmodel/PyEMMA,1
+"      # Single head metrics.
+      if isinstance(predictions, dict):
+        raise ValueError(
+            'Metrics passed provide only name, no prediction, '
+            'but predictions are dict. '
+            'Metrics: %s, Labels: %s.' % (metrics, labels_tensor_or_dict))
+      result[name] = metric(predictions, labels_tensor_or_dict)
+  return result
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Concrete implementation of this class should provide the following functions:
+
+    * _get_train_ops
+    * _get_eval_ops
+    * _get_predict_ops
+",tensorflow/contrib/learn/python/learn/estimators/estimator.py,RapidApplicationDevelopment/tensorflow,1
+"import tensorflow as tf
+from tensorflow.python.framework.ops import Graph
+from tensorflow.python.framework import random_seed as tf_random_seed
+
+from muffnn.core import TFPicklingBase, affine
+
+
+_LOGGER = logging.getLogger(__name__)
+
+
+class MLPBaseEstimator(TFPicklingBase, BaseEstimator, metaclass=ABCMeta):
+    """"""Base class for multilayer perceptron models
+
+    Notes
+    -----
+    There is currently no dropout between the sparse input layer and first
+    hidden layer. Dropout on the sparse input layer would undo the benefits of
+    sparsity because the dropout layer is dense.
+    """"""
+",muffnn/mlp/base.py,civisanalytics/muffnn,1
+"        this_line_length += len(this_repr)
+
+    np.set_printoptions(**options)
+    lines = ''.join(params_list)
+    # Strip trailing space to avoid nightmare in doctests
+    lines = '\n'.join(l.rstrip(' ') for l in lines.split('\n'))
+    return lines
+
+
+###############################################################################
+class BaseEstimator(object):
+
+    """"""Base class for all estimators in scikit-learn
+
+    Notes
+    -----
+    All estimators should specify all the parameters that can be set
+    at the class level in their __init__ as explicit keyword
+    arguments (no *args, **kwargs).
+    """"""",hyperspy/misc/machine_learning/fastica.py,pburdet/hyperspy,1
+"import numpy as np
+
+from sklearn.base import TransformerMixin, BaseEstimator, clone
+from sklearn.linear_model import LogisticRegression
+
+from mne.parallel import parallel_func
+
+from nose.tools import assert_true
+
+
+class _BaseEstimator(BaseEstimator, TransformerMixin):
+    def fit(self, X, y=None):
+        return self
+
+    def fit_transform(self, X, y=None):
+        return self.fit(X, y).transform(X)
+
+
+def baseline(X, mode, tslice):
+        if X.shape[-1] > 0:",jr/gat/transformers.py,kingjr/jr-tools,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,LUTAN/tensorflow,1
+"    if (isinstance(dictionary[key], np.float32) or
+        isinstance(dictionary[key], float)):
+      value.simple_value = float(dictionary[key])
+    else:
+      logging.warn('Skipping summary for %s, must be a float or np.float32.',
+                   key)
+  summary_writer.add_summary(summary_proto, current_global_step)
+  summary_writer.flush()
+
+
+class BaseEstimator(
+    sklearn.BaseEstimator, evaluable.Evaluable, trainable.Trainable):
+  """"""Abstract BaseEstimator class to train and evaluate TensorFlow models.
+
+  Users should not instantiate or subclass this class. Instead, use `Estimator`.
+  """"""
+  __metaclass__ = abc.ABCMeta
+
+  # Note that for Google users, this is overriden with
+  # learn_runner.EstimatorConfig.",tensorflow/contrib/learn/python/learn/estimators/estimator.py,eerwitt/tensorflow,1
