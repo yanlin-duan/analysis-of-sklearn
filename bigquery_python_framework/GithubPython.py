@@ -63,7 +63,7 @@ class GithubPython(object):
 		result = client.run_sync_query(query)
 		result.timeout_ms = 99999999
 		result.run()
-		return result.rows
+		return list(result.fetch_data())
 
 	def module_with_most_import(self):
 		query = """\
